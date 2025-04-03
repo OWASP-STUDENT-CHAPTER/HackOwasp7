@@ -35,77 +35,114 @@ export function Countdown() {
   }, []);
 
   const containerVariants = {
-    hidden: { opacity: 0, y: 20 },
+    hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      y: 0,
       transition: {
-        duration: 0.6,
-        staggerChildren: 0.1
+        duration: 1,
+        staggerChildren: 0.2
       }
     }
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
+    hidden: { 
+      opacity: 0,
+      scale: 0.8,
+      y: 20
+    },
     visible: {
       opacity: 1,
+      scale: 1,
       y: 0,
       transition: {
-        duration: 0.6
+        type: "spring",
+        stiffness: 100,
+        damping: 10
       }
     }
   };
 
   const numberVariants = {
+    initial: { scale: 1 },
     update: {
-      opacity: [0, 1],
-      y: [-20, 0],
+      scale: [1, 1.1, 1],
       transition: {
         duration: 0.3
       }
     }
   };
 
+  const glowVariants = {
+    initial: { opacity: 0.5 },
+    animate: {
+      opacity: [0.5, 1, 0.5],
+      transition: {
+        duration: 2,
+        repeat: Infinity,
+        ease: "easeInOut"
+      }
+    }
+  };
+
   return (
     <motion.div 
-      className="mt-12 mb-8"
+      className="mt-12 mb-8 relative"
       variants={containerVariants}
       initial="hidden"
       animate="visible"
     >
+      <motion.div
+        className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-blue-500/20 blur-3xl"
+        variants={glowVariants}
+        initial="initial"
+        animate="animate"
+      />
       <motion.h2 
-        className="text-white text-2xl mb-6"
+        className="text-white text-2xl mb-6 relative"
         variants={itemVariants}
       >
         Event Starts In
       </motion.h2>
-      <div className="grid grid-cols-4 gap-4 text-white">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-white relative">
         {[
           { value: timeLeft.days, label: 'DAYS' },
           { value: timeLeft.hours, label: 'HOURS' },
           { value: timeLeft.minutes, label: 'MINUTES' },
           { value: timeLeft.seconds, label: 'SECONDS' }
-        ].map((item, index) => (
+        ].map((item) => (
           <motion.div 
             key={item.label}
             className="flex flex-col items-center"
             variants={itemVariants}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
           >
             <motion.div 
-              className="text-4xl md:text-6xl font-bold bg-purple-600/30 backdrop-blur-sm rounded-lg p-4 min-w-[120px] shadow-lg"
+              className="text-4xl md:text-6xl font-bold bg-gradient-to-br from-purple-600/30 to-blue-600/30 backdrop-blur-sm rounded-lg p-4 min-w-[120px] shadow-lg border border-white/10"
+              initial="initial"
               animate="update"
               variants={numberVariants}
-              key={item.value} // Force re-render on value change
+              key={item.value}
             >
-              {String(item.value).padStart(2, '0')}
+              <motion.span
+                initial={{ y: 20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                key={item.value}
+                transition={{ type: "spring", stiffness: 200, damping: 10 }}
+              >
+                {String(item.value).padStart(2, '0')}
+              </motion.span>
             </motion.div>
-            <div className="text-sm mt-2 text-gray-300 font-semibold">
+            <motion.div 
+              className="text-sm mt-2 text-gray-300 font-semibold"
+              whileHover={{ scale: 1.1 }}
+            >
               {item.label}
-            </div>
+            </motion.div>
           </motion.div>
         ))}
       </div>
     </motion.div>
   );
-}
+}   
