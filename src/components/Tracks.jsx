@@ -217,7 +217,7 @@ useEffect(() => {
         className="h-full w-[10%] flex justify-center items-center cursor-pointer"
         onClick={leftScroll}
       >
-        <div className="w-10 h-10 flex justify-center items-center rounded-full hover:bg-gray-200 transition-colors">
+        <div className="w-10 h-10 flex justify-center items-center rounded-full bg-white transition-colors">
           <FontAwesomeIcon icon={faAngleLeft} size="lg" />
         </div>
       </div>
@@ -307,7 +307,7 @@ useEffect(() => {
         className="h-full w-[10%] flex justify-center items-center cursor-pointer"
         onClick={rightScroll}
       >
-        <div className="w-10 h-10 flex justify-center items-center rounded-full hover:bg-gray-200 transition-colors">
+        <div className="w-10 h-10 flex justify-center items-center rounded-full bg-white transition-colors">
           <FontAwesomeIcon icon={faAngleRight} size="lg" />
         </div>
       </div>

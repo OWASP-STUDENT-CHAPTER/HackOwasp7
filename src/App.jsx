@@ -6,11 +6,15 @@ import { Logos3 } from './components/logos3'
 import TracksSlider from './components/tracks'
 
 import './App.css'
+import { SparklesPreview, SparklesPreviewColorful, SparklesPreviewDark } from './components/Sparkles'
 
 function App() {
   return (
-    <div className="min-h-screen bg-[#333]">
+    <div className="min-h-screen bg-black">
       <Navbar />
+      {/* <SparklesPreview /> */}
+      {/* <SparklesPreviewColorful /> */}
+      {/* <SparklesPreviewDark /> */}
       <Hero />
       <div id="timeline">
         <TimelineDemo />
