@@ -24,6 +24,7 @@ export function Navbar() {
             <div className="ml-10 flex items-baseline space-x-4">
               <a href="#home" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Home</a>
               <a href="#timeline" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Timeline</a>
+              <a href="#tracks" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Tracks</a>
               <a href="#register" className="bg-purple-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-purple-700">Register Now</a>
             </div>
           </div>
