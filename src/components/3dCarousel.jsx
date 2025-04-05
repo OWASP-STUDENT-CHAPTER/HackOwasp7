@@ -3,7 +3,17 @@ import { useSwipeable } from "react-swipeable";
 
 const Carousel3D = ({ slides, autoplay = true, interval = 3000, arrows = false, onSlideChange = () => {} }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [slideItems, setSlideItems] = useState([]);
+  const [slideItems, setSlideItems] = useState(() => {
+    if (!slides || slides.length === 0) return [];
+    const items = slides.map((slide, index) => ({
+      state: index === 0 ? 'active' : (index === 1 ? 'proactive' : 'proactivede'),
+      element: slide
+    }));
+    if (slides.length === 2) {
+      items.push(...slides.map(slide => ({ state: 'proactivede', element: slide })));
+    }
+    return items;
+  });
   const [height] = useState('400px');
   const autoplayRef = useRef(null);
   const currentIndexRef = useRef(0);
@@ -16,58 +26,58 @@ const Carousel3D = ({ slides, autoplay = true, interval = 3000, arrows = false, 
   });
 
   useEffect(() => {
-    const items = slides.map((slide, index) => ({
-      state: index === 0 ? 'active' : (index === 1 ? 'proactive' : 'proactivede'),
-      element: slide
-    }));
-
-    if (slides.length === 2) {
-      items.push(...slides.map(slide => ({ state: 'proactivede', element: slide })));
-    }
-
-    setSlideItems(items);
-    currentIndexRef.current = 0;
-
     if (autoplay && slides.length > 1) {
-      autoplayRef.current = setInterval(() => {
-        moveNext();
-      }, interval);
+      const timer = setTimeout(() => {
+        autoplayRef.current = setInterval(() => {
+          moveNext();
+        }, interval);
+      }, 500);
+      return () => {
+        if (autoplayRef.current) {
+          clearInterval(autoplayRef.current);
+        }
+        clearTimeout(timer);
+      };
     }
-
-    return () => {
-      if (autoplayRef.current) {
-        clearInterval(autoplayRef.current);
-      }
-    };
-  }, [slides]);
+  }, [slides, autoplay, interval]);
 
   const moveNext = () => {
-    if (slides.length <= 1) return;
-
+    if (!slides || slides.length <= 1 || !slideItems || slideItems.length === 0) return;
+  
     let newIndex = currentIndexRef.current;
     newIndex = newIndex < slides.length - 1 ? newIndex + 1 : 0;
-
+  
     const newSlideItems = [...slideItems];
-
+  
     newSlideItems.forEach(item => {
       if (item.state === 'preactivede') item.state = 'proactivede';
       if (item.state === 'preactive') item.state = 'preactivede';
     });
-
-    const prevSlide = newIndex > 0 ? newSlideItems[newIndex - 1] : newSlideItems[slides.length - 1];
-    const activeSlide = newSlideItems[newIndex];
-    const nextSlide = newIndex < slides.length - 1 ? newSlideItems[newIndex + 1] : newSlideItems[0];
-
-    prevSlide.state = 'preactive';
-    activeSlide.state = 'active';
-    nextSlide.state = 'proactive';
-
-    setSlideItems(newSlideItems);
-    setCurrentSlide(newIndex);
-    currentIndexRef.current = newIndex;
-    onSlideChange(newIndex);
+  
+    const prevIndex = newIndex > 0 ? newIndex - 1 : slides.length - 1;
+    const nextIndex = newIndex < slides.length - 1 ? newIndex + 1 : 0;
+    
+    if (prevIndex >= 0 && prevIndex < newSlideItems.length &&
+        newIndex >= 0 && newIndex < newSlideItems.length &&
+        nextIndex >= 0 && nextIndex < newSlideItems.length) {
+        
+      const prevSlide = newSlideItems[prevIndex];
+      const activeSlide = newSlideItems[newIndex];
+      const nextSlide = newSlideItems[nextIndex];
+      
+      if (prevSlide && activeSlide && nextSlide) {
+        prevSlide.state = 'preactive';
+        activeSlide.state = 'active';
+        nextSlide.state = 'proactive';
+        
+        setSlideItems(newSlideItems);
+        setCurrentSlide(newIndex);
+        currentIndexRef.current = newIndex;
+        onSlideChange(newIndex);
+      }
+    }
   };
-
+  
   const movePrev = () => {
     if (slides.length <= 1) return;
 
@@ -131,6 +141,7 @@ const Carousel3D = ({ slides, autoplay = true, interval = 3000, arrows = false, 
   );
 };
 
+
 const AboutUs = () => {
   const statsRef = useRef(null);
 
@@ -170,19 +181,19 @@ const AboutUs = () => {
   };
 
   const slides = [
-    <div className="h-[400px] w-[250px] rounded-xl overflow-hidden">
-      <img src="https://picsum.photos/300/450/?random" alt="Team Member 1" className="w-full h-full object-cover" />
+    <div className="h-[500px] w-[550px] rounded-xl overflow-hidden">
+    <img src="https://picsum.photos/300/450/?random" alt="Team Member 1" className="w-full h-full object-cover" />
     </div>,
-    <div className="h-[400px] w-[250px] rounded-xl overflow-hidden">
+    <div className="h-[500px] w-[550px] rounded-xl overflow-hidden">
       <img src="https://picsum.photos/300/451/?random" alt="Team Member 2" className="w-full h-full object-cover" />
     </div>,
-    <div className="h-[400px] w-[250px] rounded-xl overflow-hidden">
+    <div className="h-[500px] w-[550px] rounded-xl overflow-hidden">
       <img src="https://picsum.photos/300/452/?random" alt="Team Member 3" className="w-full h-full object-cover" />
     </div>,
-    <div className="h-[400px] w-[250px] rounded-xl overflow-hidden">
+    <div className="h-[500px] w-[550px] rounded-xl overflow-hidden">
       <img src="https://picsum.photos/300/453/?random" alt="Team Member 4" className="w-full h-full object-cover" />
     </div>,
-    <div className="h-[400px] w-[250px] rounded-xl overflow-hidden">
+    <div className="h-[500px] w-[550px] rounded-xl overflow-hidden">
       <img src="https://picsum.photos/300/454/?random" alt="Team Member 5" className="w-full h-full object-cover" />
     </div>,
   ];
@@ -218,8 +229,8 @@ const AboutUs = () => {
               <span className="text-white"> Leave Your Mark!</span>
             </h2>
             <p className="text-gray-300 leading-relaxed">
-              The seventh edition of HackOWASP, organised by OWASP Student Chapter & GDSC, is your 
-              battleground for innovation. This 30-hour hackathon unites warriors of code—both 
+              The seventh edition of HackOWASP, organised by OWASP Student Chapter is your 
+              battleground for innovation. This 24-hour hackathon unites warriors of code—both 
               seasoned champions and rising contenders—to forge groundbreaking solutions 
               across digital realms.
             </p>

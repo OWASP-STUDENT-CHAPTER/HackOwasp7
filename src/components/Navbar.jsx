@@ -23,6 +23,7 @@ export function Navbar() {
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-4">
               <a href="#home" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Home</a>
+              <a href="#about" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">About us</a>
               <a href="#timeline" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Timeline</a>
               <a href="#tracks" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Tracks</a>
               <a href="#partners" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Partners</a>
