@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleLeft, faAngleRight, faCode, faLaptopCode, faMobile, faServer, faShieldAlt, faDatabase } from '@fortawesome/free-solid-svg-icons';
 
+
 const TracksSlider = () => {
   const tracks = [
     { 
