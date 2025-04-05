@@ -66,11 +66,11 @@ const Logos3 = ({
   ]
 }) => {
   return (
-    <section className="py-24">
-      <div className="">{/* pt-10 md:pt-16 lg:pt-20 */}
-        <div
-          className="relative mx-auto flex items-center justify-center w-full overflow-hidden">{/* ld:max-w-5xl */}
-          <Carousel opts={{ loop: true }} direction="ltr" plugins={[AutoScroll({ playOnInit: true })]}>
+    <section className="">
+      <div className="">
+        {/* <div
+          className="relative mx-auto flex items-center justify-center w-full overflow-hidden">
+          <C25ousel opts={{ loop: true }} direction="ltr" plugins={[AutoScroll({ playOnInit: true })]}>
             <CarouselContent className="ml-0">
               {logos.map((logo) => (
                 <CarouselItem
@@ -84,46 +84,116 @@ const Logos3 = ({
                 </CarouselItem>
               ))}
             </CarouselContent>
-          </Carousel>
-        </div>
+          </C25ousel>
+        </div> */}
         <div
-          className="relative mx-auto flex items-center justify-center w-full my-40 overflow-hidden">{/* ld:max-w-5xl */}
-          <InfiniteSlider gap={25} reverse className="w-full h-full">
+          className="relative mx-auto flex items-center justify-center w-full overflow-hidden">
+          <InfiniteSlider gap={25} className="w-full h-fit">
             <img
               src="https://motion-primitives.com/apple_music_logo.svg"
               alt="Apple Music logo"
-              className="h-[120px] w-auto px-25"
+              className="h-[180px] w-auto px-15 bg-amber-800 shadow-md shadow-white rounded-3xl  my-5"
             />
             <img
               src="https://motion-primitives.com/chrome_logo.svg"
               alt="Chrome logo"
-              className="h-[120px] w-auto px-25"
+              className="h-[180px] w-auto px-15 bg-amber-800 shadow-md shadow-white rounded-3xl  my-5"
             />
             <img
               src="https://motion-primitives.com/strava_logo.svg"
               alt="Strava logo"
-              className="h-[120px] w-auto px-25"
+              className="h-[180px] w-auto px-15 bg-amber-800 shadow-md shadow-white rounded-3xl  my-5"
             />
             <img
               src="https://motion-primitives.com/nintendo_logo.svg"
               alt="Nintendo logo"
-              className="h-[120px] w-auto px-25"
+              className="h-[180px] w-auto px-15 bg-amber-800 shadow-md shadow-white rounded-3xl  my-5"
             />
             <img
               src="https://motion-primitives.com/jquery_logo.svg"
               alt="Jquery logo"
-              className="h-[120px] w-auto px-25"
+              className="h-[180px] w-auto px-15 bg-amber-800 shadow-md shadow-white rounded-3xl  my-5"
             />
             <img
               src="https://motion-primitives.com/prada_logo.svg"
               alt="Prada logo"
-              className="h-[120px] w-auto px-25"
+              className="h-[180px] w-auto px-15 bg-amber-800 shadow-md shadow-white rounded-3xl  my-5"
             />
           </InfiniteSlider>
         </div>
         <div
-          className="relative mx-auto flex items-center justify-center w-full overflow-hidden">{/* ld:max-w-5xl */}
-          <Carousel opts={{ loop: true }} plugins={[AutoScroll({ playOnInit: true })]}>
+          className="relative mx-auto flex items-center justify-center w-full overflow-hidden">
+          <InfiniteSlider gap={25} reverse className="w-full h-fit">
+            <img
+              src="https://motion-primitives.com/apple_music_logo.svg"
+              alt="Apple Music logo"
+              className="h-[150px] w-auto px-15 bg-amber-800 shadow-md shadow-white rounded-3xl  my-5"
+            />
+            <img
+              src="https://motion-primitives.com/chrome_logo.svg"
+              alt="Chrome logo"
+              className="h-[150px] w-auto px-15 bg-amber-800 shadow-md shadow-white rounded-3xl  my-5"
+            />
+            <img
+              src="https://motion-primitives.com/strava_logo.svg"
+              alt="Strava logo"
+              className="h-[150px] w-auto px-15 bg-amber-800 shadow-md shadow-white rounded-3xl  my-5"
+            />
+            <img
+              src="https://motion-primitives.com/nintendo_logo.svg"
+              alt="Nintendo logo"
+              className="h-[150px] w-auto px-15 bg-amber-800 shadow-md shadow-white rounded-3xl  my-5"
+            />
+            <img
+              src="https://motion-primitives.com/jquery_logo.svg"
+              alt="Jquery logo"
+              className="h-[150px] w-auto px-15 bg-amber-800 shadow-md shadow-white rounded-3xl  my-5"
+            />
+            <img
+              src="https://motion-primitives.com/prada_logo.svg"
+              alt="Prada logo"
+              className="h-[150px] w-auto px-15 bg-amber-800 shadow-md shadow-white rounded-3xl  my-5"
+            />
+          </InfiniteSlider>
+        </div>
+        <div
+          className="relative mx-auto flex items-center justify-center w-full overflow-hidden">
+          <InfiniteSlider gap={25} className="w-full h-fit">
+            <img
+              src="https://motion-primitives.com/apple_music_logo.svg"
+              alt="Apple Music logo"
+              className="h-[100px] w-auto px-15 bg-amber-800 shadow-md shadow-white rounded-3xl  my-5"
+            />
+            <img
+              src="https://motion-primitives.com/chrome_logo.svg"
+              alt="Chrome logo"
+              className="h-[100px] w-auto px-15 bg-amber-800 shadow-md shadow-white rounded-3xl  my-5"
+            />
+            <img
+              src="https://motion-primitives.com/strava_logo.svg"
+              alt="Strava logo"
+              className="h-[100px] w-auto px-15 bg-amber-800 shadow-md shadow-white rounded-3xl  my-5"
+            />
+            <img
+              src="https://motion-primitives.com/nintendo_logo.svg"
+              alt="Nintendo logo"
+              className="h-[100px] w-auto px-15 bg-amber-800 shadow-md shadow-white rounded-3xl  my-5"
+            />
+            <img
+              src="https://motion-primitives.com/jquery_logo.svg"
+              alt="Jquery logo"
+              className="h-[100px] w-auto px-15 bg-amber-800 shadow-md shadow-white rounded-3xl  my-5"
+            />
+            <img
+              src="https://motion-primitives.com/prada_logo.svg"
+              alt="Prada logo"
+              className="h-[100px] w-auto px-15 bg-amber-800 shadow-md shadow-white rounded-3xl  my-5"
+            />
+          </InfiniteSlider>
+        </div>
+        {/* <div
+          className="relative mx-auto flex items-center justify-center w-full overflow-hidden">
+          <C25ousel opts={{ loop: true }} plugins={[AutoScroll({ playOnInit: true })]}>
             <CarouselContent className="ml-0">
               {logos.map((logo) => (
                 <CarouselItem
@@ -137,8 +207,8 @@ const Logos3 = ({
                 </CarouselItem>
               ))}
             </CarouselContent>
-          </Carousel>
-        </div>
+          </C25ousel>
+        </div> */}
       </div>
     </section>
   );
