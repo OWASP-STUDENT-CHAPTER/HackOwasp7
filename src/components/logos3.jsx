@@ -66,129 +66,277 @@ const Logos3 = ({
   ]
 }) => {
   return (
-    <section className="">
+    <section className="" style={{
+      backgroundImage: "url('./SmallGroup.png')",
+      backgroundSize: "cover",
+      backgroundPosition: "center",
+    }}>
       <div className="">
-        {/* <div
-          className="relative mx-auto flex items-center justify-center w-full overflow-hidden">
-          <C25ousel opts={{ loop: true }} direction="ltr" plugins={[AutoScroll({ playOnInit: true })]}>
-            <CarouselContent className="ml-0">
-              {logos.map((logo) => (
-                <CarouselItem
-                  key={logo.id}
-                  className="flex basis-1/3 justify-center pl-0 sm:basis-1/4 md:basis-1/5 lg:basis-1/6">
-                  <div className="mx-10 px-20 flex shrink-0 items-center justify-center">
-                    <div>
-                      <img src={logo.image} alt={logo.description} className={logo.className} />
-                    </div>
-                  </div>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-          </C25ousel>
-        </div> */}
         <div
           className="relative mx-auto flex items-center justify-center w-full overflow-hidden">
           <InfiniteSlider gap={25} className="w-full h-fit">
-            <img
-              src="https://motion-primitives.com/apple_music_logo.svg"
-              alt="Apple Music logo"
-              className="h-[180px] w-auto px-15 bg-amber-800 shadow-md shadow-white rounded-3xl  my-5"
-            />
-            <img
-              src="https://motion-primitives.com/chrome_logo.svg"
-              alt="Chrome logo"
-              className="h-[180px] w-auto px-15 bg-amber-800 shadow-md shadow-white rounded-3xl  my-5"
-            />
-            <img
-              src="https://motion-primitives.com/strava_logo.svg"
-              alt="Strava logo"
-              className="h-[180px] w-auto px-15 bg-amber-800 shadow-md shadow-white rounded-3xl  my-5"
-            />
-            <img
-              src="https://motion-primitives.com/nintendo_logo.svg"
-              alt="Nintendo logo"
-              className="h-[180px] w-auto px-15 bg-amber-800 shadow-md shadow-white rounded-3xl  my-5"
-            />
-            <img
-              src="https://motion-primitives.com/jquery_logo.svg"
-              alt="Jquery logo"
-              className="h-[180px] w-auto px-15 bg-amber-800 shadow-md shadow-white rounded-3xl  my-5"
-            />
-            <img
-              src="https://motion-primitives.com/prada_logo.svg"
-              alt="Prada logo"
-              className="h-[180px] w-auto px-15 bg-amber-800 shadow-md shadow-white rounded-3xl  my-5"
-            />
+            <div
+              className="relative h-[180px] w-56 px-15 bg-amber-800 shadow-md shadow-white rounded-3xl my-5"
+              style={{
+                backgroundImage: "url('./SmallGroup.png')",
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}
+            >
+              <img
+                src="https://motion-primitives.com/jquery_logo.svg"
+                alt="Apple Music logo"
+                className="absolute inset-0 m-auto h-[100px] w-auto"
+              />
+            </div>
+            <div
+              className="relative h-[180px] w-56 px-15 bg-amber-800 shadow-md shadow-white rounded-3xl my-5"
+              style={{
+                backgroundImage: "url('./SmallGroup.png')",
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}
+            >
+              <img
+                src="https://motion-primitives.com/jquery_logo.svg"
+                alt="Apple Music logo"
+                className="absolute inset-0 m-auto h-[100px] w-auto"
+              />
+            </div>
+            <div
+              className="relative h-[180px] w-56 px-15 bg-amber-800 shadow-md shadow-white rounded-3xl my-5"
+              style={{
+                backgroundImage: "url('./SmallGroup.png')",
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}
+            >
+              <img
+                src="https://motion-primitives.com/jquery_logo.svg"
+                alt="Apple Music logo"
+                className="absolute inset-0 m-auto h-[100px] w-auto"
+              />
+            </div>
+            <div
+              className="relative h-[180px] w-56 px-15 bg-amber-800 shadow-md shadow-white rounded-3xl my-5"
+              style={{
+                backgroundImage: "url('./SmallGroup.png')",
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}
+            >
+              <img
+                src="https://motion-primitives.com/jquery_logo.svg"
+                alt="Apple Music logo"
+                className="absolute inset-0 m-auto h-[100px] w-auto"
+              />
+            </div>
+            <div
+              className="relative h-[180px] w-56 px-15 bg-amber-800 shadow-md shadow-white rounded-3xl my-5"
+              style={{
+                backgroundImage: "url('./SmallGroup.png')",
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}
+            >
+              <img
+                src="https://motion-primitives.com/jquery_logo.svg"
+                alt="Apple Music logo"
+                className="absolute inset-0 m-auto h-[100px] w-auto"
+              />
+            </div>
+            <div
+              className="relative h-[180px] w-56 px-15 bg-amber-800 shadow-md shadow-white rounded-3xl my-5"
+              style={{
+                backgroundImage: "url('./SmallGroup.png')",
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}
+            >
+              <img
+                src="https://motion-primitives.com/jquery_logo.svg"
+                alt="Apple Music logo"
+                className="absolute inset-0 m-auto h-[100px] w-auto"
+              />
+            </div>
           </InfiniteSlider>
         </div>
         <div
           className="relative mx-auto flex items-center justify-center w-full overflow-hidden">
           <InfiniteSlider gap={25} reverse className="w-full h-fit">
-            <img
-              src="https://motion-primitives.com/apple_music_logo.svg"
-              alt="Apple Music logo"
-              className="h-[150px] w-auto px-15 bg-amber-800 shadow-md shadow-white rounded-3xl  my-5"
-            />
-            <img
-              src="https://motion-primitives.com/chrome_logo.svg"
-              alt="Chrome logo"
-              className="h-[150px] w-auto px-15 bg-amber-800 shadow-md shadow-white rounded-3xl  my-5"
-            />
-            <img
-              src="https://motion-primitives.com/strava_logo.svg"
-              alt="Strava logo"
-              className="h-[150px] w-auto px-15 bg-amber-800 shadow-md shadow-white rounded-3xl  my-5"
-            />
-            <img
-              src="https://motion-primitives.com/nintendo_logo.svg"
-              alt="Nintendo logo"
-              className="h-[150px] w-auto px-15 bg-amber-800 shadow-md shadow-white rounded-3xl  my-5"
-            />
-            <img
-              src="https://motion-primitives.com/jquery_logo.svg"
-              alt="Jquery logo"
-              className="h-[150px] w-auto px-15 bg-amber-800 shadow-md shadow-white rounded-3xl  my-5"
-            />
-            <img
-              src="https://motion-primitives.com/prada_logo.svg"
-              alt="Prada logo"
-              className="h-[150px] w-auto px-15 bg-amber-800 shadow-md shadow-white rounded-3xl  my-5"
-            />
+            <div
+              className="relative h-[180px] w-56 px-15 bg-amber-800 shadow-md shadow-white rounded-3xl my-5"
+              style={{
+                backgroundImage: "url('./SmallGroup.png')",
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}
+            >
+              <img
+                src="https://motion-primitives.com/jquery_logo.svg"
+                alt="Apple Music logo"
+                className="absolute inset-0 m-auto h-[100px] w-auto"
+              />
+            </div>
+            <div
+              className="relative h-[180px] w-56 px-15 bg-amber-800 shadow-md shadow-white rounded-3xl my-5"
+              style={{
+                backgroundImage: "url('./SmallGroup.png')",
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}
+            >
+              <img
+                src="https://motion-primitives.com/jquery_logo.svg"
+                alt="Apple Music logo"
+                className="absolute inset-0 m-auto h-[100px] w-auto"
+              />
+            </div>
+            <div
+              className="relative h-[180px] w-56 px-15 bg-amber-800 shadow-md shadow-white rounded-3xl my-5"
+              style={{
+                backgroundImage: "url('./SmallGroup.png')",
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}
+            >
+              <img
+                src="https://motion-primitives.com/jquery_logo.svg"
+                alt="Apple Music logo"
+                className="absolute inset-0 m-auto h-[100px] w-auto"
+              />
+            </div>
+            <div
+              className="relative h-[180px] w-56 px-15 bg-amber-800 shadow-md shadow-white rounded-3xl my-5"
+              style={{
+                backgroundImage: "url('./SmallGroup.png')",
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}
+            >
+              <img
+                src="https://motion-primitives.com/jquery_logo.svg"
+                alt="Apple Music logo"
+                className="absolute inset-0 m-auto h-[100px] w-auto"
+              />
+            </div>
+            <div
+              className="relative h-[180px] w-56 px-15 bg-amber-800 shadow-md shadow-white rounded-3xl my-5"
+              style={{
+                backgroundImage: "url('./SmallGroup.png')",
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}
+            >
+              <img
+                src="https://motion-primitives.com/jquery_logo.svg"
+                alt="Apple Music logo"
+                className="absolute inset-0 m-auto h-[100px] w-auto"
+              />
+            </div>
+            <div
+              className="relative h-[180px] w-56 px-15 bg-amber-800 shadow-md shadow-white rounded-3xl my-5"
+              style={{
+                backgroundImage: "url('./SmallGroup.png')",
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}
+            >
+              <img
+                src="https://motion-primitives.com/jquery_logo.svg"
+                alt="Apple Music logo"
+                className="absolute inset-0 m-auto h-[100px] w-auto"
+              />
+            </div>
           </InfiniteSlider>
         </div>
         <div
           className="relative mx-auto flex items-center justify-center w-full overflow-hidden">
           <InfiniteSlider gap={25} className="w-full h-fit">
-            <img
-              src="https://motion-primitives.com/apple_music_logo.svg"
-              alt="Apple Music logo"
-              className="h-[100px] w-auto px-15 bg-amber-800 shadow-md shadow-white rounded-3xl  my-5"
-            />
-            <img
-              src="https://motion-primitives.com/chrome_logo.svg"
-              alt="Chrome logo"
-              className="h-[100px] w-auto px-15 bg-amber-800 shadow-md shadow-white rounded-3xl  my-5"
-            />
-            <img
-              src="https://motion-primitives.com/strava_logo.svg"
-              alt="Strava logo"
-              className="h-[100px] w-auto px-15 bg-amber-800 shadow-md shadow-white rounded-3xl  my-5"
-            />
-            <img
-              src="https://motion-primitives.com/nintendo_logo.svg"
-              alt="Nintendo logo"
-              className="h-[100px] w-auto px-15 bg-amber-800 shadow-md shadow-white rounded-3xl  my-5"
-            />
-            <img
-              src="https://motion-primitives.com/jquery_logo.svg"
-              alt="Jquery logo"
-              className="h-[100px] w-auto px-15 bg-amber-800 shadow-md shadow-white rounded-3xl  my-5"
-            />
-            <img
-              src="https://motion-primitives.com/prada_logo.svg"
-              alt="Prada logo"
-              className="h-[100px] w-auto px-15 bg-amber-800 shadow-md shadow-white rounded-3xl  my-5"
-            />
+            <div
+              className="relative h-[180px] w-56 px-15 bg-amber-800 shadow-md shadow-white rounded-3xl my-5"
+              style={{
+                backgroundImage: "url('./SmallGroup.png')",
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}
+            >
+              <img
+                src="https://motion-primitives.com/jquery_logo.svg"
+                alt="Apple Music logo"
+                className="absolute inset-0 m-auto h-[100px] w-auto"
+              />
+            </div>
+            <div
+              className="relative h-[180px] w-56 px-15 bg-amber-800 shadow-md shadow-white rounded-3xl my-5"
+              style={{
+                backgroundImage: "url('./SmallGroup.png')",
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}
+            >
+              <img
+                src="https://motion-primitives.com/jquery_logo.svg"
+                alt="Apple Music logo"
+                className="absolute inset-0 m-auto h-[100px] w-auto"
+              />
+            </div>
+            <div
+              className="relative h-[180px] w-56 px-15 bg-amber-800 shadow-md shadow-white rounded-3xl my-5"
+              style={{
+                backgroundImage: "url('./SmallGroup.png')",
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}
+            >
+              <img
+                src="https://motion-primitives.com/jquery_logo.svg"
+                alt="Apple Music logo"
+                className="absolute inset-0 m-auto h-[100px] w-auto"
+              />
+            </div>
+            <div
+              className="relative h-[180px] w-56 px-15 bg-amber-800 shadow-md shadow-white rounded-3xl my-5"
+              style={{
+                backgroundImage: "url('./SmallGroup.png')",
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}
+            >
+              <img
+                src="https://motion-primitives.com/jquery_logo.svg"
+                alt="Apple Music logo"
+                className="absolute inset-0 m-auto h-[100px] w-auto"
+              />
+            </div>
+            <div
+              className="relative h-[180px] w-56 px-15 bg-amber-800 shadow-md shadow-white rounded-3xl my-5"
+              style={{
+                backgroundImage: "url('./SmallGroup.png')",
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}
+            >
+              <img
+                src="https://motion-primitives.com/jquery_logo.svg"
+                alt="Apple Music logo"
+                className="absolute inset-0 m-auto h-[100px] w-auto"
+              />
+            </div>
+            <div
+              className="relative h-[180px] w-56 px-15 bg-amber-800 shadow-md shadow-white rounded-3xl my-5"
+              style={{
+                backgroundImage: "url('./SmallGroup.png')",
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}
+            >
+              <img
+                src="https://motion-primitives.com/jquery_logo.svg"
+                alt="Apple Music logo"
+                className="absolute inset-0 m-auto h-[100px] w-auto"
+              />
+            </div>
           </InfiniteSlider>
         </div>
         {/* <div
