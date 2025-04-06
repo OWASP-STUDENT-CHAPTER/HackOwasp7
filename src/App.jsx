@@ -4,7 +4,9 @@ import { Hero } from "./components/Hero";
 import { TimelineDemo } from "./components/TimelineDemo";
 import { Logos3 } from "./components/logos3";
 import TracksSlider from "./components/tracks";
+
 import SplineScreen from "./components/SplineScene";
+
 import LegoCarousel from "./components/3dCarousel";
 import figurine from "/tracks.svg";
 import "./App.css";
@@ -15,12 +17,20 @@ import {
 } from "./components/Sparkles";
 import { Spline } from "lucide-react";
 
+
+import Footer from './components/Footer';
+
+
 function App() {
   return (
     <div className="min-h-screen bg-black overflow-x-hidden">
       <div className="relative w-full h-screen">
         <div className="absolute inset-0 z-0">
+
           <SplineScreen />
+
+          {/* <SplineScreen /> */}
+
         </div>
 
         <div className="relative z-10">
@@ -50,7 +60,8 @@ function App() {
         {/* Figurine Section with enhanced background */}
         <div className="w-1/4 flex justify-center items-center">
           <div
-            className="relative bg-gray-900 dark:bg-gray-800 rounded-lg p-6 border-2 border-yellow-500 dark:border-yellow-600"
+
+            className="relative bg-gray-900 dark:bg-gray-800 rounded-lg p-6 pb-0 border-2 border-yellow-500 dark:border-yellow-600"
             style={{
               boxShadow: "0 8px 0 rgba(234, 179, 8, 0.5)",
               backgroundImage:
@@ -110,8 +121,13 @@ function App() {
         </h2>
         <Logos3 />
       </div>
+      <div className="">
+        <Footer />
+      </div>
     </div>
   );
 }
 
+
 export default App;
+
