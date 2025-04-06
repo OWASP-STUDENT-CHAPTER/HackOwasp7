@@ -210,7 +210,7 @@ useEffect(() => {
   };
 
   return (
-    <div className="h-[35rem] w-full max-w-[1200px] flex justify-center items-center relative mt-8 select-none">
+    <div className="h-[35rem] w-full max-w-[1200px] flex justify-center items-center relative mt-8 select-none" >
       
       {/* Left Arrow */}
       <div 

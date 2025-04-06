@@ -7,10 +7,16 @@ import TracksSlider from './components/tracks'
 
 import './App.css'
 import { SparklesPreview, SparklesPreviewColorful, SparklesPreviewDark } from './components/Sparkles'
+import Footer from './components/Footer'
 
 function App() {
   return (
-    <div className="min-h-screen bg-black">
+    <div className="min-h-screen relative bg-black">
+      {/* <img
+        src="./Group.png"
+        alt="Foreground Art"
+        className="fixed top-0 w-screen max-h-[100vh] object-cover z-10"
+      /> */}
       <Navbar />
       {/* <SparklesPreview /> */}
       {/* <SparklesPreviewColorful /> */}
@@ -28,6 +34,9 @@ function App() {
       <div className="">
         <h2 className="text-center text-3xl font-bold text-white mb-10">Partners</h2>
         <Logos3 />
+      </div>
+      <div className="">
+        <Footer />
       </div>
     </div>
   )
