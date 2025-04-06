@@ -4,7 +4,7 @@ import { Hero } from "./components/Hero";
 import { TimelineDemo } from "./components/TimelineDemo";
 import { Logos3 } from "./components/logos3";
 import TracksSlider from "./components/tracks";
-import SplineScreen from "./components/SplineScene";
+// import SplineScreen from "./components/SplineScene";
 import LegoCarousel from "./components/3dCarousel";
 import figurine from "/tracks.svg";
 import "./App.css";
@@ -21,7 +21,7 @@ function App() {
     <div className="min-h-screen bg-black overflow-x-hidden">
       <div className="relative w-full h-screen">
         <div className="absolute inset-0 z-0">
-          <SplineScreen />
+          {/* <SplineScreen /> */}
         </div>
 
         <div className="relative z-10">
