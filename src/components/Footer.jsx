@@ -24,48 +24,48 @@ export default function Footer() {
           <div className="flex flex-wrap gap-16 md:gap-x-20">
             {/* Company Section */}
             <div className="footer-section">
-              <h4 className="text-lg font-semibold mb-6 text-gray-800">Companys</h4>
+              <h4 className="text-lg font-semibold mb-6 text-white">Companys</h4>
               <ul className="space-y-3">
-                <li><a href="/about" className="text-gray-700 hover:text-blue-600 transition-colors">About Us</a></li>
-                <li><a href="/contact" className="text-gray-700 hover:text-blue-600 transition-colors">Contact</a></li>
-                <li><a href="/blog" className="text-gray-700 hover:text-blue-600 transition-colors">Blog</a></li>
+                <li><a href="/about" className="text-white hover:text-blue-600 transition-colors">About Us</a></li>
+                <li><a href="/contact" className="text-white hover:text-blue-600 transition-colors">Contact</a></li>
+                <li><a href="/blog" className="text-white hover:text-blue-600 transition-colors">Blog</a></li>
               </ul>
             </div>
 
             {/* Products Section */}
             <div className="footer-section">
-              <h4 className="text-lg font-semibold mb-6 text-gray-800">Products</h4>
+              <h4 className="text-lg font-semibold mb-6 text-white">Products</h4>
               <ul className="space-y-3">
-                <li><a href="/products" className="text-gray-700 hover:text-blue-600 transition-colors">All Products</a></li>
-                <li><a href="/new" className="text-gray-700 hover:text-blue-600 transition-colors">New Arrivals</a></li>
-                <li><a href="/popular" className="text-gray-700 hover:text-blue-600 transition-colors">Popular Items</a></li>
+                <li><a href="/products" className="text-white hover:text-blue-600 transition-colors">All Products</a></li>
+                <li><a href="/new" className="text-white hover:text-blue-600 transition-colors">New Arrivals</a></li>
+                <li><a href="/popular" className="text-white hover:text-blue-600 transition-colors">Popular Items</a></li>
               </ul>
             </div>
 
             {/* Support Section */}
             <div className="footer-section">
-              <h4 className="text-lg font-semibold mb-6 text-gray-800">Support</h4>
+              <h4 className="text-lg font-semibold mb-6 text-white">Support</h4>
               <ul className="space-y-3">
-                <li><a href="/faq" className="text-gray-700 hover:text-blue-600 transition-colors">FAQ</a></li>
-                <li><a href="/help" className="text-gray-700 hover:text-blue-600 transition-colors">Help Center</a></li>
-                <li><a href="/shipping" className="text-gray-700 hover:text-blue-600 transition-colors">Shipping Info</a></li>
+                <li><a href="/faq" className="text-white hover:text-blue-600 transition-colors">FAQ</a></li>
+                <li><a href="/help" className="text-white hover:text-blue-600 transition-colors">Help Center</a></li>
+                <li><a href="/shipping" className="text-white hover:text-blue-600 transition-colors">Shipping Info</a></li>
               </ul>
             </div>
           </div>
 
           {/* Contact/Newsletter Section */}
           <div className="min-w-[280px] flex-1">
-            <h4 className="text-lg font-semibold mb-6 text-gray-800">Stay Connected</h4>
+            <h4 className="text-lg font-semibold mb-6 text-white">Stay Connected</h4>
 
             {/* Social Icons */}
             <div className="flex gap-4 mb-6">
-              <a href="#" aria-label="Facebook" className="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center text-gray-600 hover:bg-blue-600 hover:text-white transform hover:-translate-y-1 transition-all">
+              <a href="#" aria-label="Facebook" className="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center text-white hover:bg-blue-600 hover:text-white transform hover:-translate-y-1 transition-all">
                 <i className="fab fa-faceboo  k"></i>
               </a>
-              <a href="#" aria-label="Twitter" className="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center text-gray-600 hover:bg-blue-600 hover:text-white transform hover:-translate-y-1 transition-all">
+              <a href="#" aria-label="Twitter" className="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center text-white hover:bg-blue-600 hover:text-white transform hover:-translate-y-1 transition-all">
                 <i className="fab fa-twitter"></i>
               </a>
-              <a href="#" aria-label="Instagram" className="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center text-gray-600 hover:bg-blue-600 hover:text-white transform hover:-translate-y-1 transition-all">
+              <a href="#" aria-label="Instagram" className="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center text-gwhite hover:bg-blue-600 hover:text-white transform hover:-translate-y-1 transition-all">
                 <i className="fab fa-instagram"></i>
               </a>
             </div>
@@ -101,7 +101,7 @@ export default function Footer() {
         </div> */}
 
         {/* Copyright Section */}
-        <div className="mt-16 pt-6 border-t border-gray-300 flex flex-wrap justify-between text-sm text-gray-600">
+        <div className="mt-16 pt-6 border-t border-gray-300 flex flex-wrap justify-between text-sm text-white">
           <p>&copy; 2025 Your Company Name. All rights reserved.</p>
           <div className="flex gap-6 mt-4 md:mt-0">
             <a href="/privacy" className="hover:underline">Privacy Policy</a>
