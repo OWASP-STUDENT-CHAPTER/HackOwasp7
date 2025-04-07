@@ -87,7 +87,7 @@ export function Countdown() {
 
   return (
     <motion.div 
-      className="mt-12 mb-8 relative"
+      className="mt-5`-- mb-8 relative"
       variants={containerVariants}
       initial="hidden"
       animate="visible"
@@ -99,7 +99,7 @@ export function Countdown() {
         animate="animate"
       />
       <motion.h2 
-        className="text-white text-2xl mb-6 relative"
+        className="text-white text-center text-2xl mb-6 relative"
         variants={itemVariants}
       >
         Event Starts In
@@ -119,14 +119,14 @@ export function Countdown() {
             whileTap={{ scale: 0.95 }}
           >
             <motion.div 
-              className="text-4xl md:text-6xl font-bold bg-gradient-to-br from-purple-600/30 to-blue-600/30 backdrop-blur-sm rounded-lg p-4 min-w-[120px] shadow-lg border border-white/10"
+              className="text-4xl md:text-6xl text-center font-bold bg-gradient-to-br from-purple-600/30 to-blue-600/30 backdrop-blur-sm rounded-lg p-4 min-w-[120px] shadow-lg border border-white/10"
               initial="initial"
               animate="update"
               variants={numberVariants}
               key={item.value}
             >
               <motion.span
-                initial={{ y: 20, opacity: 0 }}
+                initial={{ y: 20, opacity: 0  }}
                 animate={{ y: 0, opacity: 1 }}
                 key={item.value}
                 transition={{ type: "spring", stiffness: 200, damping: 10 }}
@@ -135,7 +135,7 @@ export function Countdown() {
               </motion.span>
             </motion.div>
             <motion.div 
-              className="text-sm mt-2 text-gray-300 font-semibold"
+              className="text-sm text-center mt-2 text-gray-300 font-semibold"
               whileHover={{ scale: 1.1 }}
             >
               {item.label}

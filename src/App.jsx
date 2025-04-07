@@ -3,7 +3,7 @@ import { Navbar } from "./components/Navbar";
 import { Hero } from "./components/Hero";
 import { TimelineDemo } from "./components/TimelineDemo";
 import { Logos3 } from "./components/logos3";
-import TracksSlider from "./components/tracks";
+import TracksSlider from "./components/Tracks";
 
 import SplineScreen from "./components/SplineScene";
 
@@ -16,28 +16,30 @@ import {
   SparklesPreviewDark,
 } from "./components/Sparkles";
 import { Spline } from "lucide-react";
-
+import { motion } from "framer-motion";
 
 import Footer from './components/Footer';
 
 
 function App() {
   return (
-    <div className="min-h-screen bg-black overflow-x-hidden">
-      <div className="relative w-full h-screen">
+    <div id="home" className="min-h-screen relative bg-black overflow-x-hidden w-screen">
+      {/* <div className="absolute top-0 left-0 w-screen h-screen z-10">
+        <img src="/moon.gif" className="absolute w-64 h-64 right-10 top-30" />
+      </div> */}
+      {/* <SparklesPreview /> */}
+      {/* <SparklesPreviewColorful /> */}
+      <SparklesPreviewDark />
+          <Navbar />
+      {/* <div className="relative w-full h-screen">
         <div className="absolute inset-0 z-0">
-
           <SplineScreen />
-
-          {/* <SplineScreen /> */}
-
         </div>
 
         <div className="relative z-10">
-          <Navbar />
           <Hero />
         </div>
-      </div>
+      </div> */}
 
       {/* Rest of the Sections */}
       <div id="about" className="flex justify-center items-center w-full mt-16">
@@ -116,9 +118,6 @@ function App() {
         id="partners"
         className="relative flex flex-col items-center justify-center w-full mt-16"
       >
-        <h2 className="text-center text-3xl font-bold text-white mb-10">
-          Partners
-        </h2>
         <Logos3 />
       </div>
       <div className="">
