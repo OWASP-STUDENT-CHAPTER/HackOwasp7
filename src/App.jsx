@@ -24,13 +24,13 @@ import Footer from './components/Footer';
 function App() {
   return (
     <div id="home" className="min-h-screen relative bg-black overflow-x-hidden w-screen">
-      {/* <div className="absolute top-0 left-0 w-screen h-screen z-10">
-        <img src="/moon.gif" className="absolute w-64 h-64 right-10 top-30" />
+      {/* <div className="fixed bottom-0 left-0 w-screen h-screen z-10">
+        <img src="/walking.gif" className="absolute w-64 h-64 -mb-15 bottom-0 left-0"  />
       </div> */}
       {/* <SparklesPreview /> */}
       {/* <SparklesPreviewColorful /> */}
       <SparklesPreviewDark />
-          <Navbar />
+      <Navbar />
       {/* <div className="relative w-full h-screen">
         <div className="absolute inset-0 z-0">
           <SplineScreen />
@@ -42,15 +42,15 @@ function App() {
       </div> */}
 
       {/* Rest of the Sections */}
-      <div id="about" className="flex justify-center items-center w-full mt-16">
+      {/* <div id="about" className="flex justify-center items-center w-full mt-16">
         <LegoCarousel />
       </div>
       <div id="timeline" className="w-full">
         <TimelineDemo />
-      </div>
+      </div> */}
 
       {/* Tracks Section */}
-      <div
+      {/* <div
         id="tracks"
         className="flex flex-col md:flex-row justify-between items-center mt-16 px-4"
         style={{
@@ -59,7 +59,6 @@ function App() {
           backgroundPosition: "center",
         }}
       >
-        {/* Figurine Section with enhanced background */}
         <div className="w-1/4 flex justify-center items-center">
           <div
 
@@ -87,7 +86,6 @@ function App() {
           </div>
         </div>
 
-        {/* Tracks Section (3/4 width) */}
         <div className="w-3/4 mt-8 md:mt-0 md:ml-6">
           <div
             className="bg-gray-900 dark:bg-gray-800 rounded-lg border-2 border-blue-500 dark:border-blue-600 overflow-hidden"
@@ -111,18 +109,18 @@ function App() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* Partners Section */}
-      <div
+      {/* <div
         id="partners"
         className="relative flex flex-col items-center justify-center w-full mt-16"
       >
         <Logos3 />
-      </div>
-      <div className="">
+      </div> */}
+      {/* <div className="">
         <Footer />
-      </div>
+      </div> */}
     </div>
   );
 }
