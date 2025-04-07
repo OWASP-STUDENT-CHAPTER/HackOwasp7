@@ -236,7 +236,7 @@ const Logos3 = ({
             </div>
           </InfiniteSlider>
         </div>
-        <div
+        {/* <div
           className="relative mx-auto flex items-center justify-center w-full overflow-hidden">
           <Carousel opts={{ loop: true }} plugins={[AutoScroll({ playOnInit: true })]}>
             <CarouselContent className="ml-0">
@@ -253,7 +253,7 @@ const Logos3 = ({
               ))}
             </CarouselContent>
           </Carousel>
-        </div>
+        </div> */}
       </div>
     </section>
   );
