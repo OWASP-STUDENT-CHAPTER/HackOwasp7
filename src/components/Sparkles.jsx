@@ -77,7 +77,7 @@ export function SparklesPreviewDark() {
                         }
                     }}
                 >
-                    <img src="/spaceship.png" alt="" className="h-56 w-64" />
+                    <img src="/spaceship.png" alt="" className="h-56 w-64 hidden sm:block" />
                     {/* <StarshipAnimation /> */}
                 </motion.div>
                 <motion.div
@@ -120,7 +120,7 @@ export function SparklesPreviewDark() {
                         }
                     }}
                 >
-                    <img src="/legoMan.png" alt="" className="h-56 w-44" />
+                    <img src="/legoMan.png" alt="" className="h-56 w-44 hidden sm:block" />
                 </motion.div>
                 {/* <motion.div
                     style={{
