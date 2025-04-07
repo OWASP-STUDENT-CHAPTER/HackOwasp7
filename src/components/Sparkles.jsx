@@ -37,171 +37,107 @@ export function SparklesPreview() {
 
 export function SparklesPreviewDark() {
     return (
-        <>
-            <div className="h-screen relative w-full bg-slate-950 flex flex-col items-center justify-center overflow-hidden rounded-md">
-                <motion.div
-                    style={{
-                        position: "absolute",
-                        top: 20,
-                        left: 20,
-                        backgroundColor: "transparent",
-                        zIndex: 10
-                    }}
-                    animate={["initial"]}
-                    whileHover={["grow"]}
-                    variants={{
-                        grow: {
-                            scale: 1.1
-                        },
-                        rotate: {
-                            rotate: [null, -5, 5, 0],
-                            transition: {
-                                // delay,
-                                duration: 10
-                                // repeat: Infinity,
-                                // repeatDelay: 0.2,
-                                // repeatType: "reverse"
-                            }
-                        },
-                        initial: {
-                            x: [-30, 30],
-                            y: [-30, 30],
-                            rotate: 10,
-                            transition: {
-                                delay: 0.3,
-                                duration: 8,
-                                repeat: Infinity,
-                                // repeatDelay: 0.2,
-                                repeatType: "reverse"
-                            }
+        <div className="h-full w-full relative bg-slate-950 flex flex-col items-center justify-center overflow-hidden">
+            {/* Flying Spaceship */}
+            <motion.div
+                style={{
+                    position: "absolute",
+                    top: "5%",
+                    left: "5%",
+                    backgroundColor: "transparent",
+                    zIndex: 10
+                }}
+                animate={["initial"]}
+                whileHover={["grow"]}
+                variants={{
+                    grow: {
+                        scale: 1.1
+                    },
+                    initial: {
+                        x: [-30, 30],
+                        y: [-30, 30],
+                        rotate: 10,
+                        transition: {
+                            delay: 0.3,
+                            duration: 8,
+                            repeat: Infinity,
+                            repeatType: "reverse"
                         }
-                    }}
-                >
-                    <img src="/spaceship.png" alt="" className="h-56 w-64 hidden sm:block" />
-                    {/* <StarshipAnimation /> */}
-                </motion.div>
-                <motion.div
-                    style={{
-                        position: "absolute",
-                        bottom: 50,
-                        right: 70,
-                        backgroundColor: "transparent",
-                        rotateY: 180,
-                        rotateZ: 12,
-                        zIndex: 10
-                    }}
-                    animate={["initial"]}
-                    whileHover={["grow"]}
-                    variants={{
-                        grow: {
-                            scale: 1.1
-                        },
-                        rotate: {
-                            rotate: [null, -5, 5, 0],
-                            transition: {
-                                // delay,
-                                duration: 10
-                                // repeat: Infinity,
-                                // repeatDelay: 0.2,
-                                // repeatType: "reverse"
-                            }
-                        },
-                        initial: {
-                            x: [-20, 30, 15, 20, 35, 26, 45, 58, 54, 51, 54, 35, 15, 40, 25, 15, 52],
-                            y: [-40, 20, 25, 31, 52, 45, 45, 22, 16, 51, 41, 21, 51, 20, 45, 16, 51],
-                            // rotate: 180,
-                            transition: {
-                                delay: 0.3,
-                                duration: 20,
-                                repeat: Infinity,
-                                // repeatDelay: 0.2,
-                                repeatType: "reverse"
-                            }
+                    }
+                }}
+            >
+                <img src="/spaceship.png" alt="" className="h-32 w-36 md:h-56 md:w-64" />
+            </motion.div>
+
+            {/* Flying Lego Man */}
+            <motion.div
+                style={{
+                    position: "absolute",
+                    bottom: "10%",
+                    right: "10%",
+                    backgroundColor: "transparent",
+                    rotateY: 180,
+                    rotateZ: 12,
+                    zIndex: 10
+                }}
+                animate={["initial"]}
+                whileHover={["grow"]}
+                variants={{
+                    grow: {
+                        scale: 1.1
+                    },
+                    initial: {
+                        x: [-20, 30, 15, 20, 35, 26, 45, 58, 54, 51, 54, 35],
+                        y: [-40, 20, 25, 31, 52, 45, 45, 22, 16, 51, 41, 21],
+                        transition: {
+                            delay: 0.3,
+                            duration: 20,
+                            repeat: Infinity,
+                            repeatType: "reverse"
                         }
-                    }}
-                >
-                    <img src="/legoMan.png" alt="" className="h-56 w-44 hidden sm:block" />
-                </motion.div>
-                {/* <motion.div
-                    style={{
-                        position: "absolute",
-                        bottom: 30,
-                        left: 30,
-                        backgroundColor: "transparent",
-                        rotateZ: 12,
-                        zIndex: 10
-                    }}
-                    animate={["initial"]}
-                    whileHover={["grow"]}
-                    variants={{
-                        grow: {
-                            scale: 1.1
-                        },
-                        rotate: {
-                            rotate: [null, -5, 5, 0],
-                            transition: {
-                                // delay,
-                                duration: 10
-                                // repeat: Infinity,
-                                // repeatDelay: 0.2,
-                                // repeatType: "reverse"
-                            }
-                        },
-                        initial: {
-                            x: [-20, 30, 15, 20, 35, 26, 45, 58, 54, 51, 54, 35, 15, 40, 25, 15, 52],
-                            y: [-40, 20, 25, 31, 52, 45, 45, 22, 16, 51, 41, 21, 51, 20, 45, 16, 51],
-                            rotate: 15,
-                            transition: {
-                                delay: 0.3,
-                                duration: 15,
-                                repeat: Infinity,
-                                // repeatDelay: 0.2,
-                                repeatType: "reverse"
-                            }
-                        }
-                    }}
-                >
-                    <img src="/legoMan.png" alt="" className="h-72 w-64" />
-                </motion.div> */}
-                <div className="w-full absolute inset-0 h-screen">
-                    <SparklesCore
-                        id="tsparticlesfullpage"
-                        background="transparent"
-                        minSize={0.2}
-                        maxSize={1}
-                        particleDensity={100}
-                        className="w-full h-full"
-                        particleColor="#FFFFFF"
-                        speed={1}
-                    />
-                </div>
-                <h1 className="md:text-7xl text-3xl lg:text-9xl font-bold text-center text-white relative z-20">
-                    <span>H</span>
-                    <span>A</span>
-                    <span>C</span>
-                    <span>K</span>
-                    <span>O</span>
-                    <span>W</span>
-                    <span>A</span>
-                    <span>S</span>
-                    <span>P{" "}</span>
-                    <span>7</span>
-                    <span>.</span>
-                    <span>0</span>
+                    }
+                }}
+            >
+                <img src="/legoMan.png" alt="" className="h-32 w-24 md:h-56 md:w-44" />
+            </motion.div>
+
+            {/* Particles Background */}
+            <div className="absolute inset-0 w-full h-full">
+                <SparklesCore
+                    id="tsparticlesfullpage"
+                    background="transparent"
+                    minSize={0.2}
+                    maxSize={1}
+                    particleDensity={100}
+                    className="w-full h-full"
+                    particleColor="#FFFFFF"
+                    speed={1}
+                />
+            </div>
+
+            {/* Content */}
+            <div className="relative z-20 text-center px-4">
+                <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-9xl font-bold text-white mb-4">
+                    HackOwasp 7.0
                 </h1>
-                <div className="w-[50rem] h-10 relative">
+
+                <div className="w-full max-w-[50rem] mx-auto relative">
                     {/* Gradients */}
                     <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-[2px] w-3/4 blur-sm" />
                     <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-px w-3/4" />
                     <div className="absolute inset-x-60 top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-[5px] w-1/4 blur-sm" />
                     <div className="absolute inset-x-60 top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-px w-1/4" />
                 </div>
-                <p className="text-xl md:text-2xl text-gray-200 mb-8 max-w-3xl mx-auto text-center px-4">
-                    Join us for 24 hours of innovation, coding, and breakthrough solutions
+                <p className="text-lg sm:text-xl md:text-2xl text-gray-200 mb-8 max-w-3xl mx-auto px-4">
+                    Brick by byte - Build Your Code, One Brick at a Time
                 </p>
-                <Countdown />
+
+                {/* Countdown Component */}
+                <div className="scale-90 sm:scale-100">
+                    <Countdown />
+                </div>
             </div>
-        </>
+        </div>
     );
 }
 
