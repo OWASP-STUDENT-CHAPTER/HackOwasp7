@@ -2,4 +2,9 @@
 
 * {
     user-select: none;
+    font-family: "legothic";
+}
+
+::-webkit-scrollbar {
+    display: none;
 }
