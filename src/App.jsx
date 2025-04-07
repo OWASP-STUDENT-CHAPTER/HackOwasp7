@@ -118,6 +118,7 @@ function App() {
         id="partners"
         className="relative flex flex-col items-center justify-center w-full mt-16"
       >
+        
         <Logos3 />
       </div>
       <div className="">
