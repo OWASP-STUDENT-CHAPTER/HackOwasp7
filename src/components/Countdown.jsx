@@ -104,7 +104,7 @@ export function Countdown() {
       >
         Event Starts In
       </motion.h2>
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-white relative">
+      <div className="grid grid-cols-4 gap-4 text-white relative">
         {[
           { value: timeLeft.days, label: 'DAYS' },
           { value: timeLeft.hours, label: 'HOURS' },
@@ -119,7 +119,7 @@ export function Countdown() {
             whileTap={{ scale: 0.95 }}
           >
             <motion.div 
-              className="text-4xl md:text-6xl text-center font-bold bg-gradient-to-br from-purple-600/30 to-blue-600/30 backdrop-blur-sm rounded-lg p-4 min-w-[120px] shadow-lg border border-white/10"
+              className="text-4xl md:text-6xl text-center font-bold bg-gradient-to-br from-purple-600/30 to-blue-600/30 backdrop-blur-sm rounded-lg p-4 min-w-[50px] sm:min-w-[120px] shadow-lg border border-white/10"
               initial="initial"
               animate="update"
               variants={numberVariants}
