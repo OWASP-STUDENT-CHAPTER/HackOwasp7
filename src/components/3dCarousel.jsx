@@ -14,7 +14,7 @@ const Carousel3D = ({ slides, autoplay = true, interval = 3000, arrows = false, 
     }
     return items;
   });
-  const [height] = useState('400px');
+  const [height] = useState('500px');
   const autoplayRef = useRef(null);
   const currentIndexRef = useRef(0);
 
