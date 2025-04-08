@@ -121,15 +121,19 @@ export function SparklesPreviewDark() {
                     HackOwasp 7.0
                 </h1>
 
-                <div className="w-full max-w-[50rem] mx-auto relative">
-                    {/* Gradients */}
-                    <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-[2px] w-3/4 blur-sm" />
-                    <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-px w-3/4" />
-                    <div className="absolute inset-x-60 top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-[5px] w-1/4 blur-sm" />
-                    <div className="absolute inset-x-60 top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-px w-1/4" />
-                </div>
+                <div className="w-full max-w-[50rem] mx-auto relative px-4 sm:px-6">
+                    {/* Light effects container - adjusted for mobile */}
+                    <div className="relative w-full h-4"> {/* Container for positioning */}
+                        {/* Main gradient lines */}
+                        <div className="absolute left-[5%] sm:left-[20%] right-[5%] sm:right-[20%] top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-[2px] w-[90%] sm:w-3/4 blur-sm" />
+                        <div className="absolute left-[5%] sm:left-[20%] right-[5%] sm:right-[20%] top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-px w-[90%] sm:w-3/4" />
 
-                <p className="text-lg sm:text-xl md:text-2xl text-gray-200 mb-8 max-w-3xl mx-auto">
+                        {/* Accent gradient lines */}
+                        <div className="absolute left-[25%] sm:left-[60%] right-[25%] sm:right-[20%] top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-[5px] w-[50%] sm:w-1/4 blur-sm" />
+                        <div className="absolute left-[25%] sm:left-[60%] right-[25%] sm:right-[20%] top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-px w-[50%] sm:w-1/4" />
+                    </div>
+                </div>
+                <p className="text-lg sm:text-xl md:text-2xl text-gray-200 mb-8 max-w-3xl mx-auto px-4">
                     Brick by byte - Build Your Code, One Brick at a Time
                 </p>
 
