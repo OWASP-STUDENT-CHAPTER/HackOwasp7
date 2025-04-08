@@ -1,6 +1,20 @@
 import React from 'react';
 import { Countdown } from './Countdown';
 
+
+React.useEffect(() => {
+  const script = document.createElement('script');
+  script.src = 'https://apply.devfolio.co/v2/sdk.js';
+  script.async = true;
+  script.defer = true;
+  document.body.appendChild(script);
+  
+  return () => {
+    document.body.removeChild(script);
+  };
+}, []);
+
+
 export function Hero() {
   return (
     <div id="home" className="relative h-screen flex items-center justify-center">
@@ -19,12 +33,18 @@ export function Hero() {
         <p className="text-xl md:text-2xl text-gray-200 mb-8 max-w-2xl mx-auto">
           Join us for 24 hours of innovation, coding, and breakthrough solutions
         </p>
-        <a
+        {/* <a
           href="#register"
           className="inline-block bg-purple-600 text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-purple-700 transition-colors"
         >
           Register Now
-        </a>
+        </a> */}
+        <div 
+          className="apply-button" 
+          data-hackathon-slug={'hackowasp7'} 
+          data-button-theme={'light'}
+          style={{ height: '44px', width: '312px' }}
+        ></div>
         <Countdown />
       </div>
 
