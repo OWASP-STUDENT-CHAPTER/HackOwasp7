@@ -2,6 +2,18 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import DevfolioButton from './DevfolioButton';
 
+// React.useEffect(() => {
+//   const script = document.createElement('script');
+//   script.src = 'https://apply.devfolio.co/v2/sdk.js';
+//   script.async = true;
+//   script.defer = true;
+//   document.body.appendChild(script);
+  
+//   return () => {
+//     document.body.removeChild(script);
+//   };
+// }, []);
+
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -105,7 +117,7 @@ export function Navbar() {
               </a>
             ))}
             <div className="flex justify-center py-2">
-              <DevfolioButton hackathonSlug="hackowasp-7" theme="light" />
+              <DevfolioButton hackathonSlug="hackowasp7" theme="light" />
             </div>
           </div>
         </motion.div>
