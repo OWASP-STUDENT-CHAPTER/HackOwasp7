@@ -70,7 +70,7 @@ export function Navbar() {
               </motion.a>
             ))}
             <div className="scale-90">
-              <DevfolioButton hackathonSlug="hackowasp7" theme="light" />
+              {/* <DevfolioButton hackathonSlug="hackowasp7" theme="light" /> */}
             </div>
           </div>
 
@@ -117,7 +117,7 @@ export function Navbar() {
               </a>
             ))}
             <div className="flex justify-center py-2">
-              <DevfolioButton hackathonSlug="hackowasp7" theme="light" />
+              {/* <DevfolioButton hackathonSlug="hackowasp7" theme="light" /> */}
             </div>
           </div>
         </motion.div>
