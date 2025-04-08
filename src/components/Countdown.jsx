@@ -152,7 +152,7 @@ export function Countdown() {
       >
         {/* Replace button with DevfolioButton */}
         <div className="flex justify-center">
-          <DevfolioButton hackathonSlug="hackowasp-7" theme="light" />
+          <DevfolioButton hackathonSlug="hackowasp7" theme="light" />
         </div>
       </motion.div>
     </motion.div>
