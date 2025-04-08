@@ -1,27 +1,22 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 
 const DevfolioButton = ({ hackathonSlug = "hackowasp7", theme = "light" }) => {
-  const [scriptLoaded, setScriptLoaded] = useState(false);
-
   useEffect(() => {
-    // Note: This example uses a proxy URL. In production, set up your own proxy.
-    const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
-    const scriptUrl = 'https://apply.devfolio.co/v2/sdk.js';
+    // Create a new script element
+    const script = document.createElement('script');
+    // Set the source of the script to load the Devfolio SDK
+    script.src = 'https://apply.devfolio.co/v2/sdk.js';
+    // Setting crossOrigin can help if the server supports anonymous fetching
+    script.crossOrigin = 'anonymous';
+    script.async = true;
+    script.defer = true;
     
-    fetch(proxyUrl + scriptUrl, { mode: 'no-cors' })
-      .then(response => response.text())
-      .then(scriptText => {
-        const script = document.createElement('script');
-        script.text = scriptText;
-        script.async = true;
-        script.defer = true;
-        document.body.appendChild(script);
-        setScriptLoaded(true);
-      })
-      .catch(error => console.error('Error loading script:', error));
-
+    // Append the script to the document body
+    document.body.appendChild(script);
+    
+    // Clean up: remove the script when the component unmounts
     return () => {
-      // Optionally, remove the script if needed.
+      document.body.removeChild(script);
     };
   }, []);
 
