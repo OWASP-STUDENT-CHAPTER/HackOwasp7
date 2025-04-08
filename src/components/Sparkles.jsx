@@ -133,8 +133,7 @@ export function SparklesPreviewDark() {
                         <div className="absolute left-[25%] sm:left-[60%] right-[25%] sm:right-[20%] top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-px w-[50%] sm:w-1/4" />
                     </div>
                 </div>
-
-                <p className="text-lg sm:text-xl md:text-2xl text-gray-200 mb-8 max-w-3xl mx-auto">
+                <p className="text-lg sm:text-xl md:text-2xl text-gray-200 mb-8 max-w-3xl mx-auto px-4">
                     Brick by byte - Build Your Code, One Brick at a Time
                 </p>
 
