@@ -1,54 +1,15 @@
 import React from "react";
 import { Navbar } from "./components/Navbar";
-import { Hero } from "./components/Hero";
-import { TimelineDemo } from "./components/TimelineDemo";
-import { Logos3 } from "./components/logos3";
-import TracksSlider from "./components/Tracks";
-
-import SplineScreen from "./components/SplineScene";
-
-import LegoCarousel from "./components/3dCarousel";
-import figurine from "/tracks.svg";
+import { SparklesPreviewDark } from "./components/Sparkles";
 import "./App.css";
-import {
-  SparklesPreview,
-  SparklesPreviewColorful,
-  SparklesPreviewDark,
-} from "./components/Sparkles";
-import { Spline } from "lucide-react";
-import { motion } from "framer-motion";
-
-import Footer from './components/Footer';
-
 
 function App() {
   return (
-    <div id="home" className="min-h-screen relative bg-black overflow-x-hidden w-screen">
-      {/* <div className="fixed bottom-0 left-0 w-screen h-screen z-10">
-        <img src="/walking.gif" className="absolute w-64 h-64 -mb-15 bottom-0 left-0"  />
-      </div> */}
-      {/* <SparklesPreview /> */}
-      {/* <SparklesPreviewColorful /> */}
-      <SparklesPreviewDark />
-      <Navbar />
-      <div className="relative w-full h-screen">
-        <div className="absolute inset-0 z-0">
-          <SplineScreen />
-        </div>
-
-        <div className="relative z-10">
-          <Hero />
-        </div>
+    <div className="w-screen h-screen relative overflow-hidden bg-black">
+      {/* Container for SparklesPreviewDark */}
+      <div className="absolute inset-0">
+        <SparklesPreviewDark />
       </div>
-
-      {/* Rest of the Sections */}
-      <div id="about" className="flex justify-center items-center w-full mt-16">
-        <LegoCarousel />
-      </div>
-      <div id="timeline" className="w-full">
-        <TimelineDemo />
-      </div>
-
       {/* Tracks Section */}
       <div
         id="tracks"
@@ -120,11 +81,14 @@ function App() {
       </div>
       <div className="">
         <Footer />
+      </div> */}
+
+      {/* Navbar with higher z-index to stay on top */}
+      <div className="relative z-50">
+        <Navbar />
       </div>
-    </div>
+</div>
   );
 }
 
-
 export default App;
-
