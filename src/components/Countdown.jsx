@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import DevfolioButton from './DevfolioButton';
 
 export function Countdown() {
   const [timeLeft, setTimeLeft] = useState({
@@ -35,6 +34,24 @@ export function Countdown() {
     return () => clearInterval(timer);
   }, []);
 
+  // Load Devfolio SDK on component mount
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'https://apply.devfolio.co/v2/sdk.js';
+    script.async = true;
+    script.defer = true;
+    document.body.appendChild(script);
+
+    script.onload = () => {
+      if (window.Devfolio) {
+        new window.Devfolio({
+          buttonSelector: '#devfolio-apply-now',
+          key: 'hackowasp7' // Replace with your actual Devfolio key
+        });
+      }
+    };
+  }, []);
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -47,17 +64,13 @@ export function Countdown() {
   };
 
   const itemVariants = {
-    hidden: { 
-      opacity: 0,
-      scale: 0.8,
-      y: 20
-    },
+    hidden: { opacity: 0, scale: 0.8, y: 20 },
     visible: {
       opacity: 1,
       scale: 1,
       y: 0,
       transition: {
-        type: "spring",
+        type: 'spring',
         stiffness: 100,
         damping: 10
       }
@@ -68,9 +81,7 @@ export function Countdown() {
     initial: { scale: 1 },
     update: {
       scale: [1, 1.1, 1],
-      transition: {
-        duration: 0.3
-      }
+      transition: { duration: 0.3 }
     }
   };
 
@@ -81,14 +92,14 @@ export function Countdown() {
       transition: {
         duration: 2,
         repeat: Infinity,
-        ease: "easeInOut"
+        ease: 'easeInOut'
       }
     }
   };
 
   return (
     <motion.div 
-      className="mt-5`-- mb-8 relative"
+      className="mt-5 mb-8 relative"
       variants={containerVariants}
       initial="hidden"
       animate="visible"
@@ -127,10 +138,10 @@ export function Countdown() {
               key={item.value}
             >
               <motion.span
-                initial={{ y: 20, opacity: 0  }}
+                initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 key={item.value}
-                transition={{ type: "spring", stiffness: 200, damping: 10 }}
+                transition={{ type: 'spring', stiffness: 200, damping: 10 }}
               >
                 {String(item.value).padStart(2, '0')}
               </motion.span>
@@ -144,15 +155,21 @@ export function Countdown() {
           </motion.div>
         ))}
       </div>
+
       <motion.div 
         className="flex justify-center gap-4 mt-12"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1 }}
       >
-        {/* Replace button with DevfolioButton */}
+        {/* Devfolio Apply Button */}
         <div className="flex justify-center">
-          <DevfolioButton hackathonSlug="hackowasp7" theme="light" />
+          <button 
+            className="apply-button bg-white text-black font-bold py-2 px-6 rounded-lg hover:bg-gray-200 transition-all"
+            id="devfolio-apply-now"
+          >
+            Apply with Devfolio
+          </button>
         </div>
       </motion.div>
     </motion.div>
