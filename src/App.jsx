@@ -31,7 +31,7 @@ function App() {
       {/* <SparklesPreviewColorful /> */}
       <SparklesPreviewDark />
       <Navbar />
-      {/* <div className="relative w-full h-screen">
+      <div className="relative w-full h-screen">
         <div className="absolute inset-0 z-0">
           <SplineScreen />
         </div>
@@ -39,18 +39,18 @@ function App() {
         <div className="relative z-10">
           <Hero />
         </div>
-      </div> */}
+      </div>
 
       {/* Rest of the Sections */}
-      {/* <div id="about" className="flex justify-center items-center w-full mt-16">
+      <div id="about" className="flex justify-center items-center w-full mt-16">
         <LegoCarousel />
       </div>
       <div id="timeline" className="w-full">
         <TimelineDemo />
-      </div> */}
+      </div>
 
       {/* Tracks Section */}
-      {/* <div
+      <div
         id="tracks"
         className="flex flex-col md:flex-row justify-between items-center mt-16 px-4"
         style={{
@@ -109,19 +109,18 @@ function App() {
             </div>
           </div>
         </div>
-      </div> */}
+      </div>
 
       {/* Partners Section */}
-      {/* <div
+      <div
         id="partners"
         className="relative flex flex-col items-center justify-center w-full mt-16"
       >
-        
         <Logos3 />
-      </div> */}
-      {/* <div className="">
+      </div>
+      <div className="">
         <Footer />
-      </div> */}
+      </div>
     </div>
   );
 }
