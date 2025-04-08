@@ -70,7 +70,7 @@ export function Navbar() {
               </motion.a>
             ))}
             <div className="scale-90">
-              <DevfolioButton hackathonSlug="hackowasp-7" theme="light" />
+              <DevfolioButton hackathonSlug="hackowasp7" theme="light" />
             </div>
           </div>
 
