@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import DevfolioButton from './DevfolioButton';
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -56,13 +57,9 @@ export function Navbar() {
                 {item.name}
               </motion.a>
             ))}
-            <motion.a
-              href="#register"
-              whileHover={{ scale: 1.05 }}
-              className="bg-purple-600 text-white px-6 py-2 rounded-full text-sm font-medium hover:bg-purple-700 transition-colors"
-            >
-              Register Now
-            </motion.a>
+            <div className="scale-90">
+              <DevfolioButton hackathonSlug="hackowasp-7" theme="light" />
+            </div>
           </div>
 
           {/* Mobile Menu Button */}
@@ -107,12 +104,9 @@ export function Navbar() {
                 {item.name}
               </a>
             ))}
-            <a
-              href="#register"
-              className="block w-full text-center bg-purple-600 text-white px-4 py-2 rounded-full font-medium hover:bg-purple-700 transition-colors"
-            >
-              Register Now
-            </a>
+            <div className="flex justify-center py-2">
+              <DevfolioButton hackathonSlug="hackowasp-7" theme="light" />
+            </div>
           </div>
         </motion.div>
       </div>
