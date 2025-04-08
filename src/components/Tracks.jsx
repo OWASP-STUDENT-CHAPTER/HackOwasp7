@@ -277,9 +277,9 @@ useEffect(() => {
               {/* Track content */}
               <div className="absolute top-0 left-0 w-full h-full rounded-[25px] overflow-hidden p-6 flex flex-col justify-between text-white">
                 <div className="flex items-center justify-center mt-[55%]">
-                  <div className="bg-white bg-opacity-20 rounded-full p-4 mb-3">
+                  {/* <div className="bg-white bg-opacity-20 rounded-full p-4 mb-3">
                     <FontAwesomeIcon icon={track.icon} className="text-2xl" />
-                  </div>
+                  </div> */}
                 </div>
                 
                 <div className="flex flex-col gap-2">
