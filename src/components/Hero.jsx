@@ -28,7 +28,7 @@ export function Hero() {
       {/* Content */}
       <div className="relative z-10 text-center px-4">
         <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
-          HackOwasp 7.0
+          HACKOWASP 7.0
         </h1>
         <p className="text-xl md:text-2xl text-gray-200 mb-8 max-w-2xl mx-auto">
           Join us for 24 hours of innovation, coding, and breakthrough solutions

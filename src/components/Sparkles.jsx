@@ -134,7 +134,7 @@ export function SparklesPreviewDark() {
                     </div>
                 </div>
                 <p className="text-lg sm:text-xl md:text-2xl text-gray-200 mb-8 max-w-3xl mx-auto px-4">
-                    Brick by byte - Build Your Code, One Brick at a Time
+                    Build Your Code, One Brick at a Time
                 </p>
 
                 {/* Countdown Component */}
