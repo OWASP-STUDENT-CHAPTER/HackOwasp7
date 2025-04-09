@@ -37,7 +37,7 @@ export function SparklesPreview() {
 
 export function SparklesPreviewDark() {
     return (
-        <div className="h-full w-full relative bg-slate-950 flex flex-col items-center justify-center overflow-hidden">
+        <div className="h-screen w-full relative bg-slate-950 flex flex-col items-center justify-center overflow-hidden">
             {/* Flying Spaceship */}
             {/* <motion.div
                 style={{
