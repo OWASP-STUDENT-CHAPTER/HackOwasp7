@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import DevfolioButton from './DevfolioButton';
 
 export function Countdown() {
   const [timeLeft, setTimeLeft] = useState({
@@ -85,17 +86,6 @@ export function Countdown() {
     }
   };
 
-  const buttonVariants = {
-    initial: { scale: 1 },
-    hover: { 
-      scale: 1.05,
-      boxShadow: "0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)",
-    },
-    tap: { 
-      scale: 0.95 
-    }
-  };
-
   return (
     <motion.div 
       className="mt-5`-- mb-8 relative"
@@ -160,41 +150,10 @@ export function Countdown() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1 }}
       >
-        <motion.button
-          className="px-12 py-4 bg-gradient-to-r cursor-pointer from-purple-600 to-blue-600 rounded-xl text-white font-bold text-xl shadow-lg relative overflow-hidden group"
-          variants={buttonVariants}
-          initial="initial"
-          whileHover="hover"
-          whileTap="tap"
-          transition={{
-            type: "spring",
-            stiffness: 300,
-            damping: 15
-          }}
-          onClick={() => window.location.href = '#register'}
-        >
-          <motion.span className="relative z-10 flex items-center gap-2">
-            Register Now
-            <motion.svg 
-              xmlns="http://www.w3.org/2000/svg" 
-              fill="none" 
-              viewBox="0 0 24 24" 
-              strokeWidth={2} 
-              stroke="currentColor" 
-              className="w-6 h-6"
-              initial={{ x: -5 }}
-              animate={{ x: 0 }}
-              transition={{ repeat: Infinity, duration: 1, repeatType: "reverse" }}
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-            </motion.svg>
-          </motion.span>
-          <motion.div
-            className="absolute inset-0 bg-gradient-to-r from-purple-700 to-blue-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-            initial={{ opacity: 0 }}
-            whileHover={{ opacity: 1 }}
-          />
-        </motion.button>
+        {/* Replace button with DevfolioButton */}
+        <div className="flex justify-center">
+          <DevfolioButton hackathonSlug="hackowasp7" theme="light" />
+        </div>
       </motion.div>
     </motion.div>
   );

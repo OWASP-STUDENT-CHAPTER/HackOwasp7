@@ -39,7 +39,7 @@ export function SparklesPreviewDark() {
     return (
         <div className="h-screen w-full relative bg-slate-950 flex flex-col items-center justify-center overflow-hidden">
             {/* Flying Spaceship */}
-            <motion.div
+            {/* <motion.div
                 style={{
                     position: "absolute",
                     top: "5%",
@@ -67,10 +67,10 @@ export function SparklesPreviewDark() {
                 }}
             >
                 <img src="/spaceship.png" alt="" className="h-32 w-36 md:h-56 md:w-64" />
-            </motion.div>
+            </motion.div> */}
 
             {/* Flying Lego Man */}
-            <motion.div
+            {/* <motion.div
                 style={{
                     position: "absolute",
                     bottom: "10%",
@@ -99,10 +99,10 @@ export function SparklesPreviewDark() {
                 }}
             >
                 <img src="/legoMan.png" alt="" className="h-32 w-24 md:h-56 md:w-44" />
-            </motion.div>
+            </motion.div> */}
 
             {/* Particles Background */}
-            <div className="absolute inset-0 w-full h-full">
+            {/* <div className="absolute inset-0 w-full h-full">
                 <SparklesCore
                     id="tsparticlesfullpage"
                     background="transparent"
@@ -113,7 +113,7 @@ export function SparklesPreviewDark() {
                     particleColor="#FFFFFF"
                     speed={1}
                 />
-            </div>
+            </div> */}
 
             {/* Content */}
             <div className="relative z-20 text-center px-4">
@@ -122,19 +122,19 @@ export function SparklesPreviewDark() {
                 </h1>
 
                 <div className="w-full max-w-[50rem] mx-auto relative px-4 sm:px-6">
-                    {/* Light effects container - adjusted for mobile */}
-                    <div className="relative w-full h-4"> {/* Container for positioning */}
+                    {/* Light effects container */}
+                    <div className="relative w-full h-4">
                         {/* Main gradient lines */}
-                        <div className="absolute left-[5%] sm:left-[20%] right-[5%] sm:right-[20%] top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-[2px] w-[90%] sm:w-3/4 blur-sm" />
-                        <div className="absolute left-[5%] sm:left-[20%] right-[5%] sm:right-[20%] top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-px w-[90%] sm:w-3/4" />
+                        <div className="absolute left-1/2 -translate-x-1/2 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-[2px] w-[90%] sm:w-3/4 blur-sm" />
+                        <div className="absolute left-1/2 -translate-x-1/2 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-px w-[90%] sm:w-3/4" />
 
                         {/* Accent gradient lines */}
-                        <div className="absolute left-[25%] sm:left-[60%] right-[25%] sm:right-[20%] top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-[5px] w-[50%] sm:w-1/4 blur-sm" />
-                        <div className="absolute left-[25%] sm:left-[60%] right-[25%] sm:right-[20%] top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-px w-[50%] sm:w-1/4" />
+                        <div className="absolute left-1/2 -translate-x-1/2 top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-[5px] w-[50%] sm:w-1/4 blur-sm" />
+                        <div className="absolute left-1/2 -translate-x-1/2 top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-px w-[50%] sm:w-1/4" />
                     </div>
                 </div>
                 <p className="text-lg sm:text-xl md:text-2xl text-gray-200 mb-8 max-w-3xl mx-auto px-4">
-                    Brick by byte - Build Your Code, One Brick at a Time
+                    Build Your Code, One Brick at a Time
                 </p>
 
                 {/* Countdown Component */}

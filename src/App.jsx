@@ -4,11 +4,11 @@ import { Hero } from "./components/Hero";
 import { TimelineDemo } from "./components/TimelineDemo";
 import { Logos3 } from "./components/logos3";
 import TracksSlider from "./components/Tracks";
-
 import SplineScreen from "./components/SplineScene";
-
 import LegoCarousel from "./components/3dCarousel";
 import figurine from "/tracks.svg";
+import { SparklesPreviewDark } from "./components/Sparkles";
+import { SponsorCarousel } from "./components/SponsorCarousel";
 import "./App.css";
 import {
   SparklesPreview,
@@ -98,6 +98,12 @@ function App() {
       </div>
 
       {/* Partners Section */}
+<div className="min-h-screen bg-black">
+      {/* Sponsors Section */}
+      <section className="relative z-10">
+        <SponsorCarousel />
+      </section>
+    </div>
       <div
         id="partners"
         className="relative flex flex-col items-center justify-center w-full mt-16"
@@ -106,7 +112,6 @@ function App() {
       </div>
       <div className="">
         <Footer />
-      </div>
     </div>
   );
 }
