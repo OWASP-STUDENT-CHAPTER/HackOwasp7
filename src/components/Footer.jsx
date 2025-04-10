@@ -90,15 +90,6 @@ export default function Footer() {
             </form>
           </div> */}
         </div>
-
-        {/* Stats section */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 py-10 border-t border-b border-gray-800 mb-10">
-          <StatCounter number={500} label="Participants" />
-          <StatCounter number={150} label="Teams" />
-          <StatCounter number={5} label="Lakh Prize Pool" suffix="+" />
-          <StatCounter number={36} label="Hour Hackathon" />
-        </div>
-
         {/* Copyright */}
         <div className="text-center text-gray-400 text-sm">
           <p>©️ 2025 HackOwasp 7.0. All rights reserved.</p>
