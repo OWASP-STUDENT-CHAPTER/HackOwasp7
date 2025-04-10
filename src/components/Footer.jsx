@@ -1,125 +1,174 @@
-import React from 'react';
+"use client"
+import { Github, Twitter, Instagram, Linkedin, Mail, MapPin, Phone, Globe, Facebook } from "lucide-react"
+import { motion } from "framer-motion"
+import { IconBrandDiscord } from "@tabler/icons-react"
 
 export default function Footer() {
   return (
-    <div className="relative max-w-screen h-screen bg-black text-white flex flex-col justify-end items-center overflow-hidden" style={{
-      backgroundImage: "url('./SmallGroup.png')",
+    <div className="relative w-full text-white overflow-hidden" style={{
+      backgroundImage: "url(/SmallGroup.png)",
       backgroundSize: "cover",
       backgroundPosition: "center",
     }}>
-      {/* LEGO overlay image */}
-      {/* <div
-        className="absolute inset-0 w-full h-full opacity-50 z-0"
-        style={{
-          backgroundImage: "/lego-footer.png",
-          backgroundSize: "cover",
-          backgroundPosition: "center"
-        }}
-      ></div> */}
-
-      {/* Content - positioned above the overlay */}
-      <div className="relative z-10 max-w-7xl mx-auto sm:px-6 mb-[25vh] lg:px-8">
-        <div className="flex flex-wrap justify-between gap-10">
-          {/* Footer Links */}
-          <div className="flex flex-wrap gap-16 md:gap-x-20">
-            {/* Company Section */}
-            <div className="footer-section">
-              <h4 className="text-lg font-semibold mb-6 text-white">Companys</h4>
-              <ul className="space-y-3">
-                <li><a href="/about" className="text-white hover:text-blue-600 transition-colors">About Us</a></li>
-                <li><a href="/contact" className="text-white hover:text-blue-600 transition-colors">Contact</a></li>
-                <li><a href="/blog" className="text-white hover:text-blue-600 transition-colors">Blog</a></li>
-              </ul>
-            </div>
-
-            {/* Products Section */}
-            <div className="footer-section">
-              <h4 className="text-lg font-semibold mb-6 text-white">Products</h4>
-              <ul className="space-y-3">
-                <li><a href="/products" className="text-white hover:text-blue-600 transition-colors">All Products</a></li>
-                <li><a href="/new" className="text-white hover:text-blue-600 transition-colors">New Arrivals</a></li>
-                <li><a href="/popular" className="text-white hover:text-blue-600 transition-colors">Popular Items</a></li>
-              </ul>
-            </div>
-
-            {/* Support Section */}
-            <div className="footer-section">
-              <h4 className="text-lg font-semibold mb-6 text-white">Support</h4>
-              <ul className="space-y-3">
-                <li><a href="/faq" className="text-white hover:text-blue-600 transition-colors">FAQ</a></li>
-                <li><a href="/help" className="text-white hover:text-blue-600 transition-colors">Help Center</a></li>
-                <li><a href="/shipping" className="text-white hover:text-blue-600 transition-colors">Shipping Info</a></li>
-              </ul>
+      {/* Main footer content */}
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-40">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-16">
+          {/* About section */}
+          <div>
+            <h3 className="text-2xl font-bold mb-6 text-gray-400">HackOwasp 7.0</h3>
+            <p className="text-gray-300 mb-6">
+              Join us for the ultimate 36-hour coding challenge where innovation meets technology. Build, collaborate,
+              and transform your ideas into reality.
+            </p>
+            <div className="flex space-x-4">
+              <SocialIcon link="https://x.com/Owasp_tiet?t=tbxhHyoQdvgBXQyoPwl6kQ&s=08" icon={<Twitter size={18} />} />
+              <SocialIcon link="https://www.instagram.com/owasp_tiet?igsh=MW1jeWZmb3lyb3Jodg==" icon={<Instagram size={18} />} />
+              <SocialIcon link="https://www.facebook.com/share/16H1xwnTrh/" icon={<Facebook size={18} />} />
+              <SocialIcon link="https://www.linkedin.com/company/owasp-tiet/" icon={<Linkedin size={18} />} />
+              <SocialIcon link="https://discord.gg/Tgu28Mt99v" icon={<IconBrandDiscord size={18} />} />
             </div>
           </div>
 
-          {/* Contact/Newsletter Section */}
-          <div className="min-w-[280px] flex-1">
-            <h4 className="text-lg font-semibold mb-6 text-white">Stay Connected</h4>
-
-            {/* Social Icons */}
-            <div className="flex gap-4 mb-6">
-              <a href="#" aria-label="Facebook" className="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center text-white hover:bg-blue-600 hover:text-white transform hover:-translate-y-1 transition-all">
-                <i className="fab fa-faceboo  k"></i>
-              </a>
-              <a href="#" aria-label="Twitter" className="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center text-white hover:bg-blue-600 hover:text-white transform hover:-translate-y-1 transition-all">
-                <i className="fab fa-twitter"></i>
-              </a>
-              <a href="#" aria-label="Instagram" className="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center text-gwhite hover:bg-blue-600 hover:text-white transform hover:-translate-y-1 transition-all">
-                <i className="fab fa-instagram"></i>
-              </a>
-            </div>
-
-            {/* Newsletter */}
-            <div className="flex">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="flex-1 py-2 px-4 border border-gray-300 rounded-l-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-              />
-              <button className="bg-blue-600 hover:bg-blue-700 text-white py-2 px-5 rounded-r-md transition-colors">
-                Subscribe
-              </button>
-            </div>
+          {/* Quick Links */}
+          <div>
+            <h3 className="text-xl font-bold mb-6 text-gray-400">Quick Links</h3>
+            <ul className="space-y-3">
+              <FooterLink href="#home">Home</FooterLink>
+              {/* <FooterLink href="#about">About Us</FooterLink> */}
+              <FooterLink href="#timeline">Timeline</FooterLink>
+              {/* <FooterLink href="#tracks">Tracks</FooterLink> */}
+              <FooterLink href="#partners">Partners</FooterLink>
+              <FooterLink href="#home">Register</FooterLink>
+            </ul>
           </div>
+
+          {/* Contact Info */}
+          <div>
+            <h3 className="text-xl font-bold mb-6 text-gray-400">Contact Us</h3>
+            <ul className="space-y-4">
+              <li className="flex items-start">
+                <MapPin className="mr-3 h-5 w-5 text-gray-400 flex-shrink-0 mt-1" />
+                <span className="text-gray-300">
+                  Thapar Institute of Engineering & Technology, Patiala, Punjab, India
+                </span>
+              </li>
+              <li className="flex items-center">
+                <Mail className="mr-3 h-5 w-5 text-gray-400 flex-shrink-0" />
+                <span className="text-gray-300">owasptu@gmail.com</span>
+              </li>
+              <li className="flex items-center">
+                <Phone className="mr-3 h-5 w-5 text-gray-400 flex-shrink-0" />
+                <span className="text-gray-300">+91 81782 21861</span>
+              </li>
+              <li className="flex items-center">
+                <Globe className="mr-3 h-5 w-5 text-gray-400 hover:text-gray-300 flex-shrink-0" />
+                <a href="https://www.owasptiet.com/" target="_blank">
+                  <span className="text-gray-300">www.owasptiet.com</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Newsletter */}
+          {/* <div>
+            <h3 className="text-xl font-bold mb-6 text-gray-400">Stay Updated</h3>
+            <p className="text-gray-300 mb-4">Subscribe to our newsletter for the latest updates and announcements.</p>
+            <form className="space-y-3">
+              <div className="flex flex-col space-y-2">
+                <input
+                  type="email"
+                  placeholder="Your email address"
+                  className="bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:border-transparent"
+                />
+                <button
+                  type="submit"
+                  className="bg-gradient-to-r from-gray-600 to-blue-600 hover:from-gray-700 hover:to-blue-700 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-300"
+                >
+                  Subscribe
+                </button>
+              </div>
+            </form>
+          </div> */}
         </div>
 
-        {/* Statistics Counter Section */}
-        {/* <div className="flex flex-wrap justify-center gap-16 mt-16">
-          <div className="text-center">
-            <span className="counter block text-4xl font-bold text-blue-600" data-count="250">0</span>
-            <p className="text-gray-700">Products</p>
-          </div>
-          <div className="text-center">
-            <span className="counter block text-4xl font-bold text-blue-600" data-count="10000">0</span>
-            <p className="text-gray-700">Happy Customers</p>
-          </div>
-          <div className="text-center">
-            <span className="counter block text-4xl font-bold text-blue-600" data-count="15">0</span>
-            <p className="text-gray-700">Years of Experience</p>
-          </div>
-        </div> */}
+        {/* Stats section */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 py-10 border-t border-b border-gray-800 mb-10">
+          <StatCounter number={500} label="Participants" />
+          <StatCounter number={150} label="Teams" />
+          <StatCounter number={5} label="Lakh Prize Pool" suffix="+" />
+          <StatCounter number={36} label="Hour Hackathon" />
+        </div>
 
-        {/* Copyright Section */}
-        <div className="mt-16 pt-6 border-t border-gray-300 flex flex-wrap justify-between text-sm text-white">
-          <p>&copy; 2025 Your Company Name. All rights reserved.</p>
-          <div className="flex gap-6 mt-4 md:mt-0">
-            <a href="/privacy" className="hover:underline">Privacy Policy</a>
-            <a href="/terms" className="hover:underline">Terms of Use</a>
+        {/* Copyright */}
+        <div className="text-center text-gray-400 text-sm">
+          <p>©️ 2025 HackOwasp 7.0. All rights reserved.</p>
+          <div className="flex justify-center space-x-6 mt-4">
+            <div className="hover:text-gray-400 transition-colors">
+              Privacy Policy
+            </div>
+            <div className="hover:text-gray-400 transition-colors">
+              Terms of Service
+            </div>
+            <div className="hover:text-gray-400 transition-colors">
+              Code of Conduct
+            </div>
           </div>
         </div>
       </div>
 
-
       {/* Foreground image */}
-      <img
-        src="./legos-rbg.png"
-        alt="Foreground Art"
-        className="absolute w-screen bottom-0 max-h-[130vh] object-cover z-0 opacity-80"
-      />
+      {/* <img
+        // src="./legos-rbg.png"
+        // alt="Foreground Art"
+        className="absolute w-full bottom-0 max-h-[115vh] object-cover z-0 opacity-80"
+      /> */}
     </div>
-  );
+  )
 }
 
+// Helper components
+const SocialIcon = ({ icon, link }) => {
+  return (
+    <motion.a
+      href={link}
+      target="_blank"
+      className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-gray-600 hover:text-white transition-colors duration-300"
+      whileHover={{ y: -5, scale: 1.1 }}
+      whileTap={{ scale: 0.95 }}
+    >
+      {icon}
+    </motion.a>
+  )
+}
 
+const FooterLink = ({ href, children }) => {
+  return (
+    <li>
+      <motion.a
+        href={href}
+        className="text-gray-300 hover:text-gray-400 transition-colors duration-200 flex items-center"
+        whileHover={{ x: 5 }}
+      >
+        <span className="mr-2">→</span> {children}
+      </motion.a>
+    </li>
+  )
+}
 
+const StatCounter = ({ number, label, suffix = "" }) => {
+  return (
+    <motion.div
+      className="text-center"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5 }}
+    >
+      <div className="text-3xl md:text-4xl font-bold text-gray-400 flex justify-center items-end">
+        <span>{number}</span>
+        <span className="text-xl">{suffix}</span>
+      </div>
+      <p className="text-gray-300 mt-2">{label}</p>
+    </motion.div>
+  )
+}
