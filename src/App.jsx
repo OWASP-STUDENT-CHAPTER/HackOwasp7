@@ -5,7 +5,7 @@ import { TimelineDemo } from "./components/TimelineDemo";
 import { Logos3 } from "./components/logos3";
 import TracksSlider from "./components/Tracks";
 import SplineScreen from "./components/SplineScene";
-import LegoCarousel from "./components/3dCarousel";
+import AboutUs from "./components/3dCarousel";
 import figurine from "/tracks.svg";
 import { SparklesPreviewDark } from "./components/Sparkles";
 import { SponsorCarousel } from "./components/SponsorCarousel";
@@ -13,33 +13,51 @@ import "./App.css";
 import {
   SparklesPreview,
   SparklesPreviewColorful,
-  SparklesPreviewDark,
 } from "./components/Sparkles";
 import { Spline } from "lucide-react";
 import { motion } from "framer-motion";
 
-import Footer from './components/Footer';
-
+import Footer from "./components/Footer";
 
 function App() {
+  // React.useEffect(() => {
+  //   const script = document.createElement("script");
+  //   script.src = "https://apply.devfolio.co/v2/sdk.js";
+  //   script.async = true;
+  //   script.defer = true;
+  //   document.body.appendChild(script);
+  //   return () => {
+  //     document.body.removeChild(script);
+  //   };
+  // }, []);
   return (
-    <div id="home" className="min-h-screen relative bg-black overflow-x-hidden w-screen">
+    <div
+      id="home"
+      className="min-h-screen relative bg-black overflow-x-hidden w-screen"
+      >
+      {/* <div
+        className="apply-button"
+        data-hackathon-slug="hackowasp7"
+        data-button-theme="light"
+        style={{ height: '44px', width: '312px' }} 
+      ></div> */}
       {/* <div className="fixed bottom-0 left-0 w-screen h-screen z-10">
         <img src="/walking.gif" className="absolute w-64 h-64 -mb-15 bottom-0 left-0" />
       </div> */}
       <SparklesPreviewDark />
       <Navbar />
 
-      {/* Rest of the Sections */}
-      <div id="about" className="flex justify-center items-center w-full mt-16">
-        <LegoCarousel />
-      </div>
+      {/* About Us */}
+      {/* <div id="about" className="flex justify-center items-center w-full mt-16">
+        <AboutUs />
+      </div> */}
+
       <div id="timeline" className="w-full">
         <TimelineDemo />
       </div>
 
       {/* Tracks Section */}
-      <div
+      {/* <div
         id="tracks"
         className="flex flex-col md:flex-row justify-between items-center mt-16 pt-16 px-4"
         style={{
@@ -47,13 +65,14 @@ function App() {
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
-      >
+       >
         <div className="w-full md:w-1/4 flex justify-center items-center mb-8 md:mb-0">
           <motion.div
             className="relative bg-gray-900 dark:bg-gray-800 rounded-lg p-6 pb-0 border-2 border-yellow-500 dark:border-yellow-600"
             style={{
               boxShadow: "0 8px 0 rgba(234, 179, 8, 0.5)",
-              backgroundImage: "radial-gradient(circle at 10px 10px, rgba(234, 179, 8, 0.15) 3px, transparent 0)",
+              backgroundImage:
+                "radial-gradient(circle at 10px 10px, rgba(234, 179, 8, 0.15) 3px, transparent 0)",
               backgroundSize: "20px 20px",
             }}
             whileHover={{ y: -5, scale: 1.02 }}
@@ -67,7 +86,11 @@ function App() {
                 ></div>
               ))}
             </div>
-            <img src={figurine || "/placeholder.svg"} alt="LEGO figurine" className="w-full rotate-y-180" />
+            <img
+              src={figurine || "/placeholder.svg"}
+              alt="LEGO figurine"
+              className="w-full rotate-y-180"
+            />
           </motion.div>
         </div>
 
@@ -86,7 +109,10 @@ function App() {
               <h2 className="text-xl font-bold text-white">Hackathon Tracks</h2>
               <div className="flex">
                 {[...Array(3)].map((_, i) => (
-                  <div key={i} className="w-4 h-4 mx-1 rounded-full bg-yellow-500 dark:bg-yellow-600"></div>
+                  <div
+                    key={i}
+                    className="w-4 h-4 mx-1 rounded-full bg-yellow-500 dark:bg-yellow-600"
+                  ></div>
                 ))}
               </div>
             </div>
@@ -95,26 +121,19 @@ function App() {
             </div>
           </motion.div>
         </div>
-      </div>
+      </div> */}
 
       {/* Partners Section */}
-<div className="min-h-screen bg-black">
-      {/* Sponsors Section */}
-      <section className="relative z-10">
-        <SponsorCarousel />
-      </section>
-    </div>
-      <div
-        id="partners"
-        className="relative flex flex-col items-center justify-center w-full mt-16"
-      >
-        <Logos3 />
+      <div id="partners" className="min-h-screen bg-black">
+        <section className="relative z-10">
+          <SponsorCarousel />
+        </section>
       </div>
       <div className="">
         <Footer />
+      </div>
     </div>
   );
 }
-
 
 export default App;
