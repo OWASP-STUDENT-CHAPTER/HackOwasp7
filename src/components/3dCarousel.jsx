@@ -225,14 +225,11 @@ const AboutUs = () => {
         <div className="lg:w-1/2 lg:pl-8">
           <div className="mb-8">
             <h2 className="text-3xl mb-4">
-              <span className="text-[#4FC1E0]">Forge Your Code</span>
-              <span className="text-white"> Leave Your Mark!</span>
+              <span className="text-[#4FC1E0]">Build Your Code </span>
+              <span className="text-white"> One Brick at a Time!</span>
             </h2>
             <p className="text-gray-300 leading-relaxed">
-              The seventh edition of HackOWASP, organised by OWASP Student Chapter is your 
-              battleground for innovation. This 24-hour hackathon unites warriors of code—both 
-              seasoned champions and rising contenders—to forge groundbreaking solutions 
-              across digital realms.
+            HackOWASP is an annual national hackathon organized by the members of the OWASP Student Chapter, Thapar Institute of Engineering and Technology, Patiala. Continuing the legacy forward, the sixth edition of the event, HackOWASP gives a chance to all the ingenious developers to subsume creativity with ambition and give rise to innovation in the burgeoning world of technology. HackOWASP stands at a national level on the global scale and strives to motivate students to go beyond the possible.
             </p>
           </div>
           

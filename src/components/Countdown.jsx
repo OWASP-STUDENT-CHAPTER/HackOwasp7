@@ -150,10 +150,6 @@ export function Countdown() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1 }}
       >
-        {/* Replace button with DevfolioButton */}
-        <div className="flex justify-center">
-          <DevfolioButton hackathonSlug="hackowasp7" theme="light" />
-        </div>
       </motion.div>
     </motion.div>
   );
