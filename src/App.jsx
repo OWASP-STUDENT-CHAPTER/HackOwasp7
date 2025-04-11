@@ -53,6 +53,7 @@ function App() {
       </div> */}
 
       <div id="timeline" className="w-full">
+        
         <TimelineDemo />
       </div>
 
@@ -124,7 +125,7 @@ function App() {
       </div> */}
 
       {/* Partners Section */}
-      <div id="partners" className="min-h-screen bg-black">
+      <div id="partners" className=" bg-black">
         <section className="relative z-10">
           <SponsorCarousel />
         </section>
