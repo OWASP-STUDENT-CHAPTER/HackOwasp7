@@ -3,7 +3,7 @@ import React, { useState, useRef, useEffect } from 'react';
 const AccordionItem = ({ question, answer, isOpen, onClick, index, handleKeyDown }) => {
   const contentRef = useRef(null);
   const [height, setHeight] = useState(0);
-  
+
   useEffect(() => {
     if (contentRef.current) {
       setHeight(isOpen ? contentRef.current.scrollHeight : 0);
@@ -11,51 +11,43 @@ const AccordionItem = ({ question, answer, isOpen, onClick, index, handleKeyDown
   }, [isOpen]);
 
   return (
-    <div className="bg-blend-darken rounded-lg overflow-hidden border border-gray-700 shadow-lg transition-all duration-300 ease-in-out hover:shadow-purple-900/20">
+    <div className="rounded-xl overflow-hidden border border-cyan-500/30 bg-gray-900/80 backdrop-blur-md shadow-[0_0_15px_rgba(0,255,255,0.2)] transition-all duration-300 hover:shadow-[0_0_25px_rgba(0,255,255,0.4)]">
       <button
-        className="flex justify-between items-center w-full px-5 py-4 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-purple-500 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900"
+        className="flex justify-between items-center w-full px-6 py-5 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-950"
         onClick={onClick}
         onKeyDown={(e) => handleKeyDown(e, index)}
         aria-expanded={isOpen}
         aria-controls={`faq-answer-${index}`}
         id={`faq-question-${index}`}
       >
-        <span className="text-lg font-medium text-gray-100">{question}</span>
-        <span 
-          className={`ml-4 flex items-center justify-center w-8 h-8 rounded-md transition-all duration-300 ${
-            isOpen ? 'bg-purple-600 text-white rotate-180' : 'bg-gray-700 text-gray-300'
+        <span className="text-xl font-semibold text-cyan-100 tracking-wide flex-1 pr-4">{question}</span>
+        <span
+          className={`flex-shrink-0 flex items-center justify-center w-10 h-10 rounded-full transition-all duration-300 transform ${
+            isOpen ? 'bg-cyan-500 text-gray-900 rotate-180 shadow-[0_0_10px_rgba(0,255,255,0.7)]' : 'bg-gray-800/50 text-cyan-300'
           }`}
           aria-hidden="true"
         >
-          <svg 
-            xmlns="http://www.w3.org/2000/svg" 
-            className="h-5 w-5" 
-            fill="none" 
-            viewBox="0 0 24 24" 
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-5 w-5"
+            fill="none"
+            viewBox="0 0 24 24"
             stroke="currentColor"
           >
-            <path 
-              strokeLinecap="round" 
-              strokeLinejoin="round" 
-              strokeWidth={2} 
-              d="M19 9l-7 7-7-7" 
-            />
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
           </svg>
         </span>
       </button>
-      
-      <div 
+
+      <div
         id={`faq-answer-${index}`}
-        className="overflow-hidden transition-all duration-300 ease-in-out"
+        className="overflow-hidden transition-all duration-500 ease-in-out"
         style={{ height }}
         aria-hidden={!isOpen}
         role="region"
         aria-labelledby={`faq-question-${index}`}
       >
-        <div 
-          ref={contentRef}
-          className="px-5 py-4 border-t border-gray-700 text-gray-300"
-        >
+        <div ref={contentRef} className="px-6 py-5 border-t border-cyan-500/20 text-gray-300 text-base leading-relaxed">
           {answer}
         </div>
       </div>
@@ -73,8 +65,8 @@ const FAQAccordion = () => {
 
   const handleKeyDown = (e, index) => {
     const buttons = accordionRef.current.querySelectorAll('button');
-    const currentIndex = Array.from(buttons).findIndex(button => button.id === `faq-question-${index}`);
-    
+    const currentIndex = Array.from(buttons).findIndex((button) => button.id === `faq-question-${index}`);
+
     switch (e.key) {
       case 'ArrowDown':
         e.preventDefault();
@@ -103,51 +95,56 @@ const FAQAccordion = () => {
 
   const faqData = [
     {
-      question: "What is the team size for HackOwasp 6.0?",
-      answer: "A Team can consist of 2-5 members."
+      question: "What is the team size for HackOwasp 7.0?",
+      answer: "A Team can consist of 2-5 members.",
     },
     {
       question: "What if I have no team?",
-      answer: "We will club individual members and you may form a team in our discord server as well."
+      answer: "We will club individual members and you may form a team in our discord server as well.",
     },
     {
       question: "How long is the hackathon going to last?",
-      answer: "Hackathon is going to last for 36 hours"
+      answer: "Hackathon is going to last for 36 hours",
     },
     {
       question: "Do I need experience?",
-      answer: "No, you do not need any prior development experience. We will assign you mentors to assist you in figuring things out. Of course, willingness to think, learn, and cooperate is a cherry on the top."
+      answer:
+        "No, you do not need any prior development experience. We will assign you mentors to assist you in figuring things out. Of course, willingness to think, learn, and cooperate is a cherry on the top.",
     },
     {
       question: "Is a working prototype / website of our product required?",
-      answer: "Yes, You will need a functioning prototype of how your product/idea works to pitch it to the judges in the final round."
+      answer: "Yes, You will need a functioning prototype of how your product/idea works to pitch it to the judges in the final round.",
     },
     {
       question: "What is the cost of participation",
-      answer: "HackOWASP 6.0 is completely free to participate for everyone."
+      answer: "HackOWASP 6.0 is completely free to participate for everyone.",
     },
     {
       question: "What is the mode of Hackathon?",
-      answer: "HackOWASP 6.0 is being conducted in HYBRID mode that is OFFLINE for Thapar University students only and ONLINE for all the other students pan India and worldwide"
+      answer:
+        "HackOWASP 6.0 is being conducted in HYBRID mode that is OFFLINE for Thapar University students only and ONLINE for all the other students pan India and worldwide",
     },
     {
       question: "Will hardware be provided for the hardware track?",
-      answer: "No. Any team choosing to work on the Hardware track will have to use their own equipment and team OWASP will NOT be providing any hardware accessories."
-    }
+      answer:
+        "No. Any team choosing to work on the Hardware track will have to use their own equipment and team OWASP will NOT be providing any hardware accessories.",
+    },
   ];
 
   return (
-    <section className="py-16 px-4  min-h-screen">
-      <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-pink-500 to-purple-600">FAQs</h2>
-          <div className="h-1 w-20 bg-purple-600 mx-auto rounded-full mb-6"></div>
-          <p className="text-gray-300 max-w-2xl mx-auto">
-            Everything you need to know about HackOwasp 6.0
+    <section className="py-20 px-4 min-h-screen">
+      <div className="max-w-5xl mx-auto relative z-10">
+        <div className="text-center mb-16">
+          <h2 className="text-5xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-purple-500 animate-pulse">
+            FAQs
+          </h2>
+          <div className="h-1 w-24 bg-gradient-to-r from-cyan-400 to-purple-500 mx-auto rounded-full mt-4 shadow-[0_0_10px_rgba(0,255,255,0.7)]"></div>
+          <p className="text-gray-400 mt-4 text-lg max-w-2xl mx-auto tracking-wide">
+            Everything you need to know about HackOwasp 7.0
           </p>
         </div>
-        
-        <div className="space-y-4" ref={accordionRef}>
+
+        <div className="space-y-6" ref={accordionRef}>
           {faqData.map((faq, index) => (
             <AccordionItem
               key={index}
