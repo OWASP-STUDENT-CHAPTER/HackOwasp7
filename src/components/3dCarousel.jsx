@@ -221,7 +221,7 @@ const AboutUs = () => {
       
       <div className="text-center mb-16">
           <h1 className="text-5xl lg:text-7xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-purple-500 tracking-wide animate-out">
-            About HackOWASP 7.0
+            About HACKOWASP 6.0
           </h1>
           <p className="text-gray-400 mt-4 text-xl sm:text-2xl tracking-wide">
             Explore the Realm of Coding
@@ -249,21 +249,23 @@ const AboutUs = () => {
               <span className="text-white"> One Brick at a Time!</span>
             </h2>
             <p className="text-gray-300 leading-relaxed">
-              HackOWASP is an annual national hackathon organized by the members of the OWASP Student Chapter, Thapar Institute of Engineering and Technology, Patiala. Continuing the legacy forward, the sixth edition of the event, HackOWASP gives a chance to all the ingenious developers to subsume creativity with ambition and give rise to innovation in the burgeoning world of technology. HackOWASP stands at a national level on the global scale and strives to motivate students to go beyond the possible.
+              HACKOWASP is an annual national hackathon organized by the members of the OWASP Student Chapter, Thapar Institute of Engineering and Technology, Patiala. Continuing the legacy forward, the sixth edition of the event, HACKOWASP gives a chance to all the ingenious developers to subsume creativity with ambition and give rise to innovation in the burgeoning world of technology. HACKOWASP stands at a national level on the global scale and strives to motivate students to go beyond the possible.
             </p>
           </div>
           
           <div ref={statsRef} className="grid grid-cols-2 gap-6">
               <div className="border border-cyan-500/30 rounded-xl p-6 bg-gray-900/50 backdrop-blur-md shadow-[0_0_15px_rgba(0,255,255,0.2)] hover:shadow-[0_0_25px_rgba(0,255,255,0.4)] transition-all duration-300">
-                <h3 className="text-cyan-400 text-4xl font-bold mb-2 counter" data-target="150">0</h3>
+                <span className="text-cyan-400 text-4xl font-bold mb-2 counter" data-target="150">0</span>
+                <span className="text-cyan-400 text-3xl ml-2">+</span>
                 <p className="text-gray-400 text-base">Projects Submitted</p>
               </div>
               <div className="border border-cyan-500/30 rounded-xl p-6 bg-gray-900/50 backdrop-blur-md shadow-[0_0_15px_rgba(0,255,255,0.2)] hover:shadow-[0_0_25px_rgba(0,255,255,0.4)] transition-all duration-300">
-                <h3 className="text-cyan-400 text-4xl font-bold mb-2 counter" data-target="150">0</h3>
+                <span className="text-cyan-400 text-4xl font-bold mb-2 counter" data-target="150">0</span>
+                <span className="text-cyan-400 text-3xl ml-2">+</span>
                 <p className="text-gray-400 text-base">Participating Teams</p>
               </div>
               <div className="border border-cyan-500/30 rounded-xl p-6 bg-gray-900/50 backdrop-blur-md shadow-[0_0_15px_rgba(0,255,255,0.2)] hover:shadow-[0_0_25px_rgba(0,255,255,0.4)] transition-all duration-300">
-                <span className="text-cyan-400 text-4xl font-bold mb-2 counter" data-target="7">0</span>
+                <span className="text-cyan-400 text-4xl font-bold mb-2 counter" data-target="5">0</span>
                 <span className="text-cyan-400 text-3xl ml-2">+</span>
                 <p className="text-gray-400 text-base">Lakhs Prize Pool</p>
               </div>
