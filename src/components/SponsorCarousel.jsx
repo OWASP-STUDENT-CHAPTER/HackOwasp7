@@ -26,10 +26,13 @@ const sponsors = {
     { name: "ETHINDIA LOGO", logo: EthIndia },
     { name: "TIM HORTANS LOGO", logo: TimHortans },
     { name: "POLYGON LOGO", logo: Polygon },
+{ name: "BSB LOGO", logo: Bsep },
+{ name: "ICP LOGO", logo: ICP },
+{ name: "SWAPSO LOGO", logo: SwapSo },
   ],
   tier2: [ // Partners
     { name: "ARCHIES LOGO", logo: Archies },
-    { name: "SWAPSO LOGO", logo: SwapSo },
+    
     { name: "TIFFIN WALA LOGO", logo: TiffinWala },
     { name: "MEGHS LOGO", logo: Meghs },
   ],
