@@ -56,8 +56,7 @@ export const SparklesCore = (props) => {
               enable: false,
               zIndex: 1,
             },
-
-            fpsLimit: 120,
+            fpsLimit: 60,
             interactivity: {
               events: {
                 onClick: {
@@ -72,10 +71,10 @@ export const SparklesCore = (props) => {
               },
               modes: {
                 push: {
-                  quantity: 4,
+                  quantity: 20,
                 },
                 repulse: {
-                  distance: 200,
+                  distance: 70,
                   duration: 0.4,
                 },
               },

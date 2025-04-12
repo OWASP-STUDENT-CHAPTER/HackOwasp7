@@ -14,7 +14,6 @@ const Carousel3D = ({ slides, autoplay = true, interval = 3000, arrows = false, 
     }
     return items;
   });
-  const [height] = useState('500px');
   const autoplayRef = useRef(null);
   const currentIndexRef = useRef(0);
 
@@ -107,23 +106,29 @@ const Carousel3D = ({ slides, autoplay = true, interval = 3000, arrows = false, 
 
   const getSlideClasses = (state) => {
     switch (state) {
-      case 'active': return 'z-20 opacity-100 scale-100 translate-x-0';
-      case 'preactive': return 'z-10 opacity-30 scale-80 -translate-x-1/4';
-      case 'proactive': return 'z-10 opacity-30 scale-80 translate-x-1/4';
-      case 'preactivede': return 'z-0 opacity-0 scale-0 -translate-x-1/2';
-      case 'proactivede': return 'z-0 opacity-0 scale-0 translate-x-1/2';
-      default: return 'opacity-0 scale-0';
+      case 'active': 
+        return 'z-30 opacity-100 scale-100 translate-x-0'; // Center card (fully visible)
+      case 'preactive': 
+        return 'z-20 opacity-70 scale-80 -translate-x-[60%]'; // Left card (60% hidden)
+      case 'proactive': 
+        return 'z-20 opacity-70 scale-80 translate-x-[60%]'; // Right card (60% hidden)
+      case 'preactivede': 
+        return 'z-0 opacity-0 scale-0 -translate-x-[200%]'; // Fully hidden (left)
+      case 'proactivede': 
+        return 'z-0 opacity-0 scale-0 translate-x-[200%]'; // Fully hidden (right)
+      default: 
+        return 'opacity-0 scale-0';
     }
   };
 
   return (
-    <div className="relative" style={{ height }} {...handlers}>
+    <div className="relative h-[200px] sm:h-[400px]" {...handlers}>
       <div className="absolute left-1/2 top-0 w-[90%] -ml-[45%]">
-        <div className="relative left-1/2 transform -translate-x-1/2 w-[70%] h-[80%]">
+        <div className="relative left-1/2 transform -translate-x-1/2 w-[80%] h-[80%]">
           {slideItems.map((item, index) => (
             <div
               key={index}
-              className="absolute left-0 top-0 w-full transition-all duration-500 ease-out"
+              className="flex justify-center items-center absolute left-0 top-0 w-full transition-all duration-500 ease-out"
               data-state={item.state}
             >
               <div
@@ -140,7 +145,6 @@ const Carousel3D = ({ slides, autoplay = true, interval = 3000, arrows = false, 
     </div>
   );
 };
-
 
 const AboutUs = () => {
   const statsRef = useRef(null);
@@ -162,7 +166,7 @@ const AboutUs = () => {
 
     return () => observer.disconnect();
   }, []);
-  // Animate counters when they come into view
+
   const animateCounters = () => {
     const counters = document.querySelectorAll('.counter');
     counters.forEach((counter) => {
@@ -178,46 +182,62 @@ const AboutUs = () => {
         counter.textContent = Math.ceil(current);
       }, 20);
     });
+    const hourCounter = document.querySelector('.counter-hour');
+    if (hourCounter) {
+      let current = 16;
+      const timer = setInterval(() => {
+        current += 0.04; // Slower increment for smooth effect
+        if (current >= 20) {
+          current = 20;
+          clearInterval(timer);
+          hourCounter.textContent = "16 - 20";
+        } else {
+          hourCounter.textContent = `16 - ${Math.ceil(current)}`;
+        }
+      }, 20);
+    }
   };
 
   const slides = [
-    <div className="h-[500px] w-[550px] rounded-xl overflow-hidden">
-    <img src="https://picsum.photos/300/450/?random" alt="Team Member 1" className="w-full h-full object-cover" />
+    <div className="rounded-xl overflow-hidden xl:w-[500px] xl:h-[400px] border-4 border-[#4FC1E0]">
+      <img src="https://pplx-res.cloudinary.com/image/upload/v1743936354/user_uploads/ZiwwGPAErakYoOQ/S1420033_022.jpg" alt="Toastmaster" className="w-full xl:w-[500px] xl:h-[400px] object-fill" />
     </div>,
-    <div className="h-[500px] w-[550px] rounded-xl overflow-hidden">
-      <img src="https://picsum.photos/300/451/?random" alt="Team Member 2" className="w-full h-full object-cover" />
+    <div className="rounded-xl overflow-hidden xl:w-[500px] xl:h-[400px] border-4 border-[#4FC1E0]">
+      <img src="https://pplx-res.cloudinary.com/image/upload/v1743936354/user_uploads/eYbrwTODjVwNHdF/S1440004_008.jpg" alt="Pitch" className="w-full xl:w-[500px] xl:h-[400px] object-fill" />
     </div>,
-    <div className="h-[500px] w-[550px] rounded-xl overflow-hidden">
-      <img src="https://picsum.photos/300/452/?random" alt="Team Member 3" className="w-full h-full object-cover" />
+    <div className="rounded-xl overflow-hidden xl:w-[500px] xl:h-[400px] border-4 border-[#4FC1E0]">
+      <img src="https://pplx-res.cloudinary.com/image/upload/v1743936355/user_uploads/pPaNBixwctYkfPk/S1420043_063.jpg" alt="Hackathon" className="w-full xl:w-[500px] xl:h-[400px] object-fill" />
     </div>,
-    <div className="h-[500px] w-[550px] rounded-xl overflow-hidden">
-      <img src="https://picsum.photos/300/453/?random" alt="Team Member 4" className="w-full h-full object-cover" />
-    </div>,
-    <div className="h-[500px] w-[550px] rounded-xl overflow-hidden">
-      <img src="https://picsum.photos/300/454/?random" alt="Team Member 5" className="w-full h-full object-cover" />
+    <div className="rounded-xl overflow-hidden xl:w-[500px] xl:h-[400px] border-4 border-[#4FC1E0]">
+      <img src="https://pplx-res.cloudinary.com/image/upload/v1744451665/user_uploads/yZBkYKivRmQxtUA/Screenshot-2025-04-10-121723.jpg"  alt="Group Photo" className="w-full xl:w-[500px] xl:h-[400px] object-fill"/>
     </div>,
   ];
 
   return (
-    <div className="min-h-screen bg-[#0c1322] text-white py-12 px-4 relative overflow-hidden">
+    <div className="min-h-screen bg-transparent text-white py-12 px-4 relative overflow-hidden">
       <div className="absolute top-24 left-12 w-2 h-2 bg-[#4FC1E0] rounded-full"></div>
       <div className="absolute bottom-24 left-64 w-2 h-2 bg-[#4FC1E0] rounded-full"></div>
       <div className="absolute bottom-64 right-24 w-2 h-2 bg-[#4FC1E0] rounded-full"></div>
       
-      <h1 className="text-center text-5xl font-bold text-[#4FC1E0] mb-2 tracking-wider">
-        ABOUT HACKOWASP 7.0
-      </h1>
-      <p className="text-center text-[#4FC1E0] text-xl mb-12">EXPLORE THE REALM OF CODING</p>
+      <div className="text-center mb-16">
+          <h1 className="text-5xl lg:text-7xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-purple-500 tracking-wide animate-out">
+            About HackOWASP 7.0
+          </h1>
+          <p className="text-gray-400 mt-4 text-xl sm:text-2xl tracking-wide">
+            Explore the Realm of Coding
+          </p>
+          <div className="h-1 w-24 bg-gradient-to-r from-cyan-400 to-purple-500 mx-auto rounded-full mt-4 shadow-[0_0_10px_rgba(0,255,255,0.7)]"></div>
+        </div>
       
-      <div className="container mx-auto flex flex-col lg:flex-row">
-        <div className="lg:w-1/2 mb-10 lg:mb-0 flex justify-center items-center">
-          <div className="w-full max-w-md">
+      <div className="mx-auto flex flex-col lg:flex-row">
+        <div className="lg:w-1/2 flex justify-center items-center overflow-x-clip">
+          <div className="w-full">
             <Carousel3D
               slides={slides}
               autoplay={true}
               interval={3000}
               arrows={false}
-              onSlideChange={(index) => console.log(`Slide changed to index: ${index}`)}
+              // onSlideChange={(index) => console.log(`Slide changed to index: ${index}`)}
             />
           </div>
         </div>
@@ -229,34 +249,29 @@ const AboutUs = () => {
               <span className="text-white"> One Brick at a Time!</span>
             </h2>
             <p className="text-gray-300 leading-relaxed">
-            HackOWASP is an annual national hackathon organized by the members of the OWASP Student Chapter, Thapar Institute of Engineering and Technology, Patiala. Continuing the legacy forward, the sixth edition of the event, HackOWASP gives a chance to all the ingenious developers to subsume creativity with ambition and give rise to innovation in the burgeoning world of technology. HackOWASP stands at a national level on the global scale and strives to motivate students to go beyond the possible.
+              HackOWASP is an annual national hackathon organized by the members of the OWASP Student Chapter, Thapar Institute of Engineering and Technology, Patiala. Continuing the legacy forward, the sixth edition of the event, HackOWASP gives a chance to all the ingenious developers to subsume creativity with ambition and give rise to innovation in the burgeoning world of technology. HackOWASP stands at a national level on the global scale and strives to motivate students to go beyond the possible.
             </p>
           </div>
           
-          <div ref={statsRef} className="grid grid-cols-2 gap-4 mb-10">
-            <div className="border border-[#4FC1E0]/30 rounded-lg p-6 bg-[#0c1a2d]">
-              <h3 className="text-[#4FC1E0] text-4xl font-bold mb-1 counter" data-target="200">0</h3>
-              <p className="text-gray-400">Projects Submitted</p>
+          <div ref={statsRef} className="grid grid-cols-2 gap-6">
+              <div className="border border-cyan-500/30 rounded-xl p-6 bg-gray-900/50 backdrop-blur-md shadow-[0_0_15px_rgba(0,255,255,0.2)] hover:shadow-[0_0_25px_rgba(0,255,255,0.4)] transition-all duration-300">
+                <h3 className="text-cyan-400 text-4xl font-bold mb-2 counter" data-target="150">0</h3>
+                <p className="text-gray-400 text-base">Projects Submitted</p>
+              </div>
+              <div className="border border-cyan-500/30 rounded-xl p-6 bg-gray-900/50 backdrop-blur-md shadow-[0_0_15px_rgba(0,255,255,0.2)] hover:shadow-[0_0_25px_rgba(0,255,255,0.4)] transition-all duration-300">
+                <h3 className="text-cyan-400 text-4xl font-bold mb-2 counter" data-target="150">0</h3>
+                <p className="text-gray-400 text-base">Participating Teams</p>
+              </div>
+              <div className="border border-cyan-500/30 rounded-xl p-6 bg-gray-900/50 backdrop-blur-md shadow-[0_0_15px_rgba(0,255,255,0.2)] hover:shadow-[0_0_25px_rgba(0,255,255,0.4)] transition-all duration-300">
+                <span className="text-cyan-400 text-4xl font-bold mb-2 counter" data-target="7">0</span>
+                <span className="text-cyan-400 text-3xl ml-2">+</span>
+                <p className="text-gray-400 text-base">Lakhs Prize Pool</p>
+              </div>
+              <div className="border border-cyan-500/30 rounded-xl p-6 bg-gray-900/50 backdrop-blur-md shadow-[0_0_15px_rgba(0,255,255,0.2)] hover:shadow-[0_0_25px_rgba(0,255,255,0.4)] transition-all duration-300">
+                <h3 className="text-cyan-400 text-3xl font-bold mb-2 counter-hour">0</h3>
+                <p className="text-gray-400 text-base">Dates for the event</p>
+              </div>
             </div>
-            <div className="border border-[#4FC1E0]/30 rounded-lg p-6 bg-[#0c1a2d]">
-              <h3 className="text-[#4FC1E0] text-4xl font-bold mb-1 counter" data-target="150">0</h3>
-              <p className="text-gray-400">Participating Teams</p>
-            </div>
-            <div className="border border-[#4FC1E0]/30 rounded-lg p-6 bg-[#0c1a2d]">
-              <span className="text-[#4FC1E0] text-4xl font-bold mb-1 counter" data-target="5">0</span>
-              <span className="text-gray-400 text-xl ml-4">Lakhs</span>
-              <p className="text-gray-400">Prize Pool (in ₹)</p>
-            </div>
-            <div className="border border-[#4FC1E0]/30 rounded-lg p-6 bg-[#0c1a2d]">
-              <h3 className="text-[#4FC1E0] text-4xl font-bold mb-1 counter" data-target="25">+</h3>
-              <p className="text-gray-400">Mentors & Judges</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      <div className="container mx-auto mt-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         </div>
       </div>
     </div>

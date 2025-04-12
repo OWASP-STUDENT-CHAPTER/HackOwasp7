@@ -40,7 +40,8 @@ const sponsors = {
 
 export function SponsorCarousel() {
   return (
-    <div className="w-full bg-black/80 py-8 md:py-16 relative overflow-hidden flex flex-col items-center">
+
+    <div className="w-full bg-transparent py-8 md:py-16 relative overflow-hidden flex flex-col items-center">
       {/* Title */}
       <div className="text-center mb-6 md:mb-12">
         <h2 className="text-2xl md:text-4xl font-bold text-white mb-2 md:mb-3">Our Sponsors</h2>
@@ -87,7 +88,7 @@ export function SponsorCarousel() {
       </div>
 
       {/* Background Effects */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/90 via-transparent to-black/90 pointer-events-none" />
+      {/* <div className="absolute inset-0 bg-gradient-to-b from-black/90 via-transparent to-black/90 pointer-events-none" /> */}
     </div>
   );
 }
