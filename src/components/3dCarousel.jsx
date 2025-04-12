@@ -14,7 +14,7 @@ const Carousel3D = ({ slides, autoplay = true, interval = 3000, arrows = false, 
     }
     return items;
   });
-  const [height] = useState('500px');
+  const [height] = useState('400px'); // Adjusted for landscape slides
   const autoplayRef = useRef(null);
   const currentIndexRef = useRef(0);
 
@@ -107,19 +107,25 @@ const Carousel3D = ({ slides, autoplay = true, interval = 3000, arrows = false, 
 
   const getSlideClasses = (state) => {
     switch (state) {
-      case 'active': return 'z-20 opacity-100 scale-100 translate-x-0';
-      case 'preactive': return 'z-10 opacity-30 scale-80 -translate-x-1/4';
-      case 'proactive': return 'z-10 opacity-30 scale-80 translate-x-1/4';
-      case 'preactivede': return 'z-0 opacity-0 scale-0 -translate-x-1/2';
-      case 'proactivede': return 'z-0 opacity-0 scale-0 translate-x-1/2';
-      default: return 'opacity-0 scale-0';
+      case 'active': 
+        return 'z-30 opacity-100 scale-100 translate-x-0'; // Center card (fully visible)
+      case 'preactive': 
+        return 'z-20 opacity-70 scale-80 -translate-x-[60%]'; // Left card (60% hidden)
+      case 'proactive': 
+        return 'z-20 opacity-70 scale-80 translate-x-[60%]'; // Right card (60% hidden)
+      case 'preactivede': 
+        return 'z-0 opacity-0 scale-0 -translate-x-[200%]'; // Fully hidden (left)
+      case 'proactivede': 
+        return 'z-0 opacity-0 scale-0 translate-x-[200%]'; // Fully hidden (right)
+      default: 
+        return 'opacity-0 scale-0';
     }
   };
 
   return (
     <div className="relative" style={{ height }} {...handlers}>
       <div className="absolute left-1/2 top-0 w-[90%] -ml-[45%]">
-        <div className="relative left-1/2 transform -translate-x-1/2 w-[70%] h-[80%]">
+        <div className="relative left-1/2 transform -translate-x-1/2 w-[80%] h-[80%]">
           {slideItems.map((item, index) => (
             <div
               key={index}
@@ -141,7 +147,6 @@ const Carousel3D = ({ slides, autoplay = true, interval = 3000, arrows = false, 
   );
 };
 
-
 const AboutUs = () => {
   const statsRef = useRef(null);
 
@@ -162,7 +167,7 @@ const AboutUs = () => {
 
     return () => observer.disconnect();
   }, []);
-  // Animate counters when they come into view
+
   const animateCounters = () => {
     const counters = document.querySelectorAll('.counter');
     counters.forEach((counter) => {
@@ -181,25 +186,25 @@ const AboutUs = () => {
   };
 
   const slides = [
-    <div className="h-[500px] w-[550px] rounded-xl overflow-hidden">
-    <img src="https://picsum.photos/300/450/?random" alt="Team Member 1" className="w-full h-full object-cover" />
+    <div className="h-[300px] w-[450px] md:h-[400px] md:w-[600px] rounded-xl overflow-hidden border-4 border-[#4FC1E0]">
+      <img src="https://picsum.photos/600/400/?random" alt="Team Member 1" className="w-full h-full object-cover" />
     </div>,
-    <div className="h-[500px] w-[550px] rounded-xl overflow-hidden">
-      <img src="https://picsum.photos/300/451/?random" alt="Team Member 2" className="w-full h-full object-cover" />
+    <div className="h-[300px] w-[450px] md:h-[400px] md:w-[600px] rounded-xl overflow-hidden border-4 border-[#4FC1E0]">
+      <img src="https://picsum.photos/600/400/?random" alt="Team Member 2" className="w-full h-full object-cover" />
     </div>,
-    <div className="h-[500px] w-[550px] rounded-xl overflow-hidden">
-      <img src="https://picsum.photos/300/452/?random" alt="Team Member 3" className="w-full h-full object-cover" />
+    <div className="h-[300px] w-[450px] md:h-[400px] md:w-[600px] rounded-xl overflow-hidden border-4 border-[#4FC1E0]">
+      <img src="https://picsum.photos/600/400/?random" alt="Team Member 3" className="w-full h-full object-cover" />
     </div>,
-    <div className="h-[500px] w-[550px] rounded-xl overflow-hidden">
-      <img src="https://picsum.photos/300/453/?random" alt="Team Member 4" className="w-full h-full object-cover" />
+    <div className="h-[300px] w-[450px] md:h-[400px] md:w-[600px] rounded-xl overflow-hidden border-4 border-[#4FC1E0]">
+      <img src="https://picsum.photos/600/400/?random" alt="Team Member 4" className="w-full h-full object-cover" />
     </div>,
-    <div className="h-[500px] w-[550px] rounded-xl overflow-hidden">
-      <img src="https://picsum.photos/300/454/?random" alt="Team Member 5" className="w-full h-full object-cover" />
+    <div className="h-[300px] w-[450px] md:h-[400px] md:w-[600px] rounded-xl overflow-hidden border-4 border-[#4FC1E0]">
+      <img src="https://picsum.photos/600/400/?random" alt="Team Member 5" className="w-full h-full object-cover" />
     </div>,
   ];
 
   return (
-    <div className="min-h-screen bg-[#0c1322] text-white py-12 px-4 relative overflow-hidden">
+    <div className="min-h-screen bg-transparent text-white py-12 px-4 relative overflow-hidden">
       <div className="absolute top-24 left-12 w-2 h-2 bg-[#4FC1E0] rounded-full"></div>
       <div className="absolute bottom-24 left-64 w-2 h-2 bg-[#4FC1E0] rounded-full"></div>
       <div className="absolute bottom-64 right-24 w-2 h-2 bg-[#4FC1E0] rounded-full"></div>
@@ -211,7 +216,7 @@ const AboutUs = () => {
       
       <div className="container mx-auto flex flex-col lg:flex-row">
         <div className="lg:w-1/2 mb-10 lg:mb-0 flex justify-center items-center">
-          <div className="w-full max-w-md">
+          <div className="w-full">
             <Carousel3D
               slides={slides}
               autoplay={true}
@@ -229,7 +234,7 @@ const AboutUs = () => {
               <span className="text-white"> One Brick at a Time!</span>
             </h2>
             <p className="text-gray-300 leading-relaxed">
-            HackOWASP is an annual national hackathon organized by the members of the OWASP Student Chapter, Thapar Institute of Engineering and Technology, Patiala. Continuing the legacy forward, the sixth edition of the event, HackOWASP gives a chance to all the ingenious developers to subsume creativity with ambition and give rise to innovation in the burgeoning world of technology. HackOWASP stands at a national level on the global scale and strives to motivate students to go beyond the possible.
+              HackOWASP is an annual national hackathon organized by the members of the OWASP Student Chapter, Thapar Institute of Engineering and Technology, Patiala. Continuing the legacy forward, the sixth edition of the event, HackOWASP gives a chance to all the ingenious developers to subsume creativity with ambition and give rise to innovation in the burgeoning world of technology. HackOWASP stands at a national level on the global scale and strives to motivate students to go beyond the possible.
             </p>
           </div>
           
