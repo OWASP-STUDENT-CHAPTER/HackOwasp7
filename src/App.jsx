@@ -54,12 +54,12 @@ function App() {
         <AboutUs />
       </div>
         
-      <div id="timeline" className="relative z-10 w-full">
+      <div id="timeline" className="relative bg-transparent z-10 w-full">
         <TimelineDemo />
       </div>
 
       {/* Partners Section */}
-      <div id="partners" className="relative z-10 bg-black">
+      <div id="partners" className="relative z-10 bg-transparent">
         <section>
           <SponsorCarousel />
         </section>
