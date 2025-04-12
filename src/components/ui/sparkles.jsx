@@ -64,14 +64,14 @@ export const SparklesCore = (props) => {
                   mode: "push",
                 },
                 onHover: {
-                  enable: true,
+                  enable: false,
                   mode: "repulse",
                 },
                 resize: true,
               },
               modes: {
                 push: {
-                  quantity: 4,
+                  quantity: 20,
                 },
                 repulse: {
                   distance: 70,

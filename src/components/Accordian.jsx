@@ -1,4 +1,6 @@
+import { IconBrandDiscord } from '@tabler/icons-react';
 import React, { useState, useRef, useEffect } from 'react';
+import { motion } from "framer-motion";
 
 const AccordionItem = ({ question, answer, isOpen, onClick, index, handleKeyDown }) => {
   const contentRef = useRef(null);
@@ -22,9 +24,8 @@ const AccordionItem = ({ question, answer, isOpen, onClick, index, handleKeyDown
       >
         <span className="text-xl font-semibold text-cyan-100 tracking-wide flex-1 pr-4">{question}</span>
         <span
-          className={`flex-shrink-0 flex items-center justify-center w-10 h-10 rounded-full transition-all duration-300 transform ${
-            isOpen ? 'bg-cyan-500 text-gray-900 rotate-180 shadow-[0_0_10px_rgba(0,255,255,0.7)]' : 'bg-gray-800/50 text-cyan-300'
-          }`}
+          className={`flex-shrink-0 flex items-center justify-center w-10 h-10 rounded-full transition-all duration-300 transform ${isOpen ? 'bg-cyan-500 text-gray-900 rotate-180 shadow-[0_0_10px_rgba(0,255,255,0.7)]' : 'bg-gray-800/50 text-cyan-300'
+            }`}
           aria-hidden="true"
         >
           <svg
@@ -48,7 +49,16 @@ const AccordionItem = ({ question, answer, isOpen, onClick, index, handleKeyDown
         aria-labelledby={`faq-question-${index}`}
       >
         <div ref={contentRef} className="px-6 py-5 border-t border-cyan-500/20 text-gray-300 text-base leading-relaxed">
-          {answer}
+          <span> {answer}</span>
+          <span> {index == 1 && <motion.a
+            href="https://discord.gg/Tgu28Mt99v"
+            target="_blank"
+            className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-gray-600 hover:text-white transition-colors duration-300"
+            whileHover={{ y: -5, scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <IconBrandDiscord size={18} />
+          </motion.a>}</span>
         </div>
       </div>
     </div>
@@ -100,7 +110,7 @@ const FAQAccordion = () => {
     },
     {
       question: "What if I have no team?",
-      answer: "We will club individual members and you may form a team in our discord server as well.",
+      answer: `We will club individual members and you may form a team in our discord server as well.`
     },
     {
       question: "How long is the hackathon going to last?",
@@ -117,12 +127,12 @@ const FAQAccordion = () => {
     },
     {
       question: "What is the cost of participation",
-      answer: "HackOWASP 6.0 is completely free to participate for everyone.",
+      answer: "HackOWASP 7.0 is completely free to participate for everyone.",
     },
     {
       question: "What is the mode of Hackathon?",
       answer:
-        "HackOWASP 6.0 is being conducted in HYBRID mode that is OFFLINE for Thapar University students only and ONLINE for all the other students pan India and worldwide",
+        "HackOWASP 7.0 is being conducted in HYBRID mode that is OFFLINE for Thapar University students only and ONLINE for all the other students pan India and worldwide",
     },
     {
       question: "Will hardware be provided for the hardware track?",
