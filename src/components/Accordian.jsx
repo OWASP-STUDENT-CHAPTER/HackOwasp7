@@ -106,7 +106,7 @@ const FAQAccordion = () => {
   const faqData = [
     {
       question: "What is the team size for HackOwasp 7.0?",
-      answer: "A Team can consist of 2-5 members.",
+      answer: "A Team can consist of 1-5 members.",
     },
     {
       question: "What if I have no team?",
