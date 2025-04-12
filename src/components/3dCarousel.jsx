@@ -184,15 +184,15 @@ const AboutUs = () => {
     });
     const hourCounter = document.querySelector('.counter-hour');
     if (hourCounter) {
-      let current = 16;
+      let current = 19;
       const timer = setInterval(() => {
         current += 0.04; // Slower increment for smooth effect
         if (current >= 20) {
           current = 20;
           clearInterval(timer);
-          hourCounter.textContent = "16 - 20";
+          hourCounter.textContent = "19 - 20 th Arpil 2024";
         } else {
-          hourCounter.textContent = `16 - ${Math.ceil(current)}`;
+          hourCounter.textContent = `19 - ${Math.ceil(current)}`;
         }
       }, 20);
     }
