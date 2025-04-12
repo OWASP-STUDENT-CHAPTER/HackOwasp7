@@ -14,6 +14,7 @@ const Carousel3D = ({ slides, autoplay = true, interval = 3000, arrows = false, 
     }
     return items;
   });
+  const [height] = useState('200px'); // Adjusted for landscape slides
   const autoplayRef = useRef(null);
   const currentIndexRef = useRef(0);
 
@@ -122,7 +123,7 @@ const Carousel3D = ({ slides, autoplay = true, interval = 3000, arrows = false, 
   };
 
   return (
-    <div className="relative h-[200px] sm:h-[400px]" {...handlers}>
+    <div className="relative" style={{ height }} {...handlers}>
       <div className="absolute left-1/2 top-0 w-[90%] -ml-[45%]">
         <div className="relative left-1/2 transform -translate-x-1/2 w-[80%] h-[80%]">
           {slideItems.map((item, index) => (
@@ -185,17 +186,17 @@ const AboutUs = () => {
   };
 
   const slides = [
-    <div className="rounded-xl overflow-hidden xl:w-[500px] xl:h-[400px] border-4 border-[#4FC1E0]">
-      <img src="https://pplx-res.cloudinary.com/image/upload/v1743936354/user_uploads/ZiwwGPAErakYoOQ/S1420033_022.jpg" alt="Toastmaster" className="w-full xl:w-[500px] xl:h-[400px] object-fill" />
+    <div className=" w-full h-full rounded-xl overflow-hidden xl:w-[500px] xl:h-[400px] border-4 border-[#4FC1E0]">
+      <img src="https://pplx-res.cloudinary.com/image/upload/v1743936354/user_uploads/ZiwwGPAErakYoOQ/S1420033_022.jpg" alt="Toastmaster" className="w-full h-full xl:w-[500px] xl:h-[400px] object-fill" />
     </div>,
-    <div className="rounded-xl overflow-hidden xl:w-[500px] xl:h-[400px] border-4 border-[#4FC1E0]">
-      <img src="https://pplx-res.cloudinary.com/image/upload/v1743936354/user_uploads/eYbrwTODjVwNHdF/S1440004_008.jpg" alt="Pitch" className="w-full xl:w-[500px] xl:h-[400px] object-fill" />
+    <div className=" w-full h-full rounded-xl overflow-hidden xl:w-[500px] xl:h-[400px] border-4 border-[#4FC1E0]">
+      <img src="https://pplx-res.cloudinary.com/image/upload/v1743936354/user_uploads/eYbrwTODjVwNHdF/S1440004_008.jpg" alt="Pitch" className="w-full h-full xl:w-[500px] xl:h-[400px] object-fill" />
     </div>,
-    <div className="rounded-xl overflow-hidden xl:w-[500px] xl:h-[400px] border-4 border-[#4FC1E0]">
-      <img src="https://pplx-res.cloudinary.com/image/upload/v1743936355/user_uploads/pPaNBixwctYkfPk/S1420043_063.jpg" alt="Hackathon" className="w-full xl:w-[500px] xl:h-[400px] object-fill" />
+    <div className=" w-full h-full rounded-xl overflow-hidden xl:w-[500px] xl:h-[400px] border-4 border-[#4FC1E0]">
+      <img src="https://pplx-res.cloudinary.com/image/upload/v1743936355/user_uploads/pPaNBixwctYkfPk/S1420043_063.jpg" alt="Hackathon" className="w-full h-full xl:w-[500px] xl:h-[400px] object-fill" />
     </div>,
-    <div className="rounded-xl overflow-hidden xl:w-[500px] xl:h-[400px] border-4 border-[#4FC1E0]">
-      <img src="https://pplx-res.cloudinary.com/image/upload/v1744451665/user_uploads/yZBkYKivRmQxtUA/Screenshot-2025-04-10-121723.jpg"  alt="Group Photo" className="w-full xl:w-[500px] xl:h-[400px] object-fill"/>
+    <div className=" w-full h-full rounded-xl overflow-hidden xl:w-[500px] xl:h-[400px] border-4 border-[#4FC1E0]">
+      <img src="https://pplx-res.cloudinary.com/image/upload/v1744451665/user_uploads/yZBkYKivRmQxtUA/Screenshot-2025-04-10-121723.jpg"  alt="Group Photo" className="w-full h-full xl:w-[500px] xl:h-[400px] object-fill"/>
     </div>,
   ];
 
@@ -249,8 +250,8 @@ const AboutUs = () => {
               <p className="text-gray-400">Prize Pool (in ₹)</p>
             </div>
             <div className="border border-[#4FC1E0]/30 rounded-lg p-6 bg-[#0c1a2d]">
-              <h3 className="text-[#4FC1E0] text-4xl font-bold mb-1 counter" data-target="20">16 - 20</h3>
-              <p className="text-gray-400">Hour</p>
+              <h3 className="text-[#4FC1E0] text-4xl font-bold mb-1 counter" data-target="25">+</h3>
+              <p className="text-gray-400">Mentors & Judges</p>
             </div>
           </div>
         </div>
