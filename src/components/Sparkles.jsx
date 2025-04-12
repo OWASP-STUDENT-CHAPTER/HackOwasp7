@@ -118,7 +118,7 @@ export function SparklesPreviewDark() {
                     background="transparent"
                     minSize={0.2}
                     maxSize={1}
-                    particleDensity={100}
+                    particleDensity={150}
                     className="w-full h-full"
                     particleColor="#FFFFFF"
                     speed={1}
@@ -176,7 +176,7 @@ export function SparklesPreviewColorful() {
           background="transparent"
           minSize={0.6}
           maxSize={1.4}
-          particleDensity={100}
+          particleDensity={150}
           className="w-full h-full"
           particleColor="#00ff00"
           speed={0.5}
