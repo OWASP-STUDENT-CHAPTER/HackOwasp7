@@ -65,7 +65,7 @@ function App() {
         </section>
       </div>
       
-      <div className="relative z-10 bg-transparent">
+      <div id="faq" className="relative z-10 bg-transparent">
         <FAQAccordion />
       </div>
       

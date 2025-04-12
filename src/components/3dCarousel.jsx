@@ -182,6 +182,20 @@ const AboutUs = () => {
         counter.textContent = Math.ceil(current);
       }, 20);
     });
+    const hourCounter = document.querySelector('.counter-hour');
+    if (hourCounter) {
+      let current = 16;
+      const timer = setInterval(() => {
+        current += 0.04; // Slower increment for smooth effect
+        if (current >= 20) {
+          current = 20;
+          clearInterval(timer);
+          hourCounter.textContent = "16 - 20";
+        } else {
+          hourCounter.textContent = `16 - ${Math.ceil(current)}`;
+        }
+      }, 20);
+    }
   };
 
   const slides = [
@@ -205,10 +219,15 @@ const AboutUs = () => {
       <div className="absolute bottom-24 left-64 w-2 h-2 bg-[#4FC1E0] rounded-full"></div>
       <div className="absolute bottom-64 right-24 w-2 h-2 bg-[#4FC1E0] rounded-full"></div>
       
-      <h1 className="text-center text-5xl font-bold text-[#4FC1E0] mb-2 tracking-wider">
-        ABOUT HACKOWASP 7.0
-      </h1>
-      <p className="text-center text-[#4FC1E0] text-xl mb-12">EXPLORE THE REALM OF CODING</p>
+      <div className="text-center mb-16">
+          <h1 className="text-5xl lg:text-7xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-purple-500 tracking-wide animate-out">
+            About HackOWASP 7.0
+          </h1>
+          <p className="text-gray-400 mt-4 text-xl sm:text-2xl tracking-wide">
+            Explore the Realm of Coding
+          </p>
+          <div className="h-1 w-24 bg-gradient-to-r from-cyan-400 to-purple-500 mx-auto rounded-full mt-4 shadow-[0_0_10px_rgba(0,255,255,0.7)]"></div>
+        </div>
       
       <div className="mx-auto flex flex-col lg:flex-row">
         <div className="lg:w-1/2 flex justify-center items-center overflow-x-clip">
@@ -234,25 +253,25 @@ const AboutUs = () => {
             </p>
           </div>
           
-          <div ref={statsRef} className="grid grid-cols-2 gap-4 mb-10">
-            <div className="border border-[#4FC1E0]/30 rounded-lg p-6 bg-[#0c1a2d]">
-              <h3 className="text-[#4FC1E0] text-4xl font-bold mb-1 counter" data-target="200">0</h3>
-              <p className="text-gray-400">Projects Submitted</p>
+          <div ref={statsRef} className="grid grid-cols-2 gap-6">
+              <div className="border border-cyan-500/30 rounded-xl p-6 bg-gray-900/50 backdrop-blur-md shadow-[0_0_15px_rgba(0,255,255,0.2)] hover:shadow-[0_0_25px_rgba(0,255,255,0.4)] transition-all duration-300">
+                <h3 className="text-cyan-400 text-4xl font-bold mb-2 counter" data-target="150">0</h3>
+                <p className="text-gray-400 text-base">Projects Submitted</p>
+              </div>
+              <div className="border border-cyan-500/30 rounded-xl p-6 bg-gray-900/50 backdrop-blur-md shadow-[0_0_15px_rgba(0,255,255,0.2)] hover:shadow-[0_0_25px_rgba(0,255,255,0.4)] transition-all duration-300">
+                <h3 className="text-cyan-400 text-4xl font-bold mb-2 counter" data-target="150">0</h3>
+                <p className="text-gray-400 text-base">Participating Teams</p>
+              </div>
+              <div className="border border-cyan-500/30 rounded-xl p-6 bg-gray-900/50 backdrop-blur-md shadow-[0_0_15px_rgba(0,255,255,0.2)] hover:shadow-[0_0_25px_rgba(0,255,255,0.4)] transition-all duration-300">
+                <span className="text-cyan-400 text-4xl font-bold mb-2 counter" data-target="7">0</span>
+                <span className="text-cyan-400 text-3xl ml-2">+</span>
+                <p className="text-gray-400 text-base">Lakhs Prize Pool</p>
+              </div>
+              <div className="border border-cyan-500/30 rounded-xl p-6 bg-gray-900/50 backdrop-blur-md shadow-[0_0_15px_rgba(0,255,255,0.2)] hover:shadow-[0_0_25px_rgba(0,255,255,0.4)] transition-all duration-300">
+                <h3 className="text-cyan-400 text-3xl font-bold mb-2 counter-hour">0</h3>
+                <p className="text-gray-400 text-base">Dates for the event</p>
+              </div>
             </div>
-            <div className="border border-[#4FC1E0]/30 rounded-lg p-6 bg-[#0c1a2d]">
-              <h3 className="text-[#4FC1E0] text-4xl font-bold mb-1 counter" data-target="150">0</h3>
-              <p className="text-gray-400">Participating Teams</p>
-            </div>
-            <div className="border border-[#4FC1E0]/30 rounded-lg p-6 bg-[#0c1a2d]">
-              <span className="text-[#4FC1E0] text-4xl font-bold mb-1 counter" data-target="5">0</span>
-              <span className="text-gray-400 text-xl ml-4">Lakhs</span>
-              <p className="text-gray-400">Prize Pool (in ₹)</p>
-            </div>
-            <div className="border border-[#4FC1E0]/30 rounded-lg p-6 bg-[#0c1a2d]">
-              <h3 className="text-[#4FC1E0] text-4xl font-bold mb-1 counter" data-target="20">16 - 20</h3>
-              <p className="text-gray-400">Hour</p>
-            </div>
-          </div>
         </div>
       </div>
     </div>
