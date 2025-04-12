@@ -40,6 +40,7 @@ const sponsors = {
 
 export function SponsorCarousel() {
   return (
+
     <div className="w-full bg-transparent py-8 md:py-16 relative overflow-hidden flex flex-col items-center">
       {/* Title */}
       <div className="text-center mb-6 md:mb-12">
