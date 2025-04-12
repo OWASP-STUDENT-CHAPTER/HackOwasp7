@@ -124,7 +124,7 @@ export function TimelineDemo() {
   ];
   
   return (
-    <div className="w-full max-w-5xl mx-auto px-4 py-12 bg-black">
+    <div className="w-full max-w-5xl mx-auto px-4 py-12 bg-transparent">
       <div className="text-center mb-12">
         <h1 className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-amber-50 mb-4">
           Event Timeline
