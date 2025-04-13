@@ -184,15 +184,15 @@ const AboutUs = () => {
     });
     const hourCounter = document.querySelector('.counter-hour');
     if (hourCounter) {
-      let current = 19;
+      let current = 16;
       const timer = setInterval(() => {
         current += 0.04; // Slower increment for smooth effect
         if (current >= 20) {
           current = 20;
           clearInterval(timer);
-          hourCounter.textContent = "19 - 20 th Arpil 2024";
+          hourCounter.textContent = "16 - 20th Arpil 2025";
         } else {
-          hourCounter.textContent = `19 - ${Math.ceil(current)}`;
+          hourCounter.textContent = `16 - ${Math.ceil(current)}th Arpil 2025`;
         }
       }, 20);
     }
@@ -221,7 +221,7 @@ const AboutUs = () => {
       
       <div className="text-center mb-16">
           <h1 className="text-5xl lg:text-7xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-purple-500 tracking-wide animate-out">
-            About HACKOWASP 6.0
+            About HACKOWASP 7.0
           </h1>
           <p className="text-gray-400 mt-4 text-xl sm:text-2xl tracking-wide">
             Explore the Realm of Coding
@@ -257,15 +257,15 @@ const AboutUs = () => {
               <div className="border border-cyan-500/30 rounded-xl p-6 bg-gray-900/50 backdrop-blur-md shadow-[0_0_15px_rgba(0,255,255,0.2)] hover:shadow-[0_0_25px_rgba(0,255,255,0.4)] transition-all duration-300">
                 <span className="text-cyan-400 text-4xl font-bold mb-2 counter" data-target="150">0</span>
                 <span className="text-cyan-400 text-3xl ml-2">+</span>
-                <p className="text-gray-400 text-base">Projects Submitted</p>
+                <p className="text-gray-400 text-base">Past Projects Submitted</p>
               </div>
               <div className="border border-cyan-500/30 rounded-xl p-6 bg-gray-900/50 backdrop-blur-md shadow-[0_0_15px_rgba(0,255,255,0.2)] hover:shadow-[0_0_25px_rgba(0,255,255,0.4)] transition-all duration-300">
                 <span className="text-cyan-400 text-4xl font-bold mb-2 counter" data-target="150">0</span>
                 <span className="text-cyan-400 text-3xl ml-2">+</span>
-                <p className="text-gray-400 text-base">Participating Teams</p>
+                <p className="text-gray-400 text-base">Past Participating Teams</p>
               </div>
               <div className="border border-cyan-500/30 rounded-xl p-6 bg-gray-900/50 backdrop-blur-md shadow-[0_0_15px_rgba(0,255,255,0.2)] hover:shadow-[0_0_25px_rgba(0,255,255,0.4)] transition-all duration-300">
-                <span className="text-cyan-400 text-4xl font-bold mb-2 counter" data-target="5">0</span>
+                <span className="text-cyan-400 text-4xl font-bold mb-2 counter" data-target="7">0</span>
                 <span className="text-cyan-400 text-3xl ml-2">+</span>
                 <p className="text-gray-400 text-base">Lakhs Prize Pool</p>
               </div>
