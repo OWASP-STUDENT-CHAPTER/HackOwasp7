@@ -27,6 +27,8 @@ export function Navbar() {
     { name: "Home", href: "#home" },
     { name: "About", href: "#about" },
     { name: "Timeline", href: "#timeline" },
+    { name: "Accommodation", href: "https://forms.gle/bgzhuFum2KCYipYy9", target: "_blank" },
+    { name: "Workshops", href: "https://forms.gle/oJFXHmn9XjKJ9FiW6", target: "_blank" },
     { name: "Partners", href: "#partners" },
     { name: "FAQs", href: "#faq" },
   ];

@@ -106,7 +106,7 @@ const FAQAccordion = () => {
   const faqData = [
     {
       question: "What is the team size for HackOwasp 7.0?",
-      answer: "A Team can consist of 2-5 members.",
+      answer: "A Team can consist of 1-5 members.",
     },
     {
       question: "What if I have no team?",
@@ -142,7 +142,12 @@ const FAQAccordion = () => {
     {
       question: "Will accomodation be provided and what's the procedure?",
       answer:
-        "Yes. Any team choosing to opt for accomodation is required to fill the google form at the top of the page and No refunds are the be granted after the payment is made. The accomodation will be provided at the venue itself.",
+        "Yes. Any team choosing to opt for accomodation is required to fill the google form at the top of the page and No refunds are the be granted after the payment is made. The accomodation will be provided at the venue itself. https://forms.gle/bgzhuFum2KCYipYy9",
+    },
+    {
+      question: "How can I register for Workshops and Kaggle Hack?",
+      answer:
+        "You can register for the workshops and Kaggle Hack by filling the form at the top of the page. The registration is free of cost. https://forms.gle/oJFXHmn9XjKJ9FiW6",
     },
   ];
 
