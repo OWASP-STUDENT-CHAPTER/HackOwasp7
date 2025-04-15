@@ -11,6 +11,11 @@ import Bsep from "/logos/bsep.png";
 import Polygon from "/logos/polygon.png";
 import SwapSo from "/logos/swapso.png";
 import TiffinWala from "/logos/tiffinwala.png";
+import DAO from "/logos/DAO.jpg";
+import Hindustan from "/logos/Hindustan.png";
+import TCV from "/logos/TCV.png";
+// import Web3 from "/logos/web3.png";
+// import Web3 from "/logos/IMG_0288.png";
 
 // Define which logos should preserve their original colors (not be converted to grayscale)
 const PRESERVE_COLORS = [
@@ -18,6 +23,9 @@ const PRESERVE_COLORS = [
   "ARCHIES LOGO",
   "TIFFIN WALA LOGO",
   "SWAPSO LOGO",
+  "HINDUSTAN LOGO",
+  "TCV LOGO",
+  "DAO LOGO",
 ];
 
 const sponsors = {
@@ -26,16 +34,23 @@ const sponsors = {
     { name: "ETHINDIA LOGO", logo: EthIndia },
     { name: "TIM HORTANS LOGO", logo: TimHortans },
     { name: "POLYGON LOGO", logo: Polygon },
-{ name: "BSB LOGO", logo: Bsep },
-{ name: "ICP LOGO", logo: ICP },
-{ name: "SWAPSO LOGO", logo: SwapSo },
+    { name: "BSB LOGO", logo: Bsep },
+    { name: "ICP LOGO", logo: ICP },
+    { name: "SWAPSO LOGO", logo: SwapSo },
   ],
   tier2: [ // Partners
     { name: "ARCHIES LOGO", logo: Archies },
-    
+
     { name: "TIFFIN WALA LOGO", logo: TiffinWala },
     { name: "MEGHS LOGO", logo: Meghs },
   ],
+  tier3: [ // Community Partners
+    { name: "DAO LOGO", logo: DAO },  
+    { name: "HINDUSTAN LOGO", logo: Hindustan },
+    { name: "TCV LOGO", logo: TCV },
+    // { name: "WEB3 LOGO", logo: Web3 },
+  ],
+  // Add more tiers as needed
 };
 
 export function SponsorCarousel() {
@@ -81,6 +96,23 @@ export function SponsorCarousel() {
                 {...sponsor}
                 preserveColors={PRESERVE_COLORS.includes(sponsor.name)}
                 className="bg-white/5 border-yellow-500/60 hover:border-yellow-400 h-28 md:h-40 w-40 md:w-72 p-4 md:p-8 mx-2 md:mx-4"
+              />
+            ))}
+          </InfiniteSlider>
+        </div>
+        {/* Tier 3 - Associate Sponsors */}
+        <div className="relative">
+          <InfiniteSlider
+            duration={25}
+            reverse={true}
+            className="py-2"
+          >
+            {[...sponsors.tier3, ...sponsors.tier3].map((sponsor, idx) => (
+              <SponsorCard
+                key={`power-${idx}`}
+                {...sponsor}
+                preserveColors={PRESERVE_COLORS.includes(sponsor.name)}
+                className="bg-white/5 border-slate-400 hover:border-slate-500 h-28 md:h-40 w-40 md:w-72 p-4 md:p-8 mx-2 md:mx-4"
               />
             ))}
           </InfiniteSlider>
