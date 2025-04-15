@@ -94,7 +94,7 @@ export function TimelineDemo() {
       title: "18th-20th April",
       subtitle: "12:00 Midnight - 12 Noon",
       content: (
-        <div className="bg-gradient-to-br from-gray-900 to-gray-950 p-6 rounded-xl shadow-lg border border-gray-800 hover:border-rose-900/40 transition-all duration-300 group">
+        <div className="bg-gradient-to-br from-gray-900 to-gray-950 p-6 rounded-xl shadow-lg border border-gray-800 hover:border-rose-900/40 transition-all overflow-hidden duration-300 group">
           <div className="relative z-10">
             <h2 className="text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-amber-50 tracking-tight">
               HACKOWASP

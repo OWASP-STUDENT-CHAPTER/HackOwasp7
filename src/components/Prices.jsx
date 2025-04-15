@@ -2,10 +2,10 @@ import { PricingCard } from "@/components/ui/dark-gradient-pricing"
 
 function PricingDemo() {
   return (
-    <section className="relative overflow-hidden bg-background text-foreground">
-      <div className="relative z-10 mx-auto max-w-5xl px-4 py-20 md:px-8">
-        <div className="mb-12 space-y-3">
-          <h2 className="text-center text-3xl font-semibold leading-tight sm:text-4xl sm:leading-tight md:text-5xl md:leading-tight">
+    <section className="relative overflow-hidden bg-transparent text-foreground">
+      <div className="relative z-10 mx-auto max-w-5xl px-4 pb-20 pt-10 md:px-8">
+        <div className="mb-12 ">
+          <h2 className="text-center text-3xl text-zinc-50 font-semibold leading-tight sm:text-4xl sm:leading-tight md:text-5xl md:leading-tight">
             Pricing
           </h2>
           {/* <p className="text-center text-base text-muted-foreground md:text-lg">
@@ -15,8 +15,8 @@ function PricingDemo() {
         </div>
         <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
           <PricingCard
-            tier="Free"
-            price="$0/mo"
+            tier="1st Price"
+            price="25,000rs"
             bestFor="Best for 1-5 users"
             CTA="Get started free"
             benefits={[
@@ -29,8 +29,8 @@ function PricingDemo() {
             ]}
           />
           <PricingCard
-            tier="Pro"
-            price="$79/mo"
+            tier="2nd Price"
+            price="20,000rs"
             bestFor="Best for 5-50 users"
             CTA="14-day free trial"
             benefits={[
@@ -43,8 +43,52 @@ function PricingDemo() {
             ]}
           />
           <PricingCard
-            tier="Enterprise"
-            price="Contact us"
+            tier="3rd Price"
+            price="15,000rs"
+            bestFor="Best for 50+ users"
+            CTA="Contact us"
+            benefits={[
+              { text: "Unlimited workspaces", checked: true },
+              { text: "Email support", checked: true },
+              { text: "30 day data retention", checked: true },
+              { text: "Custom roles", checked: true },
+              { text: "Priority support", checked: true },
+              { text: "SSO", checked: true },
+            ]}
+          />
+        </div>
+        <div className="grid grid-cols-1 mt-10 gap-6 md:grid-cols-3">
+          <PricingCard
+            tier="4th Price"
+            price="10,000rs"
+            bestFor="Best for 1-5 users"
+            CTA="Get started free"
+            benefits={[
+              { text: "One workspace", checked: true },
+              { text: "Email support", checked: true },
+              { text: "1 day data retention", checked: false },
+              { text: "Custom roles", checked: false },
+              { text: "Priority support", checked: false },
+              { text: "SSO", checked: false },
+            ]}
+          />
+          <PricingCard
+            tier="5th Price"
+            price="5,000rs"
+            bestFor="Best for 5-50 users"
+            CTA="14-day free trial"
+            benefits={[
+              { text: "Five workspaces", checked: true },
+              { text: "Email support", checked: true },
+              { text: "7 day data retention", checked: true },
+              { text: "Custom roles", checked: true },
+              { text: "Priority support", checked: false },
+              { text: "SSO", checked: false },
+            ]}
+          />
+          <PricingCard
+            tier="6th Price"
+            price="2,000rs"
             bestFor="Best for 50+ users"
             CTA="Contact us"
             benefits={[

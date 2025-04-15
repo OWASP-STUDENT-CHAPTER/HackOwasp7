@@ -21,7 +21,7 @@ const Benefit = ({
           <X className="size-3" />
         </span>
       )}
-      <span className="text-sm dark:text-zinc-300 text-zinc-600">{text}</span>
+      <span className="text-sm text-zinc-300">{text}</span>
     </div>
   );
 }
@@ -51,22 +51,22 @@ export const PricingCard = ({
           <span className="mb-6 inline-block text-zinc-50 ">
             {tier}
           </span>
-          <span className="mb-3 inline-block text-4xl font-medium">
+          <span className="mb-3 inline-block text-4xl font-medium text-zinc-50">
             {price}
           </span>
-          <span
+          {/* <span
             className="bg-gradient-to-br from-zinc-200 to-zinc-500 bg-clip-text text-center text-transparent">
             {bestFor}
-          </span>
+          </span> */}
         </div>
         <div className="space-y-4 py-9">
           {benefits.map((benefit, index) => (
             <Benefit key={index} {...benefit} />
           ))}
         </div>
-        <Button className="w-full" variant={tier === "Pro" ? "default" : "ghost"}>
+        {/* <Button className="w-full" variant={tier === "Pro" ? "default" : "ghost"}>
           {CTA}
-        </Button>
+        </Button> */}
       </Card>
     </motion.div>
   );

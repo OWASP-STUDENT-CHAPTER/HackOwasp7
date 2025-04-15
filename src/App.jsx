@@ -59,9 +59,9 @@ function App() {
         <TimelineDemo />
       </div>
 
-      <div className="">
+      {/* <div className="">
         <PricingDemo />
-      </div>
+      </div> */}
 
       {/* Partners Section */}
       <div id="partners" className="relative z-10 bg-transparent">
