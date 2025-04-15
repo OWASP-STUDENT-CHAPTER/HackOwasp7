@@ -20,6 +20,7 @@ import SparkleBg from "./components/SparkleEffect";
 import { SparklesCore } from "./components/ui/sparkles";
 import Footer from "./components/Footer";
 import FAQAccordion from "./components/Accordian";
+import { PricingDemo } from "./components/Prices";
 // App.jsx - Updated structure
 function App() {
   return (
@@ -56,6 +57,10 @@ function App() {
 
       <div id="timeline" className="relative bg-transparent z-10 w-full">
         <TimelineDemo />
+      </div>
+
+      <div className="">
+        <PricingDemo />
       </div>
 
       {/* Partners Section */}
