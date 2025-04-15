@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import { Timeline } from "@/components/ui/timeline";
 import { motion } from "framer-motion";
+import Modal from "@/components/ui/Model";
 
 export function TimelineDemo() {
   const data = [
@@ -128,6 +129,18 @@ export function TimelineDemo() {
       ),
     },
   ];
+  const [selectedEvent, setSelectedEvent] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  function openModal(event) {
+    setSelectedEvent(event);
+    setIsModalOpen(true);
+  }
+
+  function closeModal() {
+    setIsModalOpen(false);
+    setSelectedEvent(null);
+  }
 
   return (
     <>
@@ -198,8 +211,35 @@ export function TimelineDemo() {
           </h1>
           <div className="h-1 w-24 bg-amber-50 mb-4 mx-auto rounded-full"></div>
         </div>
-        <Timeline data={data} />
+        <Timeline
+          data={data.map((item) => ({
+            ...item,
+            content: (
+              <div
+                onClick={() => openModal(item)}
+                className="cursor-pointer"
+                role="button"
+                tabIndex={0}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") openModal(item);
+                }}
+              >
+                {item.content}
+              </div>
+            ),
+          }))}
+        />
       </div>
+      {/* Modal for event details */}
+      <Modal isOpen={isModalOpen} onClose={closeModal}>
+        {selectedEvent && (
+          <>
+            <h2 className="text-3xl font-bold text-amber-50 mb-4">{selectedEvent.title}</h2>
+            <p className="text-lg text-gray-300 font-semibold mb-4">{selectedEvent.subtitle}</p>
+            <div className="text-gray-400">{selectedEvent.content}</div>
+          </>
+        )}
+      </Modal>
     </>
   );
 }
