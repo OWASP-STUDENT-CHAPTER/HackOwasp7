@@ -7,7 +7,7 @@ export function TimelineDemo() {
   const data = [
     {
       title: "16th April",
-      subtitle: "6:00 - 8:00 pm",
+      subtitle: "5:00 - 8:00 pm",
       content: (
         <div className="bg-gradient-to-br from-gray-900 to-gray-950 p-6 rounded-xl shadow-lg border border-gray-800 hover:border-cyan-900/40 transition-all duration-300 group">
           <div className="relative z-10">
@@ -26,10 +26,26 @@ export function TimelineDemo() {
           <div className="absolute bottom-0 right-0 w-32 h-32 bg-cyan-600/10 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
         </div>
       ),
+      timeline: (
+        <div className="bg-gradient-to-br from-gray-900 to-gray-950 p-6 rounded-xl shadow-lg border border-gray-800 hover:border-cyan-900/40 transition-all duration-300 group">
+          <div className="relative z-10">
+            <h2 className="text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-amber-50 mb-4 tracking-tight">
+              Bitcoin Workshop
+            </h2>
+            <p className="text-lg md:text-xl text-gray-300 font-semibold mb-4">
+              Blockchain & Beyond
+            </p>
+            <p className="text-lg md:text-xl text-gray-300 font-semibold mb-4">
+              Venue: Tan Audi
+            </p>
+          </div>
+          <div className="absolute bottom-0 right-0 w-32 h-32 bg-cyan-600/10 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+        </div>
+      ),
     },
     {
       title: "17th April",
-      subtitle: "6:00 - 8:00 pm",
+      subtitle: "5:00 - 8:00 pm",
       content: (
         <div className="bg-gradient-to-br from-gray-900 to-gray-950 p-6 rounded-xl shadow-lg border border-gray-800 hover:border-purple-900/40 transition-all duration-300 group">
           <div className="relative z-10">
@@ -46,6 +62,22 @@ export function TimelineDemo() {
             </ul>
           </div>
           <div className="absolute bottom-0 right-0 w-32 h-32 bg-purple-600/10 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+        </div>
+      ),
+      timeline: (
+        <div className="bg-gradient-to-br from-gray-900 to-gray-950 p-6 rounded-xl shadow-lg border border-gray-800 hover:border-cyan-900/40 transition-all duration-300 group">
+          <div className="relative z-10">
+            <h2 className="text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-amber-50 mb-4 tracking-tight">
+              Blockchain Workshop
+            </h2>
+            <p className="text-lg md:text-xl text-gray-300 font-semibold mb-4">
+              Blockchain & Beyond
+            </p>
+            <p className="text-lg md:text-xl text-gray-300 font-semibold mb-4">
+              Venue: Tan Audi
+            </p>
+          </div>
+          <div className="absolute bottom-0 right-0 w-32 h-32 bg-cyan-600/10 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
         </div>
       ),
     },
@@ -69,6 +101,25 @@ export function TimelineDemo() {
           <div className="absolute bottom-0 right-0 w-32 h-32 bg-amber-600/10 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
         </div>
       ),
+      timeline: (
+        <div className="bg-gradient-to-br from-gray-900 to-gray-950 p-6 rounded-xl shadow-lg border border-gray-800 hover:border-cyan-900/40 transition-all duration-300 group">
+          <div className="relative z-10">
+            <h2 className="text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-amber-50 mb-4 tracking-tight">
+              Kaggle Hack
+            </h2>
+            <p className="text-lg md:text-xl text-gray-300 font-semibold mb-4">
+              Data Science Challenge
+            </p>
+            <p className="text-lg md:text-xl text-gray-300 font-semibold mb-4">
+              8:00 PM, 17 April : Kaggle Hack Start
+            </p>
+            <p className="text-lg md:text-xl text-gray-300 font-semibold mb-4">
+              11:59 PM, 18 April : Kaggle Hack End
+            </p>
+          </div>
+          <div className="absolute bottom-0 right-0 w-32 h-32 bg-cyan-600/10 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+        </div>
+      ),
     },
     {
       title: "18th-19th April",
@@ -90,6 +141,31 @@ export function TimelineDemo() {
           <div className="absolute bottom-0 right-0 w-32 h-32 bg-green-600/10 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
         </div>
       ),
+      timeline: (
+        <div className="bg-gradient-to-br from-gray-900 to-gray-950 p-6 rounded-xl shadow-lg border border-gray-800 hover:border-cyan-900/40 transition-all duration-300 group">
+          <div className="relative z-10">
+            <h2 className="text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-amber-50 mb-4 tracking-tight">
+              Ideathon
+            </h2>
+            <p className="text-lg md:text-xl text-gray-300 font-semibold mb-4">
+              Unleash Your Creativity
+            </p>
+            <p className="text-lg md:text-xl text-gray-300 font-semibold mb-4">
+              12:00 AM, 18 April: Ideathon + Hackathon Track Reveal
+            </p>
+            <p className="text-lg md:text-xl text-gray-300 font-semibold mb-4">
+              12:00 AM, 18 April: Ideathon Start
+            </p>
+            <p className="text-lg md:text-xl text-gray-300 font-semibold mb-4">
+              11:59 AM, 19 April: Ideathon End
+            </p>
+            <p className="text-lg md:text-xl text-gray-300 font-semibold mb-4">
+              4:00 PM, 19 April: Ideathon Pitching
+            </p>
+          </div>
+          <div className="absolute bottom-0 right-0 w-32 h-32 bg-cyan-600/10 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+        </div>
+      ),
     },
     {
       title: "18th-20th April",
@@ -108,23 +184,43 @@ export function TimelineDemo() {
               ideas into working solutions. May the code be with you!
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {/* <div className="overflow-hidden rounded-xl">
-                <img
-                  src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3"
-                  alt="hackathon"
-                  className="rounded-xl object-cover w-full aspect-video shadow-xl hover:scale-105 transition-transform duration-500"
-                />
-              </div>
-              <div className="overflow-hidden rounded-xl">
-                <img
-                  src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3"
-                  alt="coding"
-                  className="rounded-xl object-cover w-full aspect-video shadow-xl hover:scale-105 transition-transform duration-500"
-                />
-              </div> */}
             </div>
           </div>
           <div className="absolute bottom-0 right-0 w-32 h-32 bg-rose-600/10 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+        </div>
+      ),
+      timeline: (
+        <div className="bg-gradient-to-br from-gray-900 to-gray-950 p-6 rounded-xl shadow-lg border border-gray-800 hover:border-cyan-900/40 transition-all duration-300 group">
+          <div className="relative z-10">
+            <h2 className="text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-amber-50 tracking-tight">
+              HACKOWASP
+            </h2>
+            <p className="text-lg md:text-xl text-gray-100 font-semibold mb-4">
+              The Ultimate Coding Challenge
+            </p>
+            <p className="text-lg md:text-xl text-gray-100 font-semibold mb-4">
+              12:00 AM, 19 April: Hackathon Start
+            </p>
+            <p className="text-lg md:text-xl text-gray-100 font-semibold mb-4">
+              4:00 PM, 19 April: Offline Enrty Start For Hackathon
+            </p>
+            <p className="text-lg md:text-xl text-gray-100 font-semibold mb-4">
+              6:00 PM, 19 April: Offline Enrty End For Hackathon
+            </p>
+            <p className="text-lg md:text-xl text-gray-100 font-semibold mb-4">
+              12:00 AM, 20 April: Departure
+            </p>
+            <p className="text-lg md:text-xl text-gray-100 font-semibold mb-4">
+              12:00 PM, 20 April: Mentor Eval
+            </p>
+            <p className="text-lg md:text-xl text-gray-100 font-semibold mb-4">
+              1:00 PM, 20 April: Hackathon End
+            </p>
+            <p className="text-lg md:text-xl text-gray-100 font-semibold mb-4">
+              4:00 PM, 20 April: Pitching Round
+            </p>
+          </div>
+          <div className="absolute bottom-0 right-0 w-32 h-32 bg-cyan-600/10 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
         </div>
       ),
     },
@@ -236,7 +332,7 @@ export function TimelineDemo() {
           <>
             <h2 className="text-3xl font-bold text-amber-50 mb-4">{selectedEvent.title}</h2>
             <p className="text-lg text-gray-300 font-semibold mb-4">{selectedEvent.subtitle}</p>
-            <div className="text-gray-400">{selectedEvent.content}</div>
+            <div className="text-gray-400">{selectedEvent.timeline}</div>
           </>
         )}
       </Modal>

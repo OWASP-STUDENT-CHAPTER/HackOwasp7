@@ -43,15 +43,15 @@ export const PricingCard = ({
         className={cn(
           "relative h-full w-full overflow-hidden border",
           "border-zinc-700 bg-gradient-to-br from-zinc-950/50 to-zinc-900/80",
-          "p-6",
+          "p-3 md:p-6",
           className
         )}>
         <div
-          className="flex flex-col items-center border-b pb-6 border-zinc-700 ">
-          <span className="mb-6 inline-block text-zinc-50 ">
+          className="flex flex-col items-center border-b pb-3 md:pb-6 border-zinc-700 ">
+          <span className="mb-3 md:mb-6 inline-block text-zinc-50 ">
             {tier}
           </span>
-          <span className="mb-3 inline-block text-4xl font-medium text-zinc-50">
+          <span className="mb-1.5 md:mb-3 inline-block text-4xl font-medium text-zinc-50">
             {price}
           </span>
           {/* <span
@@ -59,7 +59,7 @@ export const PricingCard = ({
             {bestFor}
           </span> */}
         </div>
-        <div className="space-y-4 py-9">
+        <div className="space-y-2 md:space-y-4 py-3 md:py-9">
           {benefits.map((benefit, index) => (
             <Benefit key={index} {...benefit} />
           ))}

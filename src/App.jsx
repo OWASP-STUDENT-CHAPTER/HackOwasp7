@@ -59,9 +59,13 @@ function App() {
         <TimelineDemo />
       </div>
 
-      {/* <div className="">
+{/* <div className="">
+  <TracksSlider />
+</div> */}
+
+      <div className="">
         <PricingDemo />
-      </div> */}
+      </div>
 
       {/* Partners Section */}
       <div id="partners" className="z-0 bg-transparent">
