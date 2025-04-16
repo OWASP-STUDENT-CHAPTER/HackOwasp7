@@ -14,7 +14,7 @@ import TiffinWala from "/logos/tiffinwala.png";
 import DAO from "/logos/DAO.jpg";
 import Hindustan from "/logos/Hindustan.png";
 import TCV from "/logos/TCV.png";
-// import Web3 from "/logos/web3.png";
+import Web3 from "/logos/Web3.png";
 // import Web3 from "/logos/IMG_0288.png";
 
 // Define which logos should preserve their original colors (not be converted to grayscale)
@@ -40,7 +40,6 @@ const sponsors = {
   ],
   tier2: [ // Partners
     { name: "ARCHIES LOGO", logo: Archies },
-
     { name: "TIFFIN WALA LOGO", logo: TiffinWala },
     { name: "MEGHS LOGO", logo: Meghs },
   ],
@@ -48,7 +47,10 @@ const sponsors = {
     { name: "DAO LOGO", logo: DAO },  
     { name: "HINDUSTAN LOGO", logo: Hindustan },
     { name: "TCV LOGO", logo: TCV },
-    // { name: "WEB3 LOGO", logo: Web3 },
+    { name: "WEB3 LOGO", logo: Web3 },
+  ],
+  community:[
+    { name: "TIFFIN WALA LOGO", logo: TiffinWala },
   ],
   // Add more tiers as needed
 };
@@ -101,10 +103,33 @@ export function SponsorCarousel() {
           </InfiniteSlider>
         </div>
         {/* Tier 3 - Associate Sponsors */}
+        {/* <div className="relative">
+          <InfiniteSlider
+            duration={25}
+            className="py-2"
+          >
+            {[...sponsors.tier3, ...sponsors.tier3].map((sponsor, idx) => (
+              <SponsorCard
+                key={`power-${idx}`}
+                {...sponsor}
+                preserveColors={PRESERVE_COLORS.includes(sponsor.name)}
+                className="bg-white/5 border-slate-400 hover:border-slate-500 h-28 md:h-40 w-40 md:w-72 p-4 md:p-8 mx-2 md:mx-4"
+              />
+            ))}
+          </InfiniteSlider>
+        </div> */}
+      </div>
+
+      <div className="text-center my-6 md:my-12">
+        <h2 className="text-2xl md:text-4xl font-bold text-white mb-2 md:mb-3">Community Partners</h2>
+        {/* <p className="text-gray-300 text-xs md:text-base">Proudly supported by industry leaders</p> */}
+      </div>
+
+      <div className="w-full flex flex-col space-y-4 md:space-y-8">
         <div className="relative">
           <InfiniteSlider
             duration={25}
-            reverse={true}
+            // reverse={true}
             className="py-2"
           >
             {[...sponsors.tier3, ...sponsors.tier3].map((sponsor, idx) => (

@@ -20,6 +20,7 @@ import SparkleBg from "./components/SparkleEffect";
 import { SparklesCore } from "./components/ui/sparkles";
 import Footer from "./components/Footer";
 import FAQAccordion from "./components/Accordian";
+import { PricingDemo } from "./components/Prices";
 // App.jsx - Updated structure
 function App() {
   return (
@@ -43,33 +44,41 @@ function App() {
       </div>
 
       {/* Hero section - no need for its own sparkles background */}
-      <div className="relative z-10">
+      <div className="z-0">
         <SparklesPreviewDark />
       </div>
 
       <Navbar />
 
       {/* Other sections with z-10 or higher to appear above sparkles */}
-      <div id="about" className="relative z-10 flex justify-center items-center w-full mt-16">
+      <div id="about" className="z-0 flex justify-center items-center w-full mt-16">
         <AboutUs />
       </div>
 
-      <div id="timeline" className="relative bg-transparent z-10 w-full">
+      <div id="timeline" className="bg-transparent z-0 w-full">
         <TimelineDemo />
       </div>
 
+{/* <div className="">
+  <TracksSlider />
+</div> */}
+
+      <div className="">
+        <PricingDemo />
+      </div>
+
       {/* Partners Section */}
-      <div id="partners" className="relative z-10 bg-transparent">
+      <div id="partners" className="z-0 bg-transparent">
         <section>
           <SponsorCarousel />
         </section>
       </div>
 
-      <div id="faq" className="relative z-10 bg-transparent">
+      <div id="faq" className="z-0 bg-transparent">
         <FAQAccordion />
       </div>
 
-      <div className="relative z-10">
+      <div className="z-0">
         <Footer />
       </div>
     </div>
