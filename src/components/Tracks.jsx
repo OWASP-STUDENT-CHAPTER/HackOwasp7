@@ -5,47 +5,45 @@ import { faAngleLeft, faAngleRight, faCode, faLaptopCode, faMobile, faServer, fa
 
 const TracksSlider = () => {
   const tracks = [
-    { 
-      title: "AI/ML", 
-      image: "https://images.unsplash.com/photo-1677442135136-760c813dfc0f?q=80&w=1932&auto=format&fit=crop",
-      description: "Build intelligent solutions with ML and deep learning",
+    {
+      title: "AI/ML",
+      image: "https://res.cloudinary.com/dioelwfec/image/upload/v1744918368/4f5c6cff-9d7c-450f-a669-2bafbf78dace_r391rq.png",
+      description: "Driven by data and algorithms to make a real difference? Join the HackOwasp 7.0 AI/ML Track and pioneer innovative projects that address critical societal needs. Leverage the power of artificial intelligence and machine learning to design solutions that uplift the marginalized and underprivileged. If you're passionate about using AI/ML for social good and creating impactful solutions, HackOwasp 7.0 is your platform to contribute.",
       icon: faLaptopCode,
       color: "from-blue-900 to-blue-700"
     },
-    { 
-      title: "Blockchain", 
-      image: "https://images.unsplash.com/photo-1639762681057-408e52192e55?q=80&w=2070&auto=format&fit=crop",
-      description: "Create decentralized apps and smart contracts",
+    {
+      title: "Blockchain",
+      image: "https://res.cloudinary.com/dioelwfec/image/upload/v1744919804/ace7cb6b-a45e-4ba7-9e48-91ab05965edb_aq3tox.png",
+      description: "Dive into the Decentralized Revolution with the Web3 Innovation Track! This track, organized by the OWASP Student Chapter, challenges you to build groundbreaking solutions leveraging blockchain, dApps, DeFi, NFTs, DAOs, and more. Unleash your creativity in the exciting world of Web3.",
       icon: faDatabase,
-      color: "from-purple-900 to-purple-700" 
+      color: "from-purple-900 to-purple-700"
     },
-    { 
-      title: "Web Development", 
-      image: "https://images.unsplash.com/photo-1627398242454-45a1465c2479?q=80&w=2074&auto=format&fit=crop",
-      description: "Craft responsive, interactive web applications",
-      icon: faCode,
-      color: "from-teal-900 to-teal-700" 
-    },
-    { 
-      title: "Mobile Apps", 
-      image: "https://images.unsplash.com/photo-1526498460520-4c246339dccb?q=80&w=2070&auto=format&fit=crop",
-      description: "Design cross-platform mobile experiences",
-      icon: faMobile,
-      color: "from-green-900 to-green-700" 
-    },
-    { 
-      title: "Cloud Computing", 
-      image: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?q=80&w=2070&auto=format&fit=crop",
-      description: "Develop scalable solutions in the cloud",
+    {
+      title: "Health",
+      image: "https://res.cloudinary.com/dioelwfec/image/upload/v1744919807/Untitled_design_5_gmtsl0.png",
+      description: "Join the HackOwasp 7.0 health track and work towards creating innovative projects that cater to the health needs of the marginalized and underprivileged. By leveraging technology, you can design solutions that increase accessibility to healthcare services, improve the quality of care, and reduce healthcare disparities. So, if you're looking for an opportunity to serve others and make a positive impact, HackOwasp 7.0 is the platform for you.",
       icon: faServer,
-      color: "from-cyan-900 to-cyan-700" 
+      color: "from-cyan-900 to-cyan-700"
     },
-    { 
-      title: "Cybersecurity", 
-      image: "https://images.unsplash.com/photo-1614064641938-3bbee52942c7?q=80&w=2070&auto=format&fit=crop",
-      description: "Build secure systems and identify vulnerabilities",
-      icon: faShieldAlt,
-      color: "from-red-900 to-red-700" 
+    {
+      title: "Hardware",
+      image: "https://res.cloudinary.com/dioelwfec/image/upload/v1744919805/2eb010a8-0db0-4744-9d57-585d2c285b43_suik3j.png",
+      description: "From electronics to IoT devices and beyond, creativity and innovation in Hardware lets you to push the boundaries of physical computing and realize your visions. Design and prototype innovative solutions that address real-world challenges and enhance user experiences. Whether you're an experienced hardware enthusiast or a curious beginner, this is a chance to explore, experiment, and create groundbreaking hardware innovations.",
+      icon: faServer,
+      color: "from-cyan-900 to-cyan-700"
+    },
+    {
+      title: "Cybersecurity",
+      image: "https://res.cloudinary.com/dioelwfec/image/upload/v1744918372/ce447554-a690-4835-bf38-0083d847311d_eq20e5.png",
+      description: "In an era of rapid digital transformation, the imperative to secure financial systems and data is paramount, underlining the critical intersection of cybersecurity and finance.Dive deep into this, leveraging cutting-edge technologies and strategic approaches to safeguard financial transactions and fend off cyber threats. Shape the future of cybersecurity in finance and ensure the integrity of global financial systems",
+      color: "from-red-900 to-red-700"
+    },
+    {
+      title: "Open Innovation",
+      image: "https://res.cloudinary.com/dioelwfec/image/upload/v1744918361/1039a7a6-ae6b-43fe-900c-dd921ba8b437_ovafeu.png",
+      description: "Explore boundless creativity and collaboration in the Open Innovation track. Break down barriers and unlock new possibilities as you tackle real-world challenges with fellow participants. Harness the power of open-source technologies and interdisciplinary teamwork to craft innovative solutions that could shape the future. Let your imagination run wild and make a meaningful impact through open innovation.",
+      color: "from-red-900 to-red-700"
     },
   ];
 
@@ -53,7 +51,7 @@ const TracksSlider = () => {
   const [positions, setPositions] = useState({
     leftEndBack: 0,
     leftEnd: 1,
-    leftMid: 2, 
+    leftMid: 2,
     center: 3,
     rightMid: 4,
     rightEnd: 5,
@@ -62,7 +60,7 @@ const TracksSlider = () => {
 
   // Initialize positions based on number of tracks
 
-useEffect(() => {
+  useEffect(() => {
     const center = Math.floor(tracks.length / 2);
     setPositions({
       leftEndBack: (center - 3 + tracks.length) % tracks.length,
@@ -74,7 +72,7 @@ useEffect(() => {
       rightEndBack: (center + 3) % tracks.length
     });
   }, []); // Empty dependency array ensures it runs only once
-  
+
 
   // Touch handling
   const sliderRef = useRef(null);
@@ -84,7 +82,7 @@ useEffect(() => {
   // Slide left function
   const leftScroll = () => {
     setPositions(prev => {
-      const newPos = {...prev};
+      const newPos = { ...prev };
       Object.keys(newPos).forEach(key => {
         newPos[key] = (newPos[key] - 1 + tracks.length) % tracks.length;
       });
@@ -95,7 +93,7 @@ useEffect(() => {
   // Slide right function
   const rightScroll = () => {
     setPositions(prev => {
-      const newPos = {...prev};
+      const newPos = { ...prev };
       Object.keys(newPos).forEach(key => {
         newPos[key] = (newPos[key] + 1) % tracks.length;
       });
@@ -112,7 +110,7 @@ useEffect(() => {
     const handleTouchEnd = (e) => {
       touchEndX.current = e.changedTouches[0].clientX;
       const diffX = touchStartX.current - touchEndX.current;
-      
+
       if (Math.abs(diffX) > 50) {
         diffX > 0 ? rightScroll() : leftScroll();
       }
@@ -135,7 +133,7 @@ useEffect(() => {
   // Helper function to get position styling
   const getPositionStyles = (index) => {
     const { leftEndBack, leftEnd, leftMid, center, rightMid, rightEnd, rightEndBack } = positions;
-    
+
     // Position 3 (center)
     if (index === center) {
       return {
@@ -150,7 +148,7 @@ useEffect(() => {
         }
       };
     }
-    
+
     // Position 2 (left middle)
     if (index === leftMid) {
       return {
@@ -161,7 +159,7 @@ useEffect(() => {
         boxShadow: "0px 0.4rem 1.6rem rgba(0, 0, 0, 0.3)"
       };
     }
-    
+
     // Position 4 (right middle)
     if (index === rightMid) {
       return {
@@ -172,7 +170,7 @@ useEffect(() => {
         boxShadow: "0px 0.4rem 1.6rem rgba(0, 0, 0, 0.3)"
       };
     }
-    
+
     // Position 1 (left edge)
     if (index === leftEnd) {
       return {
@@ -183,7 +181,7 @@ useEffect(() => {
         boxShadow: "0px 0.4rem 1.6rem rgba(0, 0, 0, 0.1)"
       };
     }
-    
+
     // Position 5 (right edge)
     if (index === rightEnd) {
       return {
@@ -194,7 +192,7 @@ useEffect(() => {
         boxShadow: "0px 0.4rem 1.6rem rgba(0, 0, 0, 0.1)"
       };
     }
-    
+
     // Position none (hidden)
     return {
       left: "50%",
@@ -212,9 +210,9 @@ useEffect(() => {
 
   return (
     <div className="h-[35rem] w-full max-w-[1200px] flex justify-center items-center relative mt-8 select-none" >
-      
+
       {/* Left Arrow */}
-      <div 
+      <div
         className="h-full w-[10%] flex justify-center items-center cursor-pointer"
         onClick={leftScroll}
       >
@@ -222,9 +220,9 @@ useEffect(() => {
           <FontAwesomeIcon icon={faAngleLeft} size="lg" />
         </div>
       </div>
-      
+
       {/* Slider Content */}
-      <div 
+      <div
         ref={sliderRef}
         className="h-full w-[80%] flex justify-center items-center relative overflow-hidden"
         style={{ perspective: "100px" }}
@@ -232,12 +230,12 @@ useEffect(() => {
         {tracks.map((track, index) => {
           const posStyles = getPositionStyles(index);
           const isCenterSlide = isCenter(index);
-          
+
           return (
             <div
               key={index}
               className={`
-                absolute h-[400px] w-[270px] bg-gradient-to-br ${track.color} rounded-[25px]
+                absolute h-[500px] w-[300px] bg-gradient-to-br ${track.color} rounded-[25px]
                 flex justify-center items-center
                 transition-all duration-500 ease-in-out
                 ${isCenterSlide ? 'cursor-pointer' : ''}
@@ -263,48 +261,41 @@ useEffect(() => {
             >
               {/* Background pattern overlay */}
               <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] rounded-[25px]"></div>
-              
+
               {/* Track media */}
               <div className="absolute top-0 left-0 w-full h-1/2 rounded-t-[25px] overflow-hidden">
                 <div className="absolute inset-0 bg-black bg-opacity-30"></div>
-                <img 
-                  src={track.image} 
+                <img
+                  src={track.image}
                   alt={track.title}
-                  className="absolute h-full w-full object-cover" 
+                  className="absolute h-full w-full object-cover"
                 />
               </div>
-              
+
               {/* Track content */}
-              <div className="absolute top-0 left-0 w-full h-full rounded-[25px] overflow-hidden p-6 flex flex-col justify-between text-white">
+              <div className="absolute top-0 left-0 w-full h-full rounded-[25px] overflow-hidden p-3 flex flex-col justify-between text-white">
                 <div className="flex items-center justify-center mt-[55%]">
-                  <div className="bg-white bg-opacity-20 rounded-full p-4 mb-3">
+                  {/* <div className="bg-white bg-opacity-20 rounded-full p-4 mb-3">
                     <FontAwesomeIcon icon={track.icon} className="text-2xl" />
-                  </div>
+                  </div> */}
                 </div>
-                
-                <div className="flex flex-col gap-2">
+
+                <div className="flex flex-col justify-start items-center gap-2">
                   <h3 className="text-xl font-bold text-center">{track.title}</h3>
-                  <p className="text-sm text-center text-white text-opacity-80">{track.description}</p>
-                  {/* <button className={`
-                    mt-2 mx-auto bg-white bg-opacity-20 hover:bg-opacity-30 
-                    transition-all duration-300 py-2 px-4 rounded-full text-black text-sm
-                    ${isCenterSlide ? 'opacity-100' : 'opacity-0'} transition-opacity duration-300
-                  `}>
-                    View Details
-                  </button> */}
+                  <p className="text-[13px] text-justify text-white text-opacity-80">{track.description}</p>
                 </div>
               </div>
-              
+
               {/* Reflection effect */}
               <div className="absolute bottom-0 left-0 w-full h-[40%] bg-gradient-to-b from-white to-transparent opacity-5 rounded-b-[25px]"></div>
             </div>
           );
         })}
-        
+
       </div>
-      
+
       {/* Right Arrow */}
-      <div 
+      <div
         className="h-full w-[10%] flex justify-center items-center cursor-pointer"
         onClick={rightScroll}
       >

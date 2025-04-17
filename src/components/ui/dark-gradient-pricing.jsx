@@ -28,7 +28,7 @@ const Benefit = ({
 
 export const PricingCard = ({
   tier,
-  price,
+  prize,
   bestFor,
   CTA,
   benefits,
@@ -52,7 +52,7 @@ export const PricingCard = ({
             {tier}
           </span>
           <span className="mb-1.5 md:mb-3 inline-block text-4xl font-medium text-zinc-50">
-            {price}
+            {prize}
           </span>
           {/* <span
             className="bg-gradient-to-br from-zinc-200 to-zinc-500 bg-clip-text text-center text-transparent">
