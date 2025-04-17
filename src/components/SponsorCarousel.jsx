@@ -14,7 +14,7 @@ import TiffinWala from "/logos/tiffinwala.png";
 import DAO from "/logos/DAO.jpg";
 import Hindustan from "/logos/Hindustan.png";
 import TCV from "/logos/TCV.png";
-import Web3 from "/logos/Web3.png";
+// import Web3 from "/logos/Web3.png";
 // import Web3 from "/logos/IMG_0288.png";
 
 // Define which logos should preserve their original colors (not be converted to grayscale)
@@ -47,7 +47,7 @@ const sponsors = {
     { name: "DAO LOGO", logo: DAO },  
     { name: "HINDUSTAN LOGO", logo: Hindustan },
     { name: "TCV LOGO", logo: TCV },
-    { name: "WEB3 LOGO", logo: Web3 },
+    // { name: "WEB3 LOGO", logo: Web3 },
   ],
   community:[
     { name: "TIFFIN WALA LOGO", logo: TiffinWala },
