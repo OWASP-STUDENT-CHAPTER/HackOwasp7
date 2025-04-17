@@ -68,10 +68,10 @@ export function TimelineDemo() {
         <div className="bg-gradient-to-br from-gray-900 to-gray-950 p-6 rounded-xl shadow-lg border border-gray-800 hover:border-cyan-900/40 transition-all duration-300 group">
           <div className="relative z-10">
             <h2 className="text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-amber-50 mb-4 tracking-tight">
-              Blockchain Workshop
+              AI/ML Workshop
             </h2>
             <p className="text-lg md:text-xl text-gray-300 font-semibold mb-4">
-              Blockchain & Beyond
+              Future of Technology
             </p>
             <p className="text-lg md:text-xl text-gray-300 font-semibold mb-4">
               Venue: Tan Audi
