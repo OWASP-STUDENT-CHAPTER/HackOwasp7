@@ -149,6 +149,11 @@ const FAQAccordion = () => {
       answer:
         "You can register for the workshops and Kaggle Hack by filling the form at the top of the page. The registration is free of cost. https://forms.gle/oJFXHmn9XjKJ9FiW6",
     },
+    {
+      question: "Who all can register for Workshops, Kaggle Hack, Ideathon and HACKOWASP?",
+      answer:
+        "All students from all years from any college or university can register for the workshops, Kaggle Hack, Ideathon and HACKOWASP. The registration is free of cost.",
+    },
   ];
 
   return (
