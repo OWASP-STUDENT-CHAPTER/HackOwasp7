@@ -91,9 +91,9 @@ function App() {
           </motion.div>
         </div>
 
-        <div className="w-full md:w-3/4 mt-8 md:mt-0 md:ml-6">
+        <div className="w-full md:w-3/4 mt-8 md:mt-0 md:ml-6 pb-10">
           <motion.div
-            className="bg-gray-900 dark:bg-gray-800 rounded-lg border-2 border-blue-500 dark:border-blue-600 overflow-hidden"
+            className="bg-gray-900 rounded-lg border-2 border-blue-500 dark:border-blue-600 "
             style={{
               boxShadow: "0 8px 0 rgba(59, 130, 246, 0.5)",
             }}
@@ -110,7 +110,7 @@ function App() {
                 ))}
               </div>
             </div>
-            <div className="p-4">
+            <div className="">
               <TracksSlider />
             </div>
           </motion.div>
