@@ -224,7 +224,7 @@ const TracksSlider = () => {
       {/* Slider Content */}
       <div
         ref={sliderRef}
-        className="min-h-[500px] w-[90%] flex justify-center items-center relative overflow-hidden"
+        className="min-h-[600px] w-[90%] flex justify-center items-center relative overflow-hidden"
         style={{ perspective: "100px" }}
       >
         {tracks.map((track, index) => {
@@ -235,7 +235,7 @@ const TracksSlider = () => {
             <div
               key={index}
               className={`
-                absolute h-[500px] w-[250px] bg-gradient-to-br ${track.color} rounded-[25px]
+                absolute h-[550px] w-[250px] md:w-[350px] bg-gradient-to-br ${track.color} rounded-[25px]
                 flex justify-center items-center
                 transition-all duration-500 ease-in-out
                 ${isCenterSlide ? 'cursor-pointer' : ''}

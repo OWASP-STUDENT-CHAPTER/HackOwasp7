@@ -29,7 +29,7 @@ export const Timeline = ({ data }) => {
 
   return (
     <div
-      className="w-full bg-transparent font-sans md:px-10"
+      className="w-full bg-transparent overflow-hidden font-sans md:px-10"
       ref={containerRef}
     >
 
