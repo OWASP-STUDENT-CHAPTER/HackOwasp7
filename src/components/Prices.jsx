@@ -21,8 +21,8 @@ function PricingDemo() {
             bestFor="Best for 1-5 users"
             CTA="Get started free"
             benefits={[
-              { text: "TIM HORTNS Coupons 20% OFF", checked: true },
-              { text: "TIM HORTNS Magnets", checked: true },
+              { text: "TIM HORTONS Coupons 20% OFF", checked: true },
+              { text: "TIM HORTONS Magnets", checked: true },
               { text: ".xyz Domain", checked: true },
               { text: "Goodies", checked: false },
               { text: "Industry Mentors Support", checked: false },
@@ -36,8 +36,8 @@ function PricingDemo() {
             bestFor="Best for 5-50 users"
             CTA="14-day free trial"
             benefits={[
-              { text: "TIM HORTNS Coupons 20% OFF", checked: true },
-              { text: "TIM HORTNS Magnets", checked: true },
+              { text: "TIM HORTONS Coupons 20% OFF", checked: true },
+              { text: "TIM HORTONS Magnets", checked: true },
               { text: ".xyz Domain", checked: true },
               { text: "Goodies", checked: false },
               { text: "Industry Mentors Support", checked: false },
@@ -51,8 +51,8 @@ function PricingDemo() {
             bestFor="Best for 50+ users"
             CTA="Contact us"
             benefits={[
-              { text: "TIM HORTNS Coupons 20% OFF", checked: true },
-              { text: "TIM HORTNS Magnets", checked: true },
+              { text: "TIM HORTONS Coupons 20% OFF", checked: true },
+              { text: "TIM HORTONS Magnets", checked: true },
               { text: ".xyz Domain", checked: true },
               { text: "Goodies", checked: false },
               { text: "Industry Mentors Support", checked: false },
@@ -68,8 +68,8 @@ function PricingDemo() {
             bestFor="Best for 1-5 users"
             CTA="Get started free"
             benefits={[
-              { text: "TIM HORTNS Coupons 20% OFF", checked: true },
-              { text: "TIM HORTNS Magnets", checked: true },
+              { text: "TIM HORTONS Coupons 20% OFF", checked: true },
+              { text: "TIM HORTONS Magnets", checked: true },
               { text: ".xyz Domain", checked: true },
               { text: "Goodies", checked: false },
               { text: "Industry Mentors Support", checked: false },
@@ -83,8 +83,8 @@ function PricingDemo() {
             bestFor="Best for 5-50 users"
             CTA="14-day free trial"
             benefits={[
-              { text: "TIM HORTNS Coupons 20% OFF", checked: true },
-              { text: "TIM HORTNS Magnets", checked: true },
+              { text: "TIM HORTONS Coupons 20% OFF", checked: true },
+              { text: "TIM HORTONS Magnets", checked: true },
               { text: ".xyz Domain", checked: true },
               { text: "Goodies", checked: false },
               { text: "Industry Mentors Support", checked: false },
@@ -98,8 +98,8 @@ function PricingDemo() {
             bestFor="Best for 50+ users"
             CTA="Contact us"
             benefits={[
-              { text: "TIM HORTNS Coupons 20% OFF", checked: false },
-              { text: "TIM HORTNS Magnets", checked: false },
+              { text: "TIM HORTONS Coupons 20% OFF", checked: false },
+              { text: "TIM HORTONS Magnets", checked: false },
               { text: ".xyz Domain", checked: false },
               { text: "Goodies", checked: true },
               { text: "Industry Mentors Support", checked: true },
