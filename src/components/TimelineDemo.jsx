@@ -183,8 +183,6 @@ export function TimelineDemo() {
               36 hours of non-stop innovation! Build, collaborate, and transform your
               ideas into working solutions. May the code be with you!
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            </div>
           </div>
           <div className="absolute bottom-0 right-0 w-32 h-32 bg-rose-600/10 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
         </div>
@@ -240,7 +238,7 @@ export function TimelineDemo() {
 
   return (
     <>
-      <div className="w-full max-w-5xl mx-auto px-4 py-12 bg-transparent relative">
+      <div className="w-full max-w-5xl mx-auto px-4 py-12 bg-transparent overflow-hidden relative">
         {/* <motion.div
           style={{
             position: "absolute",
