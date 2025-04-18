@@ -47,7 +47,7 @@ export function SparklesPreviewDark() {
     };
   }, []);
   return (
-    <div className="h-screen w-full relative bg-slate-950 flex flex-col items-center justify-center overflow-hidden">
+    <div className="h-screen w-full relative bg-transparent flex flex-col items-center justify-center overflow-hidden">
       {/* Flying Spaceship */}
       <motion.div
                 style={{
@@ -112,7 +112,7 @@ export function SparklesPreviewDark() {
             </motion.div>
 
       {/* Particles Background */}
-      <div className="absolute inset-0 w-full h-full">
+      {/* <div className="absolute inset-0 w-full h-full">
                 <SparklesCore
                     id="tsparticlesfullpage"
                     background="transparent"
@@ -123,7 +123,7 @@ export function SparklesPreviewDark() {
                     particleColor="#FFFFFF"
                     speed={1}
                 />
-            </div>
+            </div> */}
 
       {/* Content */}
       <div className="relative z-20 text-center px-4">
@@ -161,15 +161,6 @@ export function SparklesPreviewDark() {
             ></div>
             {/* <span className="bg-amber-300">google</span> */}
         </div>
-        <a href="https://www.kaggle.com/competitions/hack-owasp-ml-contest" target="_blank">
-        <button class="relative inline-flex items-center justify-center mt-24 p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white text-white focus:ring-4 focus:outline-none focus:ring-cyan-800">
-        <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-gray-900 rounded-md group-hover:bg-transparent">
-        Join the Kaggle Hack
-        </span>
-        </button>
-        </a>
-        {/* </div> */}
-        
       </div>
     </div>
   );

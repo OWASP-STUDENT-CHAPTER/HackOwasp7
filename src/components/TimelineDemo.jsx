@@ -182,7 +182,7 @@ export function TimelineDemo() {
             <p className="text-gray-400 text-base md:text-lg leading-relaxed mb-6">
               36 hours of non-stop innovation! Build, collaborate, and transform your
               ideas into working solutions. May the code be with you!
-            </p>
+            </p> 
           </div>
           <div className="absolute bottom-0 right-0 w-32 h-32 bg-rose-600/10 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
         </div>
