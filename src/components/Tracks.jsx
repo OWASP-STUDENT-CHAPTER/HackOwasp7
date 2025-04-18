@@ -24,7 +24,7 @@ const TracksSlider = () => {
       image: "https://res.cloudinary.com/dioelwfec/image/upload/v1744919807/Untitled_design_5_gmtsl0.png",
       description: "Join the HackOwasp 7.0 health track and work towards creating innovative projects that cater to the health needs of the marginalized and underprivileged. By leveraging technology, you can design solutions that increase accessibility to healthcare services, improve the quality of care, and reduce healthcare disparities. So, if you're looking for an opportunity to serve others and make a positive impact, HackOwasp 7.0 is the platform for you.",
       icon: faServer,
-      color: "from-cyan-900 to-cyan-700"
+      color: "from-amber-900 to-amber-700"
     },
     {
       title: "Hardware",
@@ -43,7 +43,7 @@ const TracksSlider = () => {
       title: "Open Innovation",
       image: "https://res.cloudinary.com/dioelwfec/image/upload/v1744918361/1039a7a6-ae6b-43fe-900c-dd921ba8b437_ovafeu.png",
       description: "Explore boundless creativity and collaboration in the Open Innovation track. Break down barriers and unlock new possibilities as you tackle real-world challenges with fellow participants. Harness the power of open-source technologies and interdisciplinary teamwork to craft innovative solutions that could shape the future. Let your imagination run wild and make a meaningful impact through open innovation.",
-      color: "from-red-900 to-red-700"
+      color: "from-green-900 to-green-700"
     },
   ];
 
@@ -209,11 +209,11 @@ const TracksSlider = () => {
   };
 
   return (
-    <div className="h-[35rem] w-full max-w-[1200px] flex justify-center items-center relative mt-8 select-none" >
+    <div className="h-[35rem] w-full max-w-[1200px] flex justify-center items-center flex-col md:flex-row relative mt-8 select-none" >
 
       {/* Left Arrow */}
       <div
-        className="h-full w-[10%] flex justify-center items-center cursor-pointer"
+        className="h-full hidden w-[10%] md:flex justify-center items-center cursor-pointer"
         onClick={leftScroll}
       >
         <div className="w-10 h-10 flex justify-center items-center rounded-full bg-white transition-colors">
@@ -224,7 +224,7 @@ const TracksSlider = () => {
       {/* Slider Content */}
       <div
         ref={sliderRef}
-        className="h-full w-[80%] flex justify-center items-center relative overflow-hidden"
+        className="min-h-[500px] w-[90%] flex justify-center items-center relative overflow-hidden"
         style={{ perspective: "100px" }}
       >
         {tracks.map((track, index) => {
@@ -235,7 +235,7 @@ const TracksSlider = () => {
             <div
               key={index}
               className={`
-                absolute h-[500px] w-[300px] bg-gradient-to-br ${track.color} rounded-[25px]
+                absolute h-[500px] w-[250px] bg-gradient-to-br ${track.color} rounded-[25px]
                 flex justify-center items-center
                 transition-all duration-500 ease-in-out
                 ${isCenterSlide ? 'cursor-pointer' : ''}
@@ -282,7 +282,7 @@ const TracksSlider = () => {
 
                 <div className="flex flex-col justify-start items-center gap-2">
                   <h3 className="text-xl font-bold text-center">{track.title}</h3>
-                  <p className="text-[13px] text-justify text-white text-opacity-80">{track.description}</p>
+                  <p className="text-[13px] text-justify text-white text-opacity-80 ">{track.description}</p>
                 </div>
               </div>
 
@@ -296,7 +296,7 @@ const TracksSlider = () => {
 
       {/* Right Arrow */}
       <div
-        className="h-full w-[10%] flex justify-center items-center cursor-pointer"
+        className="h-full w-[10%] hidden md:flex justify-center items-center cursor-pointer"
         onClick={rightScroll}
       >
         <div className="w-10 h-10 flex justify-center items-center rounded-full bg-white transition-colors">
