@@ -14,11 +14,17 @@ import TiffinWala from "/logos/tiffinwala.png";
 import DAO from "/logos/DAO.jpg";
 import Hindustan from "/logos/Hindustan.png";
 import TCV from "/logos/TCV.png";
-import Web3 from "/logos/Web3.png";
+// import Web3 from "/logos/Web3.png";
 // import Web3 from "/logos/IMG_0288.png";
+import pepsico from "/logos/PepsiCo.png";
+import cyndia from "/logos/cyndia.jpg";
+import Siz from "/logos/SIZ.png";
+import bsidesnoida from "/logos/bsidesnoida.png";
+import X0 from "/logos/0X0.png";
 
 // Define which logos should preserve their original colors (not be converted to grayscale)
 const PRESERVE_COLORS = [
+  "PepsiCo LOGO",
   "MEGHS LOGO", 
   "ARCHIES LOGO",
   "TIFFIN WALA LOGO",
@@ -26,6 +32,10 @@ const PRESERVE_COLORS = [
   "HINDUSTAN LOGO",
   "TCV LOGO",
   "DAO LOGO",
+  "CYNDIA LOGO",
+  "BESIDESNOIDA LOGO",
+  "SIZ LOGO",
+  "X0 LOGO",
 ];
 
 const sponsors = {
@@ -37,6 +47,7 @@ const sponsors = {
     { name: "BSB LOGO", logo: Bsep },
     { name: "ICP LOGO", logo: ICP },
     { name: "SWAPSO LOGO", logo: SwapSo },
+    { name: "PepsiCo LOGO", logo: pepsico },
   ],
   tier2: [ // Partners
     { name: "ARCHIES LOGO", logo: Archies },
@@ -47,7 +58,11 @@ const sponsors = {
     { name: "DAO LOGO", logo: DAO },  
     { name: "HINDUSTAN LOGO", logo: Hindustan },
     { name: "TCV LOGO", logo: TCV },
-    { name: "WEB3 LOGO", logo: Web3 },
+    { name: "CYNDIA LOGO", logo: cyndia },
+    { name: "BESIDESNOIDA LOGO", logo: bsidesnoida },
+    { name: "SIZ LOGO", logo: Siz },
+    { name: "X0 LOGO", logo: X0 },
+    // { name: "WEB3 LOGO", logo: Web3 },
   ],
   community:[
     { name: "TIFFIN WALA LOGO", logo: TiffinWala },
@@ -128,7 +143,7 @@ export function SponsorCarousel() {
       <div className="w-full flex flex-col space-y-4 md:space-y-8">
         <div className="relative">
           <InfiniteSlider
-            duration={25}
+            duration={45}
             // reverse={true}
             className="py-2"
           >

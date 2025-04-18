@@ -11,7 +11,7 @@ export function Countdown() {
   });
 
   useEffect(() => {
-    const targetDate = new Date(2025, 3, 16, 0, 0, 0);
+    const targetDate = new Date(2025, 3, 19, 0, 0, 0);
 
     const calculateTimeLeft = () => {
       const now = new Date().getTime();
@@ -103,7 +103,7 @@ export function Countdown() {
         className="text-white text-center text-2xl mb-6 relative"
         variants={itemVariants}
       >
-        Event Starts In
+        HackO Starts In
       </motion.h2>
       <div className="grid grid-cols-4 gap-4 text-white relative max-w-4xl mx-auto px-4">
         {[
