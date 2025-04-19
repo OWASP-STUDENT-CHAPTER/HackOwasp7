@@ -30,7 +30,7 @@ export function Navbar() {
     { name: "Accommodation", href: "https://forms.gle/bgzhuFum2KCYipYy9", target: "_blank" },
     { name: "Workshops", href: "https://forms.gle/oJFXHmn9XjKJ9FiW6", target: "_blank" },
     { name: "Tracks", href: "#tracks" },
-    { name: "Prices", href: "#prices" },
+    { name: "Prizes", href: "#prices" },
     { name: "Partners", href: "#partners" },
     { name: "FAQs", href: "#faq" },
   ];
