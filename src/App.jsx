@@ -20,7 +20,7 @@ import SparkleBg from "./components/SparkleEffect";
 import { SparklesCore } from "./components/ui/sparkles";
 import Footer from "./components/Footer";
 import FAQAccordion from "./components/Accordian";
-import { PricingDemo } from "./components/Prices";
+import { WinnersSection } from "./components/Prices";
 // App.jsx - Updated structure
 function App() {
   return (
@@ -117,8 +117,8 @@ function App() {
         </div>
       </div>
 
-      <div id="prices">
-        <PricingDemo />
+      <div id="winners">
+        <WinnersSection />
       </div>
 
       {/* Partners Section */}
