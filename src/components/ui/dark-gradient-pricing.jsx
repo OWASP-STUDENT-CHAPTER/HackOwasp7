@@ -32,7 +32,9 @@ export const PricingCard = ({
   bestFor,
   CTA,
   benefits,
-  className
+  className,
+  rank, // Add rank parameter
+  isHighlighted // Add isHighlighted parameter
 }) => {
   return (
     <motion.div
@@ -54,19 +56,25 @@ export const PricingCard = ({
           <span className="mb-1.5 md:mb-3 inline-block text-4xl font-medium text-zinc-50">
             {prize}
           </span>
-          {/* <span
+          <span
             className="bg-gradient-to-br from-zinc-200 to-zinc-500 bg-clip-text text-center text-transparent">
             {bestFor}
-          </span> */}
+          </span>
         </div>
-        <div className="space-y-2 md:space-y-4 py-3 md:py-9">
+        {/* Two-column layout for rank 2 and 3 cards */}
+        <div className={cn(
+          "py-3 md:py-6",
+          (rank === 2 || rank === 3) 
+            ? "grid grid-cols-2 gap-x-4 gap-y-2 md:gap-y-4" 
+            : "space-y-2 md:space-y-4"
+        )}>
           {benefits.map((benefit, index) => (
             <Benefit key={index} {...benefit} />
           ))}
         </div>
-        {/* <Button className="w-full" variant={tier === "Pro" ? "default" : "ghost"}>
+        <div className="text-center cursor-pointer hover:text-primary transition-colors">
           {CTA}
-        </Button> */}
+        </div>
       </Card>
     </motion.div>
   );

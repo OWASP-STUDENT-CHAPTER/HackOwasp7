@@ -1,49 +1,69 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAngleLeft, faAngleRight, faCode, faLaptopCode, faMobile, faServer, faShieldAlt, faDatabase } from '@fortawesome/free-solid-svg-icons';
-
+import React, { useState, useEffect, useRef } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faAngleLeft,
+  faAngleRight,
+  faCode,
+  faLaptopCode,
+  faMobile,
+  faServer,
+  faShieldAlt,
+  faDatabase,
+} from "@fortawesome/free-solid-svg-icons";
 
 const TracksSlider = () => {
   const tracks = [
     {
       title: "AI/ML",
-      image: "https://res.cloudinary.com/dioelwfec/image/upload/v1744918368/4f5c6cff-9d7c-450f-a669-2bafbf78dace_r391rq.png",
-      description: "Driven by data and algorithms to make a real difference? Join the HackOwasp 7.0 AI/ML Track and pioneer innovative projects that address critical societal needs. Leverage the power of artificial intelligence and machine learning to design solutions that uplift the marginalized and underprivileged. If you're passionate about using AI/ML for social good and creating impactful solutions, HackOwasp 7.0 is your platform to contribute.",
+      image:
+        "https://res.cloudinary.com/dioelwfec/image/upload/v1744918368/4f5c6cff-9d7c-450f-a669-2bafbf78dace_r391rq.png",
+      description:
+        "Driven by data and algorithms to make a real difference? Join the HackOwasp 7.0 AI/ML Track and pioneer innovative projects that address critical societal needs. Leverage the power of artificial intelligence and machine learning to design solutions that uplift the marginalized and underprivileged. If you're passionate about using AI/ML for social good and creating impactful solutions, HackOwasp 7.0 is your platform to contribute.",
       icon: faLaptopCode,
-      color: "from-blue-900 to-blue-700"
+      color: "from-blue-900 to-blue-700",
     },
     {
       title: "Blockchain",
-      image: "https://res.cloudinary.com/dioelwfec/image/upload/v1744919804/ace7cb6b-a45e-4ba7-9e48-91ab05965edb_aq3tox.png",
-      description: "Dive into the Decentralized Revolution with the Web3 Innovation Track! This track, organized by the OWASP Student Chapter, challenges you to build groundbreaking solutions leveraging blockchain, dApps, DeFi, NFTs, DAOs, and more. Unleash your creativity in the exciting world of Web3.",
+      image:
+        "https://res.cloudinary.com/dioelwfec/image/upload/v1744919804/ace7cb6b-a45e-4ba7-9e48-91ab05965edb_aq3tox.png",
+      description:
+        "Dive into the Decentralized Revolution with the Web3 Innovation Track! This track, organized by the OWASP Student Chapter, challenges you to build groundbreaking solutions leveraging blockchain, dApps, DeFi, NFTs, DAOs, and more. Unleash your creativity in the exciting world of Web3.",
       icon: faDatabase,
-      color: "from-purple-900 to-purple-700"
+      color: "from-purple-900 to-purple-700",
     },
     {
       title: "Health",
-      image: "https://res.cloudinary.com/dioelwfec/image/upload/v1744919807/Untitled_design_5_gmtsl0.png",
-      description: "Join the HackOwasp 7.0 health track and work towards creating innovative projects that cater to the health needs of the marginalized and underprivileged. By leveraging technology, you can design solutions that increase accessibility to healthcare services, improve the quality of care, and reduce healthcare disparities. So, if you're looking for an opportunity to serve others and make a positive impact, HackOwasp 7.0 is the platform for you.",
+      image:
+        "https://res.cloudinary.com/dioelwfec/image/upload/v1744919807/Untitled_design_5_gmtsl0.png",
+      description:
+        "Join the HackOwasp 7.0 health track and work towards creating innovative projects that cater to the health needs of the marginalized and underprivileged. By leveraging technology, you can design solutions that increase accessibility to healthcare services, improve the quality of care, and reduce healthcare disparities. So, if you're looking for an opportunity to serve others and make a positive impact, HackOwasp 7.0 is the platform for you.",
       icon: faServer,
-      color: "from-amber-900 to-amber-700"
+      color: "from-amber-900 to-amber-700",
     },
     {
       title: "Hardware",
-      image: "https://res.cloudinary.com/dioelwfec/image/upload/v1744919805/2eb010a8-0db0-4744-9d57-585d2c285b43_suik3j.png",
-      description: "From electronics to IoT devices and beyond, creativity and innovation in Hardware lets you to push the boundaries of physical computing and realize your visions. Design and prototype innovative solutions that address real-world challenges and enhance user experiences. Whether you're an experienced hardware enthusiast or a curious beginner, this is a chance to explore, experiment, and create groundbreaking hardware innovations.",
+      image:
+        "https://res.cloudinary.com/dioelwfec/image/upload/v1744919805/2eb010a8-0db0-4744-9d57-585d2c285b43_suik3j.png",
+      description:
+        "From electronics to IoT devices and beyond, creativity and innovation in Hardware lets you to push the boundaries of physical computing and realize your visions. Design and prototype innovative solutions that address real-world challenges and enhance user experiences. Whether you're an experienced hardware enthusiast or a curious beginner, this is a chance to explore, experiment, and create groundbreaking hardware innovations.",
       icon: faServer,
-      color: "from-cyan-900 to-cyan-700"
+      color: "from-cyan-900 to-cyan-700",
     },
     {
       title: "Cybersecurity",
-      image: "https://res.cloudinary.com/dioelwfec/image/upload/v1744918372/ce447554-a690-4835-bf38-0083d847311d_eq20e5.png",
-      description: "In an era of rapid digital transformation, the imperative to secure financial systems and data is paramount, underlining the critical intersection of cybersecurity and finance.Dive deep into this, leveraging cutting-edge technologies and strategic approaches to safeguard financial transactions and fend off cyber threats. Shape the future of cybersecurity in finance and ensure the integrity of global financial systems",
-      color: "from-red-900 to-red-700"
+      image:
+        "https://res.cloudinary.com/dioelwfec/image/upload/v1744918372/ce447554-a690-4835-bf38-0083d847311d_eq20e5.png",
+      description:
+        "In an era of rapid digital transformation, the imperative to secure financial systems and data is paramount, underlining the critical intersection of cybersecurity and finance.Dive deep into this, leveraging cutting-edge technologies and strategic approaches to safeguard financial transactions and fend off cyber threats. Shape the future of cybersecurity in finance and ensure the integrity of global financial systems",
+      color: "from-red-900 to-red-700",
     },
     {
       title: "Open Innovation",
-      image: "https://res.cloudinary.com/dioelwfec/image/upload/v1744918361/1039a7a6-ae6b-43fe-900c-dd921ba8b437_ovafeu.png",
-      description: "Explore boundless creativity and collaboration in the Open Innovation track. Break down barriers and unlock new possibilities as you tackle real-world challenges with fellow participants. Harness the power of open-source technologies and interdisciplinary teamwork to craft innovative solutions that could shape the future. Let your imagination run wild and make a meaningful impact through open innovation.",
-      color: "from-green-900 to-green-700"
+      image:
+        "https://res.cloudinary.com/dioelwfec/image/upload/v1744918361/1039a7a6-ae6b-43fe-900c-dd921ba8b437_ovafeu.png",
+      description:
+        "Explore boundless creativity and collaboration in the Open Innovation track. Break down barriers and unlock new possibilities as you tackle real-world challenges with fellow participants. Harness the power of open-source technologies and interdisciplinary teamwork to craft innovative solutions that could shape the future. Let your imagination run wild and make a meaningful impact through open innovation.",
+      color: "from-green-900 to-green-700",
     },
   ];
 
@@ -55,7 +75,7 @@ const TracksSlider = () => {
     center: 3,
     rightMid: 4,
     rightEnd: 5,
-    rightEndBack: 6
+    rightEndBack: 6,
   });
 
   // Initialize positions based on number of tracks
@@ -69,10 +89,9 @@ const TracksSlider = () => {
       center: center % tracks.length,
       rightMid: (center + 1) % tracks.length,
       rightEnd: (center + 2) % tracks.length,
-      rightEndBack: (center + 3) % tracks.length
+      rightEndBack: (center + 3) % tracks.length,
     });
   }, []); // Empty dependency array ensures it runs only once
-
 
   // Touch handling
   const sliderRef = useRef(null);
@@ -81,9 +100,9 @@ const TracksSlider = () => {
 
   // Slide left function
   const leftScroll = () => {
-    setPositions(prev => {
+    setPositions((prev) => {
       const newPos = { ...prev };
-      Object.keys(newPos).forEach(key => {
+      Object.keys(newPos).forEach((key) => {
         newPos[key] = (newPos[key] - 1 + tracks.length) % tracks.length;
       });
       return newPos;
@@ -92,9 +111,9 @@ const TracksSlider = () => {
 
   // Slide right function
   const rightScroll = () => {
-    setPositions(prev => {
+    setPositions((prev) => {
       const newPos = { ...prev };
-      Object.keys(newPos).forEach(key => {
+      Object.keys(newPos).forEach((key) => {
         newPos[key] = (newPos[key] + 1) % tracks.length;
       });
       return newPos;
@@ -118,21 +137,29 @@ const TracksSlider = () => {
 
     const slider = sliderRef.current;
     if (slider) {
-      slider.addEventListener('touchstart', handleTouchStart);
-      slider.addEventListener('touchend', handleTouchEnd);
+      slider.addEventListener("touchstart", handleTouchStart);
+      slider.addEventListener("touchend", handleTouchEnd);
     }
 
     return () => {
       if (slider) {
-        slider.removeEventListener('touchstart', handleTouchStart);
-        slider.removeEventListener('touchend', handleTouchEnd);
+        slider.removeEventListener("touchstart", handleTouchStart);
+        slider.removeEventListener("touchend", handleTouchEnd);
       }
     };
   }, []);
 
   // Helper function to get position styling
   const getPositionStyles = (index) => {
-    const { leftEndBack, leftEnd, leftMid, center, rightMid, rightEnd, rightEndBack } = positions;
+    const {
+      leftEndBack,
+      leftEnd,
+      leftMid,
+      center,
+      rightMid,
+      rightEnd,
+      rightEndBack,
+    } = positions;
 
     // Position 3 (center)
     if (index === center) {
@@ -144,8 +171,8 @@ const TracksSlider = () => {
         boxShadow: "0px 0.4rem 1.6rem rgba(0, 0, 0, 0.5)",
         hover: {
           boxShadow: "0px 0rem 1.8rem rgba(0, 0, 0, 0.7)",
-          transform: "translate(-50%, 0) rotateY(0deg) scale(1.05, 1.05)"
-        }
+          transform: "translate(-50%, 0) rotateY(0deg) scale(1.05, 1.05)",
+        },
       };
     }
 
@@ -156,7 +183,7 @@ const TracksSlider = () => {
         zIndex: "20",
         transform: "translate(-50%, 0) rotateY(-1deg) scale(0.9, 0.9)",
         opacity: "1",
-        boxShadow: "0px 0.4rem 1.6rem rgba(0, 0, 0, 0.3)"
+        boxShadow: "0px 0.4rem 1.6rem rgba(0, 0, 0, 0.3)",
       };
     }
 
@@ -167,7 +194,7 @@ const TracksSlider = () => {
         zIndex: "20",
         transform: "translate(-50%, 0) rotateY(1deg) scale(0.9, 0.9)",
         opacity: "1",
-        boxShadow: "0px 0.4rem 1.6rem rgba(0, 0, 0, 0.3)"
+        boxShadow: "0px 0.4rem 1.6rem rgba(0, 0, 0, 0.3)",
       };
     }
 
@@ -178,7 +205,7 @@ const TracksSlider = () => {
         zIndex: "10",
         transform: "translate(-50%, 0) rotateY(-2deg) scale(0.8, 0.8)",
         opacity: "1",
-        boxShadow: "0px 0.4rem 1.6rem rgba(0, 0, 0, 0.1)"
+        boxShadow: "0px 0.4rem 1.6rem rgba(0, 0, 0, 0.1)",
       };
     }
 
@@ -189,7 +216,7 @@ const TracksSlider = () => {
         zIndex: "10",
         transform: "translate(-50%, 0) rotateY(2deg) scale(0.8, 0.8)",
         opacity: "1",
-        boxShadow: "0px 0.4rem 1.6rem rgba(0, 0, 0, 0.1)"
+        boxShadow: "0px 0.4rem 1.6rem rgba(0, 0, 0, 0.1)",
       };
     }
 
@@ -199,7 +226,7 @@ const TracksSlider = () => {
       zIndex: "0",
       transform: "translate(-50%, 0) rotateY(0deg) scale(0.7, 0.7)",
       opacity: "0",
-      boxShadow: "0px 0.4rem 1.6rem rgba(0, 0, 0, 0)"
+      boxShadow: "0px 0.4rem 1.6rem rgba(0, 0, 0, 0)",
     };
   };
 
@@ -209,8 +236,7 @@ const TracksSlider = () => {
   };
 
   return (
-    <div className="h-[35rem] w-full max-w-[1200px] flex justify-center items-center flex-col md:flex-row relative mt-8 select-none" >
-
+    <div className="h-[35rem] w-full max-w-[1200px] flex justify-center items-center flex-col md:flex-row relative mt-8 select-none">
       {/* Left Arrow */}
       <div
         className="h-full hidden w-[10%] md:flex justify-center items-center cursor-pointer"
@@ -235,10 +261,12 @@ const TracksSlider = () => {
             <div
               key={index}
               className={`
-                absolute h-[550px] w-[250px] md:w-[350px] bg-gradient-to-br ${track.color} rounded-[25px]
+                absolute h-[550px] w-[250px] md:w-[350px] bg-gradient-to-br ${
+                  track.color
+                } rounded-[25px]
                 flex justify-center items-center
                 transition-all duration-500 ease-in-out
-                ${isCenterSlide ? 'cursor-pointer' : ''}
+                ${isCenterSlide ? "cursor-pointer" : ""}
               `}
               style={{
                 left: posStyles.left,
@@ -246,7 +274,7 @@ const TracksSlider = () => {
                 transform: posStyles.transform,
                 opacity: posStyles.opacity,
                 boxShadow: posStyles.boxShadow,
-                transformStyle: "preserve-3d"
+                transformStyle: "preserve-3d",
               }}
               {...(isCenterSlide && {
                 onMouseOver: (e) => {
@@ -256,7 +284,7 @@ const TracksSlider = () => {
                 onMouseOut: (e) => {
                   e.currentTarget.style.boxShadow = posStyles.boxShadow;
                   e.currentTarget.style.transform = posStyles.transform;
-                }
+                },
               })}
             >
               {/* Background pattern overlay */}
@@ -275,14 +303,18 @@ const TracksSlider = () => {
               {/* Track content */}
               <div className="absolute top-0 left-0 w-full h-full rounded-[25px] overflow-hidden p-3 flex flex-col justify-between text-white">
                 <div className="flex items-center justify-center mt-[55%]">
+                  <h3 className="text-xl mt-24 font-bold text-center">
+                    {track.title}
+                  </h3>
                   {/* <div className="bg-white bg-opacity-20 rounded-full p-4 mb-3">
                     <FontAwesomeIcon icon={track.icon} className="text-2xl" />
                   </div> */}
                 </div>
 
-                <div className="flex flex-col justify-start items-center gap-2">
-                  <h3 className="text-xl font-bold text-center">{track.title}</h3>
-                  <p className="text-[13px] text-justify text-white text-opacity-80 ">{track.description}</p>
+                <div className="flex-1 mt-8 overflow-auto">
+                  <p className="text-[13px] text-justify text-white text-opacity-90">
+                    {track.description}
+                  </p>
                 </div>
               </div>
 
@@ -291,7 +323,6 @@ const TracksSlider = () => {
             </div>
           );
         })}
-
       </div>
 
       {/* Right Arrow */}
