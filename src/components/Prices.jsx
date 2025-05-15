@@ -1,11 +1,12 @@
 import { useState } from "react";
-import { PricingCard } from "@/components/ui/dark-gradient-pricing"; // Assuming this path
+import { PricingCard } from "@/components/ui/dark-gradient-pricing";
 import {
   FaTrophy,
   FaCode,
   FaLightbulb,
   FaSyncAlt,
   FaStar,
+  FaBrain
 } from "react-icons/fa";
 
 // FlippableCard component
@@ -27,120 +28,132 @@ function FlippableCard({
   };
 
   const getRankSpecificStyling = () => {
-    const solidBaseBg = "bg-zinc-800/90"; // 90% opaque zinc-800
-    const highlightedSolidBaseBg = "bg-zinc-800/90";
+    const solidBaseBg = "bg-zinc-900/95";
+    const highlightedSolidBaseBg = "bg-zinc-900/95";
 
     if (rank === 1) {
       return {
         border:
-          "border-2 border-yellow-400/80 shadow-[0_0_30px_rgba(250,204,21,0.4)] hover:shadow-[0_0_40px_rgba(250,204,21,0.5)]",
+          "border-2 border-yellow-400/80 shadow-[0_0_20px_rgba(250,204,21,0.3)] hover:shadow-[0_0_30px_rgba(250,204,21,0.4)]",
         borderRadius: "rounded-2xl",
-        bgColor: `${highlightedSolidBaseBg} bg-gradient-to-br from-amber-600/40 via-yellow-500/30 to-amber-200/25`,
-        trophyIconSize: isHighlighted ? 52 : 40,
-        tierText: "text-2xl md:text-3xl text-yellow-300",
-        teamNameText: isHighlighted ? "text-3xl md:text-4xl" : "text-3xl",
+        bgColor: `${highlightedSolidBaseBg} bg-gradient-to-br from-amber-600/20 via-yellow-500/15 to-amber-200/10`,
+        trophyIconSize: isHighlighted ? 40 : 32,
+        tierText: "text-xl md:text-2xl text-yellow-300",
+        teamNameText: isHighlighted ? "text-2xl md:text-3xl" : "text-2xl",
         prizeText:
-          "bg-yellow-500/30 text-yellow-200 text-lg px-5 py-2 font-bold",
+          "bg-yellow-500/20 text-yellow-200 text-base px-4 py-1.5 font-medium",
       };
     } else if (rank === 2) {
       return {
         border:
-          "border border-slate-300/70 shadow-[0_0_18px_rgba(209,213,219,0.3)] hover:shadow-[0_0_25px_rgba(209,213,219,0.35)]",
+          "border border-slate-300/60 shadow-[0_0_15px_rgba(209,213,219,0.2)] hover:shadow-[0_0_20px_rgba(209,213,219,0.25)]",
         borderRadius: "rounded-xl",
-        bgColor: `${solidBaseBg} bg-gradient-to-br from-slate-400/20 via-blue-gray-300/10 to-slate-500/20`,
-        trophyIconSize: 32,
-        tierText: "text-xl text-slate-200",
-        teamNameText: "text-2xl",
-        prizeText: "bg-slate-400/25 text-slate-200 px-3 py-1 font-semibold",
+        bgColor: `${solidBaseBg} bg-gradient-to-br from-slate-400/10 via-blue-gray-300/5 to-slate-500/10`,
+        trophyIconSize: 28,
+        tierText: "text-lg text-slate-200",
+        teamNameText: "text-xl",
+        prizeText: "bg-slate-400/20 text-slate-200 px-3 py-1 font-medium",
       };
     } else if (rank === 3) {
       return {
         border:
-          "border border-orange-500/70 shadow-[0_0_18px_rgba(249,115,22,0.3)] hover:shadow-[0_0_25px_rgba(249,115,22,0.35)]",
+          "border border-orange-500/60 shadow-[0_0_15px_rgba(249,115,22,0.2)] hover:shadow-[0_0_20px_rgba(249,115,22,0.25)]",
         borderRadius: "rounded-xl",
-        bgColor: `${solidBaseBg} bg-gradient-to-br from-amber-700/25 via-orange-600/15 to-amber-500/20`,
-        trophyIconSize: 32,
-        tierText: "text-xl text-orange-300",
-        teamNameText: "text-2xl",
-        prizeText: "bg-orange-500/25 text-orange-300 px-3 py-1 font-semibold",
+        bgColor: `${solidBaseBg} bg-gradient-to-br from-amber-700/15 via-orange-600/10 to-amber-500/10`,
+        trophyIconSize: 28,
+        tierText: "text-lg text-orange-300",
+        teamNameText: "text-xl",
+        prizeText: "bg-orange-500/20 text-orange-300 px-3 py-1 font-medium",
       };
     } else if (rank === 4) {
       return {
         border:
-          "border-2 border-sky-500/70 shadow-[0_0_18px_rgba(14,165,233,0.3)] hover:shadow-[0_0_25px_rgba(14,165,233,0.35)]",
+          "border border-sky-500/60 shadow-[0_0_15px_rgba(14,165,233,0.2)] hover:shadow-[0_0_20px_rgba(14,165,233,0.25)]",
         borderRadius: "rounded-xl",
-        bgColor: `${solidBaseBg} bg-gradient-to-br from-sky-600/15 via-transparent to-sky-600/15`,
+        bgColor: `${solidBaseBg} bg-gradient-to-br from-sky-600/10 via-transparent to-sky-600/10`,
         trophyIconSize: null,
-        tierText: "text-lg text-sky-300",
-        teamNameText: "text-xl",
-        prizeText: "bg-sky-500/25 text-sky-300 px-3 py-1 font-semibold",
+        tierText: "text-base text-sky-300",
+        teamNameText: "text-lg",
+        prizeText: "bg-sky-500/20 text-sky-300 px-3 py-1 font-medium",
       };
     }
     return {
-      // Default for any other unstyled card 
       border: "border border-zinc-700",
       borderRadius: "rounded-xl",
-      bgColor: "bg-zinc-900/90", 
+      bgColor: "bg-zinc-900/95",
       trophyIconSize: null,
-      tierText: "text-lg text-zinc-300",
-      teamNameText: "text-xl",
-      prizeText: "bg-zinc-700/50 text-zinc-300 px-3 py-1",
+      tierText: "text-base text-zinc-300",
+      teamNameText: "text-lg",
+      prizeText: "bg-zinc-700/40 text-zinc-300 px-3 py-1",
     };
   };
 
   const styles = getRankSpecificStyling();
 
+  const getCategoryIcon = () => {
+    switch(category.toLowerCase()) {
+      case "hackowasp 7":
+        return <FaCode className="mr-1" />;
+      case "ideathon":
+        return <FaLightbulb className="mr-1" />;
+      case "ml contest":
+        return <FaBrain className="mr-1" />;
+      default:
+        return null;
+    }
+  };
+
   return (
     <div
-      className={`flip-card relative group cursor-pointer transition-all duration-300 ease-out hover:scale-[1.03] ${styles.border} ${styles.borderRadius} w-full overflow-hidden`} // Added styles.borderRadius and overflow-hidden
+      className={`flip-card relative group cursor-pointer transition-all duration-300 ease-out hover:scale-[1.02] ${styles.border} ${styles.borderRadius} w-full overflow-hidden`}
       onClick={() => setIsFlipped(!isFlipped)}
       style={{
         perspective: "1500px",
-        height: isHighlighted ? "480px" : "380px",
+        height: isHighlighted ? "400px" : "350px",
       }}
     >
       <div
-        className="flip-card-inner w-full h-full transition-transform duration-500 relative"
+        className="flip-card-inner w-full h-full transition-transform duration-500 ease-in-out"
         style={{
           transformStyle: "preserve-3d",
           transform: isFlipped ? "rotateY(180deg)" : "rotateY(0deg)",
-          transformOrigin: "center center",
         }}
       >
         {/* Front */}
         <div
           className={`flip-card-front absolute w-full h-full ${styles.borderRadius} overflow-hidden ${styles.bgColor}`}
-          style={{ backfaceVisibility: "hidden" }}
+          style={{
+            backfaceVisibility: "hidden",
+            zIndex: isFlipped ? 0 : 1,
+          }}
         >
-          {" "}
-          <div className="relative flex flex-col items-center justify-between p-6 md:p-8 h-full w-full shadow-xl">
-            <div className="absolute top-3 left-3 md:top-4 md:left-4 text-zinc-500 text-xs flex items-center opacity-70 group-hover:opacity-100 transition-opacity">
-              <FaSyncAlt className="mr-1" /> Flip
+          <div className="relative flex flex-col items-center justify-between p-5 md:p-6 h-full w-full shadow-lg">
+            <div className="absolute top-3 left-3 text-zinc-500 text-xs flex items-center opacity-70 group-hover:opacity-100 transition-opacity">
+              <FaSyncAlt className="mr-1" size={10} /> Flip
             </div>
             {rank <= 3 && styles.trophyIconSize && (
               <div
-                className={`absolute top-3 right-3 md:top-4 md:right-4 ${trophyColors[rank]} drop-shadow-[0_0_5px_rgba(255,255,255,0.5)]`}
+                className={`absolute top-3 right-3 ${trophyColors[rank]} drop-shadow-[0_0_5px_rgba(255,255,255,0.2)]`}
               >
-                <FaTrophy size={isHighlighted ? 32 : 28} />
+                <FaTrophy size={24} />
               </div>
             )}
-            <div className="relative z-10 flex flex-col items-center text-center w-full pt-4">
-              <p className="text-sm font-medium text-zinc-400 mb-1 uppercase tracking-wider">
+            <div className="relative z-10 flex flex-col items-center text-center w-full pt-3">
+              <p className="text-xs font-medium text-zinc-400 mb-1 uppercase tracking-wider flex items-center">
+                {getCategoryIcon()}
                 {category}
               </p>
               {rank <= 3 && styles.trophyIconSize && (
-                <div className={`${trophyColors[rank]} my-2 md:my-3`}>
-                  {" "}
-                  <FaTrophy size={styles.trophyIconSize} />{" "}
+                <div className={`${trophyColors[rank]} my-2`}>
+                  <FaTrophy size={styles.trophyIconSize} />
                 </div>
               )}
               {rank === 4 && (
-                <div className="my-2 md:my-3 text-sky-400">
-                  {" "}
-                  <FaStar size={isHighlighted ? 40 : 32} />{" "}
+                <div className="my-2 text-sky-400">
+                  <FaStar size={28} />
                 </div>
               )}
-              <h3 className={`${styles.tierText} font-semibold mb-1 md:mb-2`}>
+              <h3 className={`${styles.tierText} font-semibold mb-1`}>
                 {tier}
               </h3>
               <h2
@@ -158,29 +171,27 @@ function FlippableCard({
         </div>
         {/* Back */}
         <div
-          className={`flip-card-back absolute w-full h-full ${styles.borderRadius} overflow-hidden`}
-          style={{ backfaceVisibility: "hidden", transform: "rotateY(180deg)" }}
+          className={`flip-card-back absolute w-full h-full ${styles.borderRadius} overflow-hidden bg-zinc-900`}
+          style={{
+            backfaceVisibility: "hidden",
+            transform: "rotateY(180deg)",
+            zIndex: isFlipped ? 1 : 0,
+          }}
         >
-          {" "}
           <PricingCard
             tier={tier}
             prize={prize}
             bestFor={`${category} - ${tier}`}
-            CTA={
-              <span className="flex items-center justify-center">
-                <FaSyncAlt className="mr-2" /> Click to flip back
-              </span>
-            }
             benefits={benefits}
             isHighlighted={isHighlighted}
             rank={rank}
+            className={`${rank === 2 || rank === 3 ? 'benefits-two-columns' : ''}`}
           />
         </div>
       </div>
     </div>
   );
 }
-
 // WinnersSection component
 function WinnersSection() {
   const firstPrizeBenefits = [
@@ -209,45 +220,49 @@ function WinnersSection() {
   ];
 
   return (
-    <section className="relative overflow-hidden text-foreground py-16 md:py-24">
-      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16 md:mb-20">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tighter mb-3">
+    <section className="relative overflow-hidden text-foreground py-14 md:py-20">
+      {/* Background decorations */}
+      <div className="absolute top-40 left-10 w-72 h-72 bg-yellow-500/5 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-20 right-10 w-80 h-80 bg-blue-500/5 rounded-full blur-3xl"></div>
+      
+      <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-14 md:mb-16">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-3">
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-yellow-500 via-amber-400 to-yellow-300">
               🏆 Event Winners
             </span>
           </h2>
-          <p className="text-lg md:text-xl text-zinc-400 max-w-2xl mx-auto">
+          <p className="text-base md:text-lg text-zinc-400 max-w-2xl mx-auto">
             Celebrating the brilliant minds and their outstanding achievements.
             Tap a card to reveal the prizes.
           </p>
         </div>
 
-        {/* hackowasp 7 */}
-        <div className="mb-16 md:mb-20">
-          <h3 className="text-3xl md:text-4xl text-zinc-100 font-bold mb-8 md:mb-10 text-center tracking-tight">
+        {/* HackOWASP 7 */}
+        <div className="mb-16 md:mb-20 p-6 rounded-2xl bg-gradient-to-br from-blue-900/10 via-indigo-900/5 to-transparent">
+          <h3 className="text-2xl md:text-3xl text-zinc-100 font-bold mb-8 text-center tracking-tight">
             HackOWASP 7 Champions
           </h3>
-          <div className="flex justify-center mb-10 md:mb-12">
-            <div className="w-full max-w-xl md:max-w-2xl">
+          <div className="flex justify-center mb-8 md:mb-10">
+            <div className="w-full max-w-lg">
               <FlippableCard
                 teamName="GAMMA-CODERS"
                 tier="1st Prize"
                 prize="₹15,000 Cash"
                 isHighlighted={true}
                 rank={1}
-                category="hackowasp 7"
+                category="HackOWASP 7"
                 benefits={firstPrizeBenefits}
               />
             </div>
           </div>
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:gap-8 mb-10">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:gap-6 mb-8">
             <FlippableCard
               teamName="PIXGENZ"
               tier="2nd Prize"
               prize="₹10,000 Cash"
               rank={2}
-              category="hackowasp 7"
+              category="HackOWASP 7"
               benefits={secondThirdPrizeBenefits}
             />
             <FlippableCard
@@ -255,20 +270,20 @@ function WinnersSection() {
               tier="3rd Prize"
               prize="₹5,000 Cash"
               rank={3}
-              category="hackowasp 7"
+              category="HackOWASP 7"
               benefits={secondThirdPrizeBenefits}
             />
           </div>
-          <h4 className="text-2xl text-sky-300 font-semibold mb-6 text-center">
+          <h4 className="text-xl text-sky-300 font-semibold mb-5 text-center">
             Special Recognitions
           </h4>
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:gap-8">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:gap-6">
             <FlippableCard
               teamName="FORCEPUSH"
               tier="Best First Year Team"
               prize="₹2,000 Cash"
               rank={4}
-              category="hackowasp 7"
+              category="HackOWASP 7"
               benefits={specialAwardBenefits}
             />
             <FlippableCard
@@ -276,19 +291,19 @@ function WinnersSection() {
               tier="Open Innovation Award"
               prize="₹2,000 Cash"
               rank={4}
-              category="hackowasp 7"
+              category="HackOWASP 7"
               benefits={specialAwardBenefits}
             />
           </div>
         </div>
 
         {/* Ideathon */}
-        <div className="mb-16 md:mb-20">
-          <h3 className="text-3xl md:text-4xl text-zinc-100 font-bold mb-8 md:mb-10 text-center tracking-tight">
+        <div className="mb-16 md:mb-20 p-6 rounded-2xl bg-gradient-to-br from-emerald-900/10 via-teal-900/5 to-transparent">
+          <h3 className="text-2xl md:text-3xl text-zinc-100 font-bold mb-8 text-center tracking-tight">
             Ideathon Innovators
           </h3>
-          <div className="flex justify-center mb-10 md:mb-12">
-            <div className="w-full max-w-xl md:max-w-2xl">
+          <div className="flex justify-center mb-8 md:mb-10">
+            <div className="w-full max-w-lg">
               <FlippableCard
                 teamName="UN-ACROBATS"
                 tier="1st Prize"
@@ -300,7 +315,7 @@ function WinnersSection() {
               />
             </div>
           </div>
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:gap-8">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:gap-6">
             <FlippableCard
               teamName="CRYPTOBAPS"
               tier="2nd Prize"
@@ -321,12 +336,12 @@ function WinnersSection() {
         </div>
 
         {/* ML Contest */}
-        <div>
-          <h3 className="text-3xl md:text-4xl text-zinc-100 font-bold mb-8 md:mb-10 text-center tracking-tight">
+        <div className="p-6 rounded-2xl bg-gradient-to-br from-purple-900/10 via-fuchsia-900/5 to-transparent">
+          <h3 className="text-2xl md:text-3xl text-zinc-100 font-bold mb-8 text-center tracking-tight">
             ML Contest Prodigies
           </h3>
-          <div className="flex justify-center mb-10 md:mb-12">
-            <div className="w-full max-w-xl md:max-w-2xl">
+          <div className="flex justify-center mb-8 md:mb-10">
+            <div className="w-full max-w-lg">
               <FlippableCard
                 teamName="YUNSUXIAOZI"
                 tier="1st Prize"
@@ -338,7 +353,7 @@ function WinnersSection() {
               />
             </div>
           </div>
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:gap-8">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:gap-6">
             <FlippableCard
               teamName="JOHN"
               tier="2nd Prize"
@@ -358,6 +373,48 @@ function WinnersSection() {
           </div>
         </div>
       </div>
+
+      {/* Add this style to your global CSS or as an inline style tag */}
+      <style jsx global>{`
+        /* Two-column benefits layout for 2nd and 3rd place cards */
+        .benefits-two-columns .space-y-2,
+        .benefits-two-columns .space-y-4 {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 0.75rem;
+        }
+        
+        .benefits-two-columns .space-y-2 > div,
+        .benefits-two-columns .space-y-4 > div {
+          margin-top: 0 !important;
+        }
+        
+        /* Safari-specific fixes */
+        @media not all and (min-resolution:.001dpcm) { 
+          @supports (-webkit-appearance:none) {
+            .flip-card-inner {
+              transform-style: flat !important;
+              -webkit-transform-style: flat !important;
+            }
+            
+            .flip-card-back {
+              opacity: 0;
+            }
+            
+            .flip-card-back.flipped {
+              opacity: 1;
+            }
+            
+            .flip-card-front {
+              opacity: 1;
+            }
+            
+            .flip-card-front.flipped {
+              opacity: 0;
+            }
+          }
+        }
+      `}</style>
     </section>
   );
 }
