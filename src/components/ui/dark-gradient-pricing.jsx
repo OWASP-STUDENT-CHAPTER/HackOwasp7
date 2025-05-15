@@ -30,7 +30,6 @@ export const PricingCard = ({
   tier,
   prize,
   bestFor,
-  CTA,
   benefits,
   className,
   rank, // Add rank parameter
@@ -39,18 +38,18 @@ export const PricingCard = ({
   return (
     <motion.div
       initial={{ filter: "blur(2px)" }}
-      whileInView={{ filter: "blur(0px)" }}
+      whileInView={{ filter: "blur(0px)", height: "100%" }}
       transition={{ duration: 0.5, ease: "easeInOut", delay: 0.25 }}>
       <Card
         className={cn(
-          "relative h-full w-full overflow-hidden border",
+          "relative h-screen overflow-hidden border",
           "border-zinc-700 bg-gradient-to-br from-zinc-950/50 to-zinc-900/80",
           "p-3 md:p-6",
           className
         )}>
         <div
-          className="flex flex-col items-center border-b pb-3 md:pb-6 border-zinc-700 ">
-          <span className="mb-3 md:mb-6 inline-block text-zinc-50 ">
+          className="flex flex-col items-center border-b pb-1.5 md:pb-3 border-zinc-700 ">
+          <span className="mb-1.5 md:mb-3 inline-block text-zinc-50 ">
             {tier}
           </span>
           <span className="mb-1.5 md:mb-3 inline-block text-4xl font-medium text-zinc-50">
@@ -64,16 +63,13 @@ export const PricingCard = ({
         {/* Two-column layout for rank 2 and 3 cards */}
         <div className={cn(
           "py-3 md:py-6",
-          (rank === 2 || rank === 3) 
+          (rank == 1 ||rank === 2 || rank === 3 ) 
             ? "grid grid-cols-2 gap-x-4 gap-y-2 md:gap-y-4" 
             : "space-y-2 md:space-y-4"
         )}>
           {benefits.map((benefit, index) => (
             <Benefit key={index} {...benefit} />
           ))}
-        </div>
-        <div className="text-center cursor-pointer hover:text-primary transition-colors">
-          {CTA}
         </div>
       </Card>
     </motion.div>
